@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+data/
+datasets/
+checkpoints/
+wandb/
+*.pt
+*.pth
+*.ckpt
+*.out
