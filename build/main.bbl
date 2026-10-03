@@ -1,0 +1,15 @@
+\begin{thebibliography}{1}
+
+\bibitem{brooks2023instructpix2pix}
+Tim Brooks, Aleksander Holynski, and Alexei~A. Efros,
+\newblock ``{InstructPix2Pix}: Learning to follow image editing instructions,''
+\newblock in {\em Proceedings of the IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition (CVPR)}, June 2023, pp. 18392--18402.
+
+\bibitem{blackforest2025flux}
+{Black Forest Labs},
+\newblock ``Flux.1 kontext: Flow matching for in-context image generation and
+  editing in latent space,''
+\newblock {\em arXiv preprint arXiv:2506.15742}, 2025.
+
+\end{thebibliography}
