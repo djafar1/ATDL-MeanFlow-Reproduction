@@ -1,5 +1,6 @@
 # ZHH: we abstract all VAE utils here
 import os
+import time
 from functools import partial
 
 import jax
@@ -69,7 +70,10 @@ class LatentManager:
 
         lowered = p_decode_fn.lower(p_vae_variable, z_dummy)
         compiled_decod_fn = lowered.compile()
-        Bflops = compiled_decod_fn.cost_analysis()[0]['flops'] / 1e9
+        cost_analysis = compiled_decod_fn.cost_analysis()
+        if isinstance(cost_analysis, (list, tuple)):
+            cost_analysis = cost_analysis[0]
+        Bflops = cost_analysis['flops'] / 1e9
         log_for_0('Compiling VAE decoder done')
         log_for_0(f'FLOPs (1e9): {Bflops}')
   
@@ -115,6 +119,12 @@ class LatentDataset(torch.utils.data.Dataset):
 
     def __getitem__(self, idx):
         file_path = os.path.join(self.root, self.file_list[idx])
-        data = torch.load(file_path)
-        return data['image'], data['label']
-
+        last_error = None
+        for attempt in range(30):
+            try:
+                data = torch.load(file_path)
+                return data['image'], data['label']
+            except (FileNotFoundError, OSError) as e:
+                last_error = e
+                time.sleep(5)
+        raise last_error

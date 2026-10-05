@@ -1,0 +1,41 @@
+model:
+    cls: DiT_B_4
+
+dataset:
+    root: /home/hdn456/projects/ATDL-MeanFlow-data/latents_imagenet256
+
+training:
+    num_epochs: 80
+    batch_size: 256
+    learning_rate: 0.0001
+    adam_b2: 0.95
+    ema_type: 'const'
+    ema_val: 0.9999
+    log_per_step: 100
+    checkpoint_per_epoch: 1
+    sample_on_training: False
+    seed: 42
+
+method:
+    noise_dist: 'logit_normal'
+    P_mean: -0.4
+    P_std: 1.0
+    data_proportion: 1.00
+    guidance_eq: 'none'
+    class_dropout_prob: 0.1
+    t_start: 0.0
+    t_end: 1.0
+    norm_p: 1.0
+    norm_eps: 0.01
+
+fid:
+    on_training: False
+    num_samples: 50000
+    device_batch_size: 20
+    cache_ref: /home/hdn456/projects/ATDL-MeanFlow-data/fid/imagenet256_fid_stats.npz
+
+sampling:
+    num_steps: 1
+
+load_from: /home/hdn456/projects/ATDL-MeanFlow-data/runs/table1a_0
+eval_only: False
