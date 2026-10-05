@@ -73,9 +73,18 @@ Group Assignment 2 (Topics 1--2--3--4), 11th of October 2026
 \end{keywords}
 %
 
-\cite{blackforest2025flux} % bare indtil vi har første citation, ellers får vi errors,  lol.
 
 \section{Introduction}
+
+
+Diffusion and flow-based generative models produce high-quality images by progressively transforming noise into samples from a learned data distribution. This process typically requires repeated neural network evaluations, making sampling computationally expensive. Reducing the number of evaluations while preserving sample quality is therefore an important objective in generative modelling.
+
+MeanFlow addresses this problem by learning the average velocity over a time interval rather than the instantaneous velocity used in conventional Flow Matching \cite{meanflow}. This representation allows the model to approximate the transformation from noise to an image in a single network evaluation. Its training objective follows from an identity relating average and instantaneous velocities, with the required total derivative computed through a Jacobian-vector product. The method supports training from scratch without a pretrained teacher, distillation, or a progressively adjusted training curriculum.
+
+The effectiveness of this approach depends on whether its reported experimental findings can be reproduced under independently executed training and evaluation procedures. Differences in implementation, training configuration, and computational resources may affect the resulting performance. A reproducibility study must therefore distinguish between reproducing a reported numerical result and recovering the behaviour that supports the underlying methodological claims.
+
+In this report, we investigate selected CIFAR-10 experiments using the authors' released PyTorch implementation. We assess generation quality using Fréchet Inception Distance (FID) and interpret the results in relation to the number of neural network evaluations required for sampling. We document the experimental configuration and any departures from the reference setup, and examine whether our findings support the selected claims of the MeanFlow study.
+
 
 
 \section{Conclusion}
