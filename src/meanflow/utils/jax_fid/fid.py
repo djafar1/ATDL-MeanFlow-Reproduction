@@ -4,7 +4,6 @@ import jax
 import jax.numpy as jnp
 import numpy as np
 import scipy
-from keras.preprocessing.image import ImageDataGenerator
 from PIL import Image
 from torch.utils.data import DataLoader, Dataset
 from torchvision import transforms
@@ -34,6 +33,7 @@ def compute_statistics_with_mmap(path, mmap_filname, params, apply_fn, batch_siz
         mu, sigma = stats["mu"], stats["sigma"]
         return mu, sigma
     
+    from keras.preprocessing.image import ImageDataGenerator
     preprocessing_fn = lambda x: x.astype(float) / 255
     image_data_generator = ImageDataGenerator(preprocessing_function=preprocessing_fn)
     directory_iterator = image_data_generator.flow_from_directory(
@@ -112,7 +112,7 @@ def compute_frechet_distance(mu1, mu2, sigma1, sigma2, eps=1e-6):
 
     diff = mu1 - mu2
 
-    covmean, _ = scipy.linalg.sqrtm(sigma1.dot(sigma2), disp=False)
+    covmean = scipy.linalg.sqrtm(sigma1.dot(sigma2))
     if not np.isfinite(covmean).all():
         msg = (
             "fid calculation produces singular product; "

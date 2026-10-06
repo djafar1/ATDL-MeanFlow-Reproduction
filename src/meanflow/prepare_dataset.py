@@ -19,7 +19,8 @@ import jax
 from absl import app, flags
 
 # Initialize JAX distributed processing
-jax.distributed.initialize()
+if "SLURM_STEP_NODELIST" in os.environ:
+    jax.distributed.initialize()
 
 from utils.data_util import compute_latent_dataset
 from utils.fid_util import compute_fid_stats

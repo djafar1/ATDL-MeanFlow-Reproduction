@@ -10,3 +10,18 @@ wandb/
 *.pth
 *.ckpt
 *.out
+
+# MeanFlow large/local artifacts
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.out
+*.err
+
+checkpoint_*/
+checkpoints/
+samples/
+runs/
+latents*/
+hf_cache/

@@ -1,8 +1,10 @@
 """ Main file for running the ImageNet experiments.
 """
+import os
 import jax
 
-jax.distributed.initialize()
+if "SLURM_STEP_NODELIST" in os.environ:
+    jax.distributed.initialize()
 
 from absl import app, flags
 from ml_collections import config_flags
