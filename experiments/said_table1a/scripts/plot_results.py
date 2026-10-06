@@ -1,30 +1,58 @@
-import numpy as np
+from pathlib import Path
+import os
+import pandas as pd
 import matplotlib.pyplot as plt
 
-data = np.loadtxt(
-    "results/said_table1a/tables/table1a_results.csv",
-    delimiter=",", skiprows=1, usecols=(0, 1, 2)
+csv_path = Path("results/said_table1a/tables/table1a_results.csv")
+out_dir = Path("results/said_table1a/figures")
+out_dir.mkdir(parents=True, exist_ok=True)
+
+df = pd.read_csv(csv_path)
+
+x = df["ratio_r_not_equal_t"]
+y = df["reproduced_fid"] - df["paper_fid"]
+
+colors = ["green", "orange", "blue", "purple"]
+
+plt.figure(figsize=(10, 6))
+bars = plt.bar(
+    x,
+    y,
+    color=colors,
+    width=12,
+    edgecolor="black",
+    linewidth=1.2
 )
 
-x, paper, reproduced = data.T
-diff = reproduced - paper
+plt.axhline(0, linewidth=1.2)
+plt.grid(axis="y", linestyle="--", alpha=0.25)
 
-fig, ax = plt.subplots(figsize=(8, 4.5))
-bars = ax.bar(x, diff, width=12)
+plt.title("Table 1a reproduction error\nReproduced FID - paper FID", fontsize=16)
+plt.xlabel("r != t (%)", fontsize=13)
+plt.ylabel("FID difference", fontsize=13)
+plt.xticks(x, [str(v) for v in x], fontsize=12)
+plt.yticks(fontsize=12)
 
-ax.axhline(0, linewidth=1)
-ax.set_xticks(x)
-ax.set_xlabel("r != t (%)")
-ax.set_ylabel("FID difference")
-ax.set_title("Table 1a reproduction error\nReproduced FID - paper FID")
-ax.grid(axis="y", alpha=0.2)
+ymin = min(y)
+ymax = max(y)
+pad = 0.12
+plt.ylim(ymin - pad, ymax + pad)
 
-for bar, value in zip(bars, diff):
-    y = value + 0.05 if value >= 0 else value - 0.05
-    va = "bottom" if value >= 0 else "top"
-    ax.text(bar.get_x() + bar.get_width()/2, y, f"{value:+.2f}",
-            ha="center", va=va)
+for bar, yi in zip(bars, y):
+    x_text = bar.get_x() + bar.get_width() / 2
+    if yi >= 0:
+        plt.text(
+            x_text, yi + 0.025, f"{yi:+.2f}",
+            ha="center", va="bottom", fontsize=12, fontweight="bold"
+        )
+    else:
+        plt.text(
+            x_text, yi - 0.035, f"{yi:+.2f}",
+            ha="center", va="top", fontsize=12, fontweight="bold"
+        )
 
 plt.tight_layout()
-plt.savefig("results/said_table1a/figures/table1a_fid_difference.png", dpi=250)
-plt.savefig("results/said_table1a/figures/table1a_fid_difference.pdf")
+plt.savefig(out_dir / "table1a_fid_difference.png", dpi=220, bbox_inches="tight")
+plt.close()
+
+print("Saved:", out_dir / "table1a_fid_difference.png")
