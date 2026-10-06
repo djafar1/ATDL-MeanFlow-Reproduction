@@ -112,7 +112,7 @@ def compute_frechet_distance(mu1, mu2, sigma1, sigma2, eps=1e-6):
 
     diff = mu1 - mu2
 
-    covmean, _ = scipy.linalg.sqrtm(sigma1.dot(sigma2), disp=False)
+    covmean = scipy.linalg.sqrtm(sigma1.dot(sigma2))
     if not np.isfinite(covmean).all():
         msg = (
             "fid calculation produces singular product; "

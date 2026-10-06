@@ -22,4 +22,4 @@ def ema_schedules(config):
 
 
 def update_ema(ema_params, params, alpha):
-  return jax.tree_map(lambda e, p: alpha * e + (1 - alpha) * p, ema_params, params)
+  return jax.tree_util.tree_map(lambda e, p: alpha * e + (1 - alpha) * p, ema_params, params)
