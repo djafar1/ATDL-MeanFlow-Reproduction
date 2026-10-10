@@ -1,0 +1,11 @@
+% Simon's contribution: three limitations of the paper and this replication.
+% Mean Flows.pdf: Section 5, Tables 2--3 (printed pp.7--9).
+% Quantitative generation quality is FID-50K; NFE/parameters measure cost/model size.
+% Table 2 includes Shortcut, IMM, DiT and SiT, but no standalone Rectified Flow row.
+% VTAB-1k evaluates classification transfer across 19 tasks, not generative FID.
+% Limited scope is not evidence of cherry-picking, hidden runs or causal shortcuts.
+\textbf{Metric.} FID-50K is the paper's main quality metric and our sole measure. It combines fidelity and coverage, making failure diagnosis difficult; precision/recall and human assessment would provide complementary evidence~\cite{generative-precision-recall}.
+
+\textbf{Models.} Table~2 includes Shortcut, IMM, DiT and SiT~\cite{meanflow}, but no standalone Rectified Flow baseline. Rankings depend on sampling and training budgets; they are not controlled comparisons at matched training compute. Our B/4 ablation cannot verify the larger-model claims.
+
+\textbf{Datasets.} Generation is evaluated on ImageNet-256 and CIFAR-10~\cite{meanflow}, leaving other domains and background/noise corruptions untested. VTAB-1k's 19 tasks illustrate broader coverage but measure classification transfer rather than generation~\cite{vtab}. Generalization beyond the reported benchmarks remains unverified.

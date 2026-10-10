@@ -1,15 +1,30 @@
 \begin{thebibliography}{1}
 
-\bibitem{brooks2023instructpix2pix}
-Tim Brooks, Aleksander Holynski, and Alexei~A. Efros,
-\newblock ``{InstructPix2Pix}: Learning to follow image editing instructions,''
-\newblock in {\em Proceedings of the IEEE/CVF Conference on Computer Vision and
-  Pattern Recognition (CVPR)}, June 2023, pp. 18392--18402.
+\bibitem{meanflow}
+Zhengyang Geng, Mingyang Deng, Xingjian Bai, Zico Kolter, and Kaiming He,
+\newblock ``Mean flows for one-step generative modeling,''
+\newblock in {\em Advances in Neural Information Processing Systems},
+  D.~Belgrave, C.~Zhang, H.~Lin, R.~Pascanu, P.~Koniusz, M.~Ghassemi, and
+  N.~Chen, Eds. 2025, vol. 38, Main Conference, pp. 75460--75482, Curran
+  Associates, Inc.
 
-\bibitem{blackforest2025flux}
-{Black Forest Labs},
-\newblock ``Flux.1 kontext: Flow matching for in-context image generation and
-  editing in latent space,''
-\newblock {\em arXiv preprint arXiv:2506.15742}, 2025.
+\bibitem{meanflow-code}
+Zhengyang Geng, Mingyang Deng, Xingjian Bai, Zico Kolter, and Kaiming He,
+\newblock ``{MeanFlow}: Official {JAX} implementation,''
+  \texttt{https://github.com/}\allowbreak\texttt{Gsunshine/meanflow}, 2025,
+\newblock Executed revision d70cb55 with recorded compatibility patches.
+
+\bibitem{generative-precision-recall}
+Tuomas Kynk{\"a}{\"a}nniemi, Tero Karras, Samuli Laine, Jaakko Lehtinen, and
+  Timo Aila,
+\newblock ``Improved precision and recall metric for assessing generative
+  models,''
+\newblock in {\em Advances in Neural Information Processing Systems}, 2019,
+  vol.~32.
+
+\bibitem{vtab}
+Xiaohua Zhai, Joan Puigcerver, Alexander Kolesnikov, et~al.,
+\newblock ``A large-scale study of representation learning with the visual task
+  adaptation benchmark,'' arXiv:1910.04867, 2020.
 
 \end{thebibliography}

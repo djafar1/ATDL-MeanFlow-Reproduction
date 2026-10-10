@@ -15,6 +15,7 @@
 % manuscript
 \usepackage{enumitem}
 \setlist{nosep, leftmargin=14pt}
+\usepackage[hidelinks]{hyperref}
 
 % Example definitions.
 % --------------------
@@ -27,10 +28,16 @@ REPRODUCING MEANFLOW: A REPLICATION STUDY OF ONE-STEP GENERATIVE MODELING
 
 \name{Simon Winther Albertsen, Hjalte Bjoernstrup, Said Djafar Said}
 
+% Group number and experiment assignments confirmed by Simon: Group 11;
+% Hjalte: Table 1(b), Simon: Table 1(e), Djafar: Table 1(a).
+% Assignment repository verified from this report's origin Git remote.
+% Gsunshine/meanflow is the authors' source repository, cited separately.
 \address{
 Department of Computer Science, University of Copenhagen\\
 MSc Computer Science\\
-Group Assignment 2 (Topics 1--2--3--4), 11th of October 2026
+Group Assignment 2 (Topics 1--2--3--4), 11th of October 2026\\
+Replication Track; Group 11\\
+Assignment repository: \href{https://github.com/simonwinther/ATDL_GROUP_ASSIGNMENT_2}{\nolinkurl{github.com/simonwinther/ATDL_GROUP_ASSIGNMENT_2}}
 }
 %
 % For example:
@@ -65,29 +72,32 @@ Group Assignment 2 (Topics 1--2--3--4), 11th of October 2026
 \maketitle
 %
 \begin{abstract}
-..
+\input{sections/abstract}
 \end{abstract}
 
 \begin{keywords}
-..
+MeanFlow, reproducibility, one-step generation, adaptive loss weighting, Fr\'echet Inception Distance
 \end{keywords}
 %
 
+\input{sections/contributions}
 
 \section{Introduction}
+\input{sections/introduction}
 
+% Simon's experiment has its own one-page allocation, including table and figure.
+\clearpage
+\input{sections/loss_metrics}
+% TODO(Hjalte): integrate Table 1(b) and its results in a one-page allocation.
+% TODO(Djafar): integrate Table 1(a) and its results in a one-page allocation.
+% Do not add a dataset, implementation, protocol or result without their evidence.
+\clearpage
 
-Diffusion and flow-based generative models produce high-quality images by progressively transforming noise into samples from a learned data distribution. This process typically requires repeated neural network evaluations, making sampling computationally expensive. Reducing the number of evaluations while preserving sample quality is therefore an important objective in generative modelling.
-
-MeanFlow addresses this problem by learning the average velocity over a time interval rather than the instantaneous velocity used in conventional Flow Matching \cite{meanflow}. This representation allows the model to approximate the transformation from noise to an image in a single network evaluation. Its training objective follows from an identity relating average and instantaneous velocities, with the required total derivative computed through a Jacobian-vector product. The method supports training from scratch without a pretrained teacher, distillation, or a progressively adjusted training curriculum.
-
-The effectiveness of this approach depends on whether its reported experimental findings can be reproduced under independently executed training and evaluation procedures. Differences in implementation, training configuration, and computational resources may affect the resulting performance. A reproducibility study must therefore distinguish between reproducing a reported numerical result and recovering the behaviour that supports the underlying methodological claims.
-
-In this report, we investigate selected CIFAR-10 experiments using the authors' released PyTorch implementation. We assess generation quality using Fréchet Inception Distance (FID) and interpret the results in relation to the number of neural network evaluations required for sampling. We document the experimental configuration and any departures from the reference setup, and examine whether our findings support the selected claims of the MeanFlow study.
-
-
+\section{Discussion}
+\input{sections/loss_metrics_discussion}
 
 \section{Conclusion}
+\input{sections/loss_metrics_conclusion}
 
 
 % In this assignment, you will select one paper from the curated lists provided under Topic 1 and Topic 2.

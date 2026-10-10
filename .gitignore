@@ -1,0 +1,8 @@
+# Keep the current report PDF; exclude temporary builds and layout checks.
+/build/*
+!/build/main.pdf
+
+# Recorded analysis outputs and paper figures are kept separately.
+/analysis/visualisation-previews/
+__pycache__/
+*.py[cod]
