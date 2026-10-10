@@ -221,8 +221,8 @@ and shared findings are integrated.
 Group 11 and the assignments were confirmed by Simon: Hjalte Table 1(b), Simon
 Table 1(e), Djafar Table 1(a). The front page preserves the existing author names,
 states Replication Track and Group 11, links the actual assignment repository
-`https://github.com/simonwinther/ATDL_GROUP_ASSIGNMENT_2` from the report's origin
-remote, and gives specific contributions. The authors' `Gsunshine/meanflow`
+`https://github.com/djafar1/ATDL-MeanFlow-Reproduction`, confirmed by Simon and
+configured as the report's origin remote, and gives specific contributions. The authors' `Gsunshine/meanflow`
 repository remains a separate reference.
 
 The completed experiment is ImageNet-256/JAX. The abstract reports five exponents,

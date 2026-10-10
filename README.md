@@ -4,8 +4,8 @@ Word and Latex template documents for [ISBI 2021](https://biomedicalimaging.org/
 # Assignment report
 
 Group 11 submits under the Replication Track. The assignment repository is
-[ATDL_GROUP_ASSIGNMENT_2](https://github.com/simonwinther/ATDL_GROUP_ASSIGNMENT_2),
-verified from this repository's `origin` remote. The separate
+[ATDL-MeanFlow-Reproduction](https://github.com/djafar1/ATDL-MeanFlow-Reproduction),
+confirmed by Simon and configured as this repository's `origin`. The separate
 [authors' MeanFlow repository](https://github.com/Gsunshine/meanflow) supplies the
 JAX implementation for Simon's experiment.
 

@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex build/main"] 1791364446.0498 "build/main.aux" "build/main.bbl" "build/main" 1791364592.70346 0
+["bibtex build/main"] 1791364446.0498 "build/main.aux" "build/main.bbl" "build/main" 1791630792.96768 0
   "./IEEEbib.bst" 1791217567.85638 17903 9ff833f4bf67f47893e44ee17b52d211 ""
   "./refs.bib" 1791364442.60727 1894 bdbca62d03b7cde248155afd07339cac ""
   "./strings.bib" 1791217567.85838 226 12565ad96e526823ab328ae0c4f08749 ""
-  "build/main.aux" 1791364592.24928 2347 9cbda4a8e40f904fabcfe9770137f34e "pdflatex"
+  "build/main.aux" 1791630792.51076 2347 9cbda4a8e40f904fabcfe9770137f34e "pdflatex"
   (generated)
   "build/main.bbl"
   "build/main.blg"
   (rewritten before read)
-["pdflatex"] 1791364591.3535 "main.tex" "build/main.pdf" "main" 1791364592.70388 0
+["pdflatex"] 1791630791.57621 "main.tex" "build/main.pdf" "main" 1791630792.96796 0
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1775415801 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1775415801 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1775415801 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -177,11 +177,11 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1775415801 43569 fd570f2fa160877d211e859f687312ba ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1782561340 5385779 47c0c393a77fd4a098bacfd57d66b88a ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1782561329 2328189 369c9ea20eeb6b8917354c60d9b662e6 ""
-  "build/main.aux" 1791364592.24928 2347 9cbda4a8e40f904fabcfe9770137f34e "pdflatex"
+  "build/main.aux" 1791630792.51076 2347 9cbda4a8e40f904fabcfe9770137f34e "pdflatex"
   "build/main.bbl" 1791364446.14426 1253 535981d887497974006a5c5cd25a79ad "bibtex build/main"
-  "build/main.out" 1791364592.25028 759 e3f343d1be1b131e811614fee85798e3 "pdflatex"
+  "build/main.out" 1791630792.51276 759 e3f343d1be1b131e811614fee85798e3 "pdflatex"
   "figures/loss_metrics_fid_epochs.pdf" 1791242831.95566 14583 492c5bd1011a3dbf5dc6e0daac8dbc5a ""
-  "main.tex" 1791243967.73664 5403 771cfef518c3c5c31cfc049f0cdf4519 ""
+  "main.tex" 1791630791.01377 5372 bec7ef0a61aebde1d2ac5d1a786b651a ""
   "sections/abstract.tex" 1791243891.45524 712 461d9a10a38f10cdd11a1a1aa8f2f3fc ""
   "sections/contributions.tex" 1791243967.73764 608 3028e38e53fc14d4795aadf7bf0ba2b7 ""
   "sections/introduction.tex" 1791244065.20388 948 ae65994c83006fb0689c42b84ab1773f ""
