@@ -1,0 +1,7 @@
+{
+  "change": "Temporary IPC sockets moved to node-local /tmp.",
+  "persistent_fid_weights": "/work/meanflow-table1e/cache/tmp/jax_fid",
+  "weights_access": "Symbolic link from each runtime temporary directory.",
+  "experiment_configs_changed": false,
+  "data_loader_worker_count_changed": false
+}

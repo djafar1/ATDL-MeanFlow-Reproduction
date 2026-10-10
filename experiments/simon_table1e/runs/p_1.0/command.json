@@ -1,0 +1,27 @@
+{
+  "started_utc": "2026-10-05T05:52:36.944465+00:00",
+  "physical_gpu_index": 0,
+  "working_directory": "/work/meanflow-table1e/meanflow",
+  "argv": [
+    "/work/meanflow-table1e/venv/bin/python",
+    "-u",
+    "/work/meanflow-table1e/meanflow_table1e_runbook/audit_run.py",
+    "--config=configs/load_config.py:table1e_p_1.0",
+    "--workdir=/work/meanflow-table1e/runs/p_1.0"
+  ],
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "GPU-fc69ea19-3c17-a4c0-28bb-095ecf542429",
+    "MEANFLOW_SINGLE_PROCESS": "1",
+    "MEANFLOW_VAE_PATH": "/work/meanflow-table1e/models/sd-vae-ft-mse-flax",
+    "MEANFLOW_LATENT_MANIFEST": "/work/meanflow-table1e/provenance/latent-file-order.txt",
+    "HF_HOME": "/work/meanflow-table1e/cache/huggingface",
+    "TMPDIR": "/tmp/meanflow.pP5Iz3",
+    "JAX_PLATFORMS": "cuda,cpu",
+    "XLA_PYTHON_CLIENT_PREALLOCATE": "false",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "MF_RUN_DIR": "/work/meanflow-table1e/runs/p_1.0"
+  },
+  "config_sha256": "5f9085a24e7af7b15bc68a3b80492a4b02fa3494467b746bc52e8e0a132b0aa5",
+  "entrypoint": "Recording wrapper calls the existing authors main.py via runpy; no added training steps."
+}

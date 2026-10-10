@@ -1,0 +1,28 @@
+{
+  "started_utc": "2026-10-05T16:38:18.022884+00:00",
+  "working_directory": "/work/meanflow-table1e/meanflow",
+  "argv": [
+    "/work/meanflow-table1e/venv/bin/python",
+    "-u",
+    "/work/meanflow-table1e/runs/diagnostic_p_1.0_seed43/guarded-recording-entrypoint.py",
+    "--config=configs/load_config.py:table1e_p_1.0_seed43",
+    "--workdir=/work/meanflow-table1e/runs/diagnostic_p_1.0_seed43"
+  ],
+  "physical_gpu_index": 0,
+  "environment": {
+    "MF_RUN_DIR": "/work/meanflow-table1e/runs/diagnostic_p_1.0_seed43",
+    "CUDA_VISIBLE_DEVICES": "GPU-fc69ea19-3c17-a4c0-28bb-095ecf542429",
+    "MEANFLOW_SINGLE_PROCESS": "1",
+    "MEANFLOW_VAE_PATH": "/work/meanflow-table1e/models/sd-vae-ft-mse-flax",
+    "MEANFLOW_LATENT_MANIFEST": "/work/meanflow-table1e/provenance/latent-file-order.txt",
+    "HF_HOME": "/work/meanflow-table1e/cache/huggingface",
+    "TMPDIR": "/tmp/meanflow-seed43-bv1pmjab",
+    "JAX_PLATFORMS": "cuda,cpu",
+    "XLA_PYTHON_CLIENT_PREALLOCATE": "false",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "config_sha256": "09ce974a03ff83969cce59836e7e2c0c4eb6338031fe60079b577b0a2cebb5f9",
+  "entrypoint_sha256": "95416f63707be36dfaa6355d6972b49ef35420c8388c1e88419c32a27555fca6",
+  "entrypoint": "Checks actual effective config before training, then delegates to unchanged original audit_run recorder and authors main.py."
+}

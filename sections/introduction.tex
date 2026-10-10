@@ -1,7 +1,0 @@
-% Experiment assignments confirmed by Simon; Table 1's ablation definitions
-% checked against Mean Flows.pdf, p.8. Other members' sections/runs are not local.
-% TODO(group): add Hjalte's and Djafar's actual datasets, implementations and
-% results from their protocols; do not assume they match the paper's setup.
-MeanFlow learns average velocity over a time interval for one-step generation~\cite{meanflow}. Its training target uses a Jacobian-vector product. It trains from scratch without a pretrained teacher or distillation.
-
-We target Table~1(a), the ratio of sampling $r\ne t$; Table~1(b), Jacobian-vector-product computation; and Table~1(e), loss metrics. The completed loss-metric study uses the authors' JAX code on ImageNet-1K at $256\times256$. The other experiments' datasets, implementations and results await integration. Fr\'echet Inception Distance (FID) assesses generation quality; we disclose departures from the released setup.

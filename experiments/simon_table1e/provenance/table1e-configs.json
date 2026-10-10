@@ -1,0 +1,30 @@
+{
+  "configs": [
+    {
+      "p": 0.0,
+      "config": "/work/meanflow-table1e/meanflow/configs/table1e_p_0.0.yml",
+      "sha256": "7c1b9c1907a5811e6dfdf6c8f99b6748a17b4560c6c1e1c830cad421a2a21051"
+    },
+    {
+      "p": 0.5,
+      "config": "/work/meanflow-table1e/meanflow/configs/table1e_p_0.5.yml",
+      "sha256": "197a97c48c5b7bd67150948005ece0e5ccaf2e0e7a31d32f55afad30b71aa15d"
+    },
+    {
+      "p": 1.0,
+      "config": "/work/meanflow-table1e/meanflow/configs/table1e_p_1.0.yml",
+      "sha256": "5f9085a24e7af7b15bc68a3b80492a4b02fa3494467b746bc52e8e0a132b0aa5"
+    },
+    {
+      "p": 1.5,
+      "config": "/work/meanflow-table1e/meanflow/configs/table1e_p_1.5.yml",
+      "sha256": "4ab1a109211e4df713a98854091507a5c74c250a9e63e5b44f4730c1eb6b2082"
+    },
+    {
+      "p": 2.0,
+      "config": "/work/meanflow-table1e/meanflow/configs/table1e_p_2.0.yml",
+      "sha256": "c4a8b13dbcb9e5a7a3faadf41a036f03c007fcfd3901ea4500e99f0a6cb7032b"
+    }
+  ],
+  "file_order_sha256": "06f913986ef1ce1bc36c42f680d8535e0a35183629ef1376355a8a2176953405"
+}

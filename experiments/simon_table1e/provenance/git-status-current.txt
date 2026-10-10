@@ -1,0 +1,15 @@
+ M main.py
+ M meanflow.py
+ M prepare_dataset.py
+ M train.py
+ M utils/data_util.py
+ M utils/ema_util.py
+ M utils/input_pipeline.py
+ M utils/jax_fid/fid.py
+ M utils/vae_util.py
+ M utils/vis_util.py
+?? configs/table1e_p_0.0.yml
+?? configs/table1e_p_0.5.yml
+?? configs/table1e_p_1.0.yml
+?? configs/table1e_p_1.5.yml
+?? configs/table1e_p_2.0.yml

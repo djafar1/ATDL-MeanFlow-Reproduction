@@ -1,0 +1,946 @@
+{
+  "created_utc": "2026-10-05T16:38:17.788397+00:00",
+  "training_seeds": [
+    42,
+    43
+  ],
+  "sampling_seed": 0,
+  "p_values": [
+    "0.0",
+    "0.5",
+    "1.0",
+    "1.5",
+    "2.0"
+  ],
+  "arms": {
+    "0.0": {
+      "config": {
+        "dataset": {
+          "cache": false,
+          "image_channels": 4,
+          "image_size": 32,
+          "name": "imgnet_latent",
+          "num_classes": 1000,
+          "num_workers": 4,
+          "pin_memory": false,
+          "prefetch_factor": 2,
+          "root": "/work/meanflow-table1e/data/imagenet256_latents",
+          "vae": "mse"
+        },
+        "eval_only": false,
+        "fid": {
+          "cache_ref": "/work/meanflow-table1e/data/fid/imagenet256_authors_ref.npz",
+          "device_batch_size": 20,
+          "num_samples": 50000,
+          "on_training": true
+        },
+        "load_from": null,
+        "method": {
+          "P_mean": -0.4,
+          "P_std": 1.0,
+          "class_dropout_prob": 0.1,
+          "data_proportion": 0.75,
+          "guidance_eq": "none",
+          "kappa": 0.5,
+          "noise_dist": "logit_normal",
+          "norm_eps": 0.01,
+          "norm_p": 0.0,
+          "omega": 1.0,
+          "t_end": 1.0,
+          "t_start": 0.0
+        },
+        "model": {
+          "cls": "DiT_B_4"
+        },
+        "sampling": {
+          "num_classes": 1000,
+          "num_steps": 1,
+          "sampling_timesteps": null,
+          "schedule": "default",
+          "seed": 0
+        },
+        "training": {
+          "adam_b2": 0.95,
+          "batch_size": 256,
+          "checkpoint_per_epoch": 10,
+          "ema_val": 0.9999,
+          "fid_per_epoch": 10,
+          "half_precision": false,
+          "learning_rate": 0.0001,
+          "log_per_step": 100,
+          "num_epochs": 80,
+          "sample_per_epoch": 10,
+          "seed": 43,
+          "ema_type": "const",
+          "sample_on_training": true
+        }
+      },
+      "record": {
+        "checked_utc": "2026-10-05T16:36:58.563147+00:00",
+        "purpose": "Second training seed for every loss exponent.",
+        "selection_reason": "Post hoc repetition of all five p values after inspecting the seed-42 results.",
+        "only_experimental_change": {
+          "training.seed": {
+            "original": 42,
+            "additional": 43
+          }
+        },
+        "p": 0.0,
+        "training_seed": 43,
+        "sampling_seed": 0,
+        "from_scratch": true,
+        "resume_from_primary": false,
+        "primary_FID_epoch80": 80.2260628361397,
+        "primary_directory": "/work/meanflow-table1e/runs/p_0.0",
+        "output_directory": "/work/meanflow-table1e/runs/diagnostic_p_0.0_seed43",
+        "git_sha": "d70cb55d298ee03c53bf6da67bec281082e4e2d9",
+        "source_patch_sha256": "5dbc69b3e92ecf7c4ecec68edea1cbae9b164c9518541397f3846f5612c49e06",
+        "primary_manifest_sha256": "97e3c631e93320dc3148f758575f21a1d833b95b19e1d3b65e20816472344d8a",
+        "same_physical_gpu_uuid": "GPU-60696e56-351d-2b86-d0fb-55e4ff9a6199",
+        "physical_gpu_index": 1,
+        "gpu_name": "NVIDIA B200",
+        "gpu_vram": "183359 MiB",
+        "driver_version": "610.57.04",
+        "global_batch_size": 256,
+        "per_device_batch_size": 256,
+        "number_of_GPUs": 1,
+        "expected_effective_config": {
+          "dataset": {
+            "cache": false,
+            "image_channels": 4,
+            "image_size": 32,
+            "name": "imgnet_latent",
+            "num_classes": 1000,
+            "num_workers": 4,
+            "pin_memory": false,
+            "prefetch_factor": 2,
+            "root": "/work/meanflow-table1e/data/imagenet256_latents",
+            "vae": "mse"
+          },
+          "eval_only": false,
+          "fid": {
+            "cache_ref": "/work/meanflow-table1e/data/fid/imagenet256_authors_ref.npz",
+            "device_batch_size": 20,
+            "num_samples": 50000,
+            "on_training": true
+          },
+          "load_from": null,
+          "method": {
+            "P_mean": -0.4,
+            "P_std": 1.0,
+            "class_dropout_prob": 0.1,
+            "data_proportion": 0.75,
+            "guidance_eq": "none",
+            "kappa": 0.5,
+            "noise_dist": "logit_normal",
+            "norm_eps": 0.01,
+            "norm_p": 0.0,
+            "omega": 1.0,
+            "t_end": 1.0,
+            "t_start": 0.0
+          },
+          "model": {
+            "cls": "DiT_B_4"
+          },
+          "sampling": {
+            "num_classes": 1000,
+            "num_steps": 1,
+            "sampling_timesteps": null,
+            "schedule": "default",
+            "seed": 0
+          },
+          "training": {
+            "adam_b2": 0.95,
+            "batch_size": 256,
+            "checkpoint_per_epoch": 10,
+            "ema_type": "const",
+            "ema_val": 0.9999,
+            "fid_per_epoch": 10,
+            "half_precision": false,
+            "learning_rate": 0.0001,
+            "log_per_step": 100,
+            "num_epochs": 80,
+            "sample_on_training": true,
+            "sample_per_epoch": 10,
+            "seed": 43
+          }
+        },
+        "primary_files_to_preserve_sha256": {
+          "/work/meanflow-table1e/results/table1e.csv": "e76972f3d2470213bd41b73bacfc47254904920881fa2d20799ef04d08986c6a",
+          "/work/meanflow-table1e/results/report-summary.json": "6adf777e6e3814e8955cb895e20cf910cd2485d62317feeef3b360a3564e3c6c",
+          "/work/meanflow-table1e/provenance/reproducibility-manifest.json": "97e3c631e93320dc3148f758575f21a1d833b95b19e1d3b65e20816472344d8a",
+          "/work/meanflow-table1e/provenance/final-controller.log": "0ed8bfa103da1eff1cf47d21e8487800df6752438f80e616d6a3e17b7fce1ee1",
+          "/work/meanflow-table1e/runs/p_0.0/run-summary.json": "5f171503f4711d9c1a31f5d4184c6add33f69bd8f44cc7294bddad4c3ef280ea",
+          "/work/meanflow-table1e/runs/p_0.0/effective-config.json": "06387160510226a0a3ec5fa38d5e257271b57f96969a22edb8ad89ca8a0cddd8",
+          "/work/meanflow-table1e/runs/p_0.0/fid.csv": "512cccda35c39409884d48462d6a899be4e1fc3aae50856f9ae9dee202b7cc17",
+          "/work/meanflow-table1e/runs/p_0.0/final-checkpoint-files.json": "22916c1150e369a687c4b3d5099c818cb7adafb053d1b373f484f3e372b1e22d",
+          "/work/meanflow-table1e/runs/p_0.5/run-summary.json": "63515d384f38d33633530a863aefa7bbc38107053269bab063b351ec2a72ff96",
+          "/work/meanflow-table1e/runs/p_0.5/effective-config.json": "4dc05666ac7cc583a70d8c85f09ceca1dd886600f0f14f573904b275625e3f80",
+          "/work/meanflow-table1e/runs/p_0.5/fid.csv": "8b10cbf636869d7b8954f609638f353be5616400b53efb4a4a033fbd5f58d996",
+          "/work/meanflow-table1e/runs/p_0.5/final-checkpoint-files.json": "0df4c6646ed6d92c967db9b6b24437e944631f489d36356d3fa4633925b35053",
+          "/work/meanflow-table1e/runs/p_1.0/run-summary.json": "92ea3fdf5792ff39c4fd69137396e8e9641c016a605edb20d885c4c76a76f27a",
+          "/work/meanflow-table1e/runs/p_1.0/effective-config.json": "d82fb7d1dd657da0de8da07c1e4413eed5238f5331d7611166e4f8b7e05e1ad7",
+          "/work/meanflow-table1e/runs/p_1.0/fid.csv": "34e9c10da0a6aad085a2994183d77f7f5589ae5650b3032f67bb4649991e0e59",
+          "/work/meanflow-table1e/runs/p_1.0/final-checkpoint-files.json": "a217b028d9bb1e3741646e143e07ed484058b71d4fcd5ee42415aac376d79d64",
+          "/work/meanflow-table1e/runs/p_1.5/run-summary.json": "04c52d686793b0a881dd69092e5558973f98ae27fecbdb127d06ea822129c7d7",
+          "/work/meanflow-table1e/runs/p_1.5/effective-config.json": "1df202db4f4a985daeda2815af6545ef6792e3b8eed541508d2f818c8988c2c4",
+          "/work/meanflow-table1e/runs/p_1.5/fid.csv": "bf054a7c2e56114f0b8f84300ddabc46fb6e835a25ed19be9753bb609efcb003",
+          "/work/meanflow-table1e/runs/p_1.5/final-checkpoint-files.json": "6d2c0f199b5a789ee311861032182ed51800599dc2b245594229f263870a661d",
+          "/work/meanflow-table1e/runs/p_2.0/run-summary.json": "2c6ade92f50978fb50453222f8cf58b14d8d79b30c4a5eb9594f57f5de395ce8",
+          "/work/meanflow-table1e/runs/p_2.0/effective-config.json": "59be02571caa0b352f802816d166c5fbf9e16d15d11982d835a83d994cb5d5c1",
+          "/work/meanflow-table1e/runs/p_2.0/fid.csv": "546149d0ad96456972b78d53c95c875f273187f27be4413245926dee6ed68272",
+          "/work/meanflow-table1e/runs/p_2.0/final-checkpoint-files.json": "ae8c592cbe3b77f8fea7f6edb3f9476cc38f5ccc7c25210c912c2ac0e440e638"
+        },
+        "reporting": "Keep both seeds for every p. Report individual FIDs and mean/sample SD across seeds 42 and 43 only when both runs completed; two seeds provide a limited variability check.",
+        "billing_scope": "One GPU executes this run; all GPUs retained in the UCloud allocation may continue to be billed."
+      },
+      "packages_freeze": "absl-py==2.5.0\naiofiles==25.1.0\nastunparse==1.6.3\nattrs==26.1.0\ncached-property==2.0.1\ncertifi==2026.7.22\ncharset-normalizer==3.5.2\nclu==0.0.12\ndiffusers==0.35.1\ndm-tree==0.1.10\netils==1.14.0\nfilelock==3.32.3\nflatbuffers==25.12.19\nflax==0.12.10\nfsspec==2026.7.0\ngast==0.7.0\ngoogle-pasta==0.2.0\ngrpcio==1.84.0\nh5py==3.14.0\nhf-xet==1.6.0\nhuggingface_hub==0.36.2\nhumanize==4.16.0\nidna==3.20\nimportlib_metadata==9.0.1\njax==0.11.2\njax-cuda13-pjrt==0.11.2\njax-cuda13-plugin==0.11.2\njaxlib==0.11.2\nJinja2==3.1.6\nkeras==3.15.1\nlibclang==18.1.1\nMarkdown==3.11\nmarkdown-it-py==4.2.0\nMarkupSafe==3.0.3\nmdurl==0.1.2\nml_collections==1.1.0\nml_dtypes==0.6.0\nmpmath==1.3.0\nmsgpack==1.2.3\nnamex==0.1.0\nnetworkx==3.6.1\nnumpy==2.5.3\nnvidia-cublas==13.8.1.7\nnvidia-cuda-cccl==13.3.4.3.1\nnvidia-cuda-crt==13.4.92\nnvidia-cuda-cupti==13.4.92\nnvidia-cuda-nvcc==13.4.92\nnvidia-cuda-nvrtc==13.4.92\nnvidia-cuda-runtime==13.4.92\nnvidia-cudnn-cu13==9.27.0.42\nnvidia-cufft==12.4.0.43\nnvidia-cusolver==12.3.4.7\nnvidia-cusparse==12.8.6.72\nnvidia-nccl-cu13==2.32.3\nnvidia-nvjitlink==13.4.92\nnvidia-nvshmem-cu13==3.8.0\nnvidia-nvvm==13.4.92\nopt_einsum==3.4.0\noptax==0.2.8\noptree==0.20.0\norbax-checkpoint==0.12.6\npackaging==26.3\npillow==12.3.0\nprometheus_client==0.26.0\nprotobuf==7.36.2\npsutil==7.2.2\nPygments==2.21.0\nPyYAML==6.0.3\nregex==2026.9.29\nrequests==2.34.2\nrich==15.0.0\nsafetensors==0.8.0\nscipy==1.18.1\nsetuptools==78.1.0\nsimplejson==4.2.0\nsix==1.17.0\nsympy==1.14.0\ntensorboard==2.21.0\ntensorboard-data-server==0.7.2\ntensorflow_cpu==2.21.0\ntensorstore==0.1.85\ntermcolor==3.3.0\ntorch==2.14.1+cpu\ntorchvision==0.29.1+cpu\ntqdm==4.70.1\ntreescope==0.1.10\ntyping_extensions==4.16.0\nurllib3==2.8.0\nuvloop==0.23.0\nWerkzeug==3.1.9\nwheel==0.48.0\nwrapt==2.5.0\nzipp==4.1.1"
+    },
+    "0.5": {
+      "config": {
+        "dataset": {
+          "cache": false,
+          "image_channels": 4,
+          "image_size": 32,
+          "name": "imgnet_latent",
+          "num_classes": 1000,
+          "num_workers": 4,
+          "pin_memory": false,
+          "prefetch_factor": 2,
+          "root": "/work/meanflow-table1e/data/imagenet256_latents",
+          "vae": "mse"
+        },
+        "eval_only": false,
+        "fid": {
+          "cache_ref": "/work/meanflow-table1e/data/fid/imagenet256_authors_ref.npz",
+          "device_batch_size": 20,
+          "num_samples": 50000,
+          "on_training": true
+        },
+        "load_from": null,
+        "method": {
+          "P_mean": -0.4,
+          "P_std": 1.0,
+          "class_dropout_prob": 0.1,
+          "data_proportion": 0.75,
+          "guidance_eq": "none",
+          "kappa": 0.5,
+          "noise_dist": "logit_normal",
+          "norm_eps": 0.01,
+          "norm_p": 0.5,
+          "omega": 1.0,
+          "t_end": 1.0,
+          "t_start": 0.0
+        },
+        "model": {
+          "cls": "DiT_B_4"
+        },
+        "sampling": {
+          "num_classes": 1000,
+          "num_steps": 1,
+          "sampling_timesteps": null,
+          "schedule": "default",
+          "seed": 0
+        },
+        "training": {
+          "adam_b2": 0.95,
+          "batch_size": 256,
+          "checkpoint_per_epoch": 10,
+          "ema_val": 0.9999,
+          "fid_per_epoch": 10,
+          "half_precision": false,
+          "learning_rate": 0.0001,
+          "log_per_step": 100,
+          "num_epochs": 80,
+          "sample_per_epoch": 10,
+          "seed": 43,
+          "ema_type": "const",
+          "sample_on_training": true
+        }
+      },
+      "record": {
+        "checked_utc": "2026-10-05T16:37:18.310764+00:00",
+        "purpose": "Second training seed for every loss exponent.",
+        "selection_reason": "Post hoc repetition of all five p values after inspecting the seed-42 results.",
+        "only_experimental_change": {
+          "training.seed": {
+            "original": 42,
+            "additional": 43
+          }
+        },
+        "p": 0.5,
+        "training_seed": 43,
+        "sampling_seed": 0,
+        "from_scratch": true,
+        "resume_from_primary": false,
+        "primary_FID_epoch80": 64.60214722548977,
+        "primary_directory": "/work/meanflow-table1e/runs/p_0.5",
+        "output_directory": "/work/meanflow-table1e/runs/diagnostic_p_0.5_seed43",
+        "git_sha": "d70cb55d298ee03c53bf6da67bec281082e4e2d9",
+        "source_patch_sha256": "5dbc69b3e92ecf7c4ecec68edea1cbae9b164c9518541397f3846f5612c49e06",
+        "primary_manifest_sha256": "97e3c631e93320dc3148f758575f21a1d833b95b19e1d3b65e20816472344d8a",
+        "same_physical_gpu_uuid": "GPU-b887cdf4-f601-f229-6cb6-d67867be093a",
+        "physical_gpu_index": 2,
+        "gpu_name": "NVIDIA B200",
+        "gpu_vram": "183359 MiB",
+        "driver_version": "610.57.04",
+        "global_batch_size": 256,
+        "per_device_batch_size": 256,
+        "number_of_GPUs": 1,
+        "expected_effective_config": {
+          "dataset": {
+            "cache": false,
+            "image_channels": 4,
+            "image_size": 32,
+            "name": "imgnet_latent",
+            "num_classes": 1000,
+            "num_workers": 4,
+            "pin_memory": false,
+            "prefetch_factor": 2,
+            "root": "/work/meanflow-table1e/data/imagenet256_latents",
+            "vae": "mse"
+          },
+          "eval_only": false,
+          "fid": {
+            "cache_ref": "/work/meanflow-table1e/data/fid/imagenet256_authors_ref.npz",
+            "device_batch_size": 20,
+            "num_samples": 50000,
+            "on_training": true
+          },
+          "load_from": null,
+          "method": {
+            "P_mean": -0.4,
+            "P_std": 1.0,
+            "class_dropout_prob": 0.1,
+            "data_proportion": 0.75,
+            "guidance_eq": "none",
+            "kappa": 0.5,
+            "noise_dist": "logit_normal",
+            "norm_eps": 0.01,
+            "norm_p": 0.5,
+            "omega": 1.0,
+            "t_end": 1.0,
+            "t_start": 0.0
+          },
+          "model": {
+            "cls": "DiT_B_4"
+          },
+          "sampling": {
+            "num_classes": 1000,
+            "num_steps": 1,
+            "sampling_timesteps": null,
+            "schedule": "default",
+            "seed": 0
+          },
+          "training": {
+            "adam_b2": 0.95,
+            "batch_size": 256,
+            "checkpoint_per_epoch": 10,
+            "ema_type": "const",
+            "ema_val": 0.9999,
+            "fid_per_epoch": 10,
+            "half_precision": false,
+            "learning_rate": 0.0001,
+            "log_per_step": 100,
+            "num_epochs": 80,
+            "sample_on_training": true,
+            "sample_per_epoch": 10,
+            "seed": 43
+          }
+        },
+        "primary_files_to_preserve_sha256": {
+          "/work/meanflow-table1e/results/table1e.csv": "e76972f3d2470213bd41b73bacfc47254904920881fa2d20799ef04d08986c6a",
+          "/work/meanflow-table1e/results/report-summary.json": "6adf777e6e3814e8955cb895e20cf910cd2485d62317feeef3b360a3564e3c6c",
+          "/work/meanflow-table1e/provenance/reproducibility-manifest.json": "97e3c631e93320dc3148f758575f21a1d833b95b19e1d3b65e20816472344d8a",
+          "/work/meanflow-table1e/provenance/final-controller.log": "0ed8bfa103da1eff1cf47d21e8487800df6752438f80e616d6a3e17b7fce1ee1",
+          "/work/meanflow-table1e/runs/p_0.0/run-summary.json": "5f171503f4711d9c1a31f5d4184c6add33f69bd8f44cc7294bddad4c3ef280ea",
+          "/work/meanflow-table1e/runs/p_0.0/effective-config.json": "06387160510226a0a3ec5fa38d5e257271b57f96969a22edb8ad89ca8a0cddd8",
+          "/work/meanflow-table1e/runs/p_0.0/fid.csv": "512cccda35c39409884d48462d6a899be4e1fc3aae50856f9ae9dee202b7cc17",
+          "/work/meanflow-table1e/runs/p_0.0/final-checkpoint-files.json": "22916c1150e369a687c4b3d5099c818cb7adafb053d1b373f484f3e372b1e22d",
+          "/work/meanflow-table1e/runs/p_0.5/run-summary.json": "63515d384f38d33633530a863aefa7bbc38107053269bab063b351ec2a72ff96",
+          "/work/meanflow-table1e/runs/p_0.5/effective-config.json": "4dc05666ac7cc583a70d8c85f09ceca1dd886600f0f14f573904b275625e3f80",
+          "/work/meanflow-table1e/runs/p_0.5/fid.csv": "8b10cbf636869d7b8954f609638f353be5616400b53efb4a4a033fbd5f58d996",
+          "/work/meanflow-table1e/runs/p_0.5/final-checkpoint-files.json": "0df4c6646ed6d92c967db9b6b24437e944631f489d36356d3fa4633925b35053",
+          "/work/meanflow-table1e/runs/p_1.0/run-summary.json": "92ea3fdf5792ff39c4fd69137396e8e9641c016a605edb20d885c4c76a76f27a",
+          "/work/meanflow-table1e/runs/p_1.0/effective-config.json": "d82fb7d1dd657da0de8da07c1e4413eed5238f5331d7611166e4f8b7e05e1ad7",
+          "/work/meanflow-table1e/runs/p_1.0/fid.csv": "34e9c10da0a6aad085a2994183d77f7f5589ae5650b3032f67bb4649991e0e59",
+          "/work/meanflow-table1e/runs/p_1.0/final-checkpoint-files.json": "a217b028d9bb1e3741646e143e07ed484058b71d4fcd5ee42415aac376d79d64",
+          "/work/meanflow-table1e/runs/p_1.5/run-summary.json": "04c52d686793b0a881dd69092e5558973f98ae27fecbdb127d06ea822129c7d7",
+          "/work/meanflow-table1e/runs/p_1.5/effective-config.json": "1df202db4f4a985daeda2815af6545ef6792e3b8eed541508d2f818c8988c2c4",
+          "/work/meanflow-table1e/runs/p_1.5/fid.csv": "bf054a7c2e56114f0b8f84300ddabc46fb6e835a25ed19be9753bb609efcb003",
+          "/work/meanflow-table1e/runs/p_1.5/final-checkpoint-files.json": "6d2c0f199b5a789ee311861032182ed51800599dc2b245594229f263870a661d",
+          "/work/meanflow-table1e/runs/p_2.0/run-summary.json": "2c6ade92f50978fb50453222f8cf58b14d8d79b30c4a5eb9594f57f5de395ce8",
+          "/work/meanflow-table1e/runs/p_2.0/effective-config.json": "59be02571caa0b352f802816d166c5fbf9e16d15d11982d835a83d994cb5d5c1",
+          "/work/meanflow-table1e/runs/p_2.0/fid.csv": "546149d0ad96456972b78d53c95c875f273187f27be4413245926dee6ed68272",
+          "/work/meanflow-table1e/runs/p_2.0/final-checkpoint-files.json": "ae8c592cbe3b77f8fea7f6edb3f9476cc38f5ccc7c25210c912c2ac0e440e638"
+        },
+        "reporting": "Keep both seeds for every p. Report individual FIDs and mean/sample SD across seeds 42 and 43 only when both runs completed; two seeds provide a limited variability check.",
+        "billing_scope": "One GPU executes this run; all GPUs retained in the UCloud allocation may continue to be billed."
+      },
+      "packages_freeze": "absl-py==2.5.0\naiofiles==25.1.0\nastunparse==1.6.3\nattrs==26.1.0\ncached-property==2.0.1\ncertifi==2026.7.22\ncharset-normalizer==3.5.2\nclu==0.0.12\ndiffusers==0.35.1\ndm-tree==0.1.10\netils==1.14.0\nfilelock==3.32.3\nflatbuffers==25.12.19\nflax==0.12.10\nfsspec==2026.7.0\ngast==0.7.0\ngoogle-pasta==0.2.0\ngrpcio==1.84.0\nh5py==3.14.0\nhf-xet==1.6.0\nhuggingface_hub==0.36.2\nhumanize==4.16.0\nidna==3.20\nimportlib_metadata==9.0.1\njax==0.11.2\njax-cuda13-pjrt==0.11.2\njax-cuda13-plugin==0.11.2\njaxlib==0.11.2\nJinja2==3.1.6\nkeras==3.15.1\nlibclang==18.1.1\nMarkdown==3.11\nmarkdown-it-py==4.2.0\nMarkupSafe==3.0.3\nmdurl==0.1.2\nml_collections==1.1.0\nml_dtypes==0.6.0\nmpmath==1.3.0\nmsgpack==1.2.3\nnamex==0.1.0\nnetworkx==3.6.1\nnumpy==2.5.3\nnvidia-cublas==13.8.1.7\nnvidia-cuda-cccl==13.3.4.3.1\nnvidia-cuda-crt==13.4.92\nnvidia-cuda-cupti==13.4.92\nnvidia-cuda-nvcc==13.4.92\nnvidia-cuda-nvrtc==13.4.92\nnvidia-cuda-runtime==13.4.92\nnvidia-cudnn-cu13==9.27.0.42\nnvidia-cufft==12.4.0.43\nnvidia-cusolver==12.3.4.7\nnvidia-cusparse==12.8.6.72\nnvidia-nccl-cu13==2.32.3\nnvidia-nvjitlink==13.4.92\nnvidia-nvshmem-cu13==3.8.0\nnvidia-nvvm==13.4.92\nopt_einsum==3.4.0\noptax==0.2.8\noptree==0.20.0\norbax-checkpoint==0.12.6\npackaging==26.3\npillow==12.3.0\nprometheus_client==0.26.0\nprotobuf==7.36.2\npsutil==7.2.2\nPygments==2.21.0\nPyYAML==6.0.3\nregex==2026.9.29\nrequests==2.34.2\nrich==15.0.0\nsafetensors==0.8.0\nscipy==1.18.1\nsetuptools==78.1.0\nsimplejson==4.2.0\nsix==1.17.0\nsympy==1.14.0\ntensorboard==2.21.0\ntensorboard-data-server==0.7.2\ntensorflow_cpu==2.21.0\ntensorstore==0.1.85\ntermcolor==3.3.0\ntorch==2.14.1+cpu\ntorchvision==0.29.1+cpu\ntqdm==4.70.1\ntreescope==0.1.10\ntyping_extensions==4.16.0\nurllib3==2.8.0\nuvloop==0.23.0\nWerkzeug==3.1.9\nwheel==0.48.0\nwrapt==2.5.0\nzipp==4.1.1"
+    },
+    "1.0": {
+      "config": {
+        "dataset": {
+          "cache": false,
+          "image_channels": 4,
+          "image_size": 32,
+          "name": "imgnet_latent",
+          "num_classes": 1000,
+          "num_workers": 4,
+          "pin_memory": false,
+          "prefetch_factor": 2,
+          "root": "/work/meanflow-table1e/data/imagenet256_latents",
+          "vae": "mse"
+        },
+        "eval_only": false,
+        "fid": {
+          "cache_ref": "/work/meanflow-table1e/data/fid/imagenet256_authors_ref.npz",
+          "device_batch_size": 20,
+          "num_samples": 50000,
+          "on_training": true
+        },
+        "load_from": null,
+        "method": {
+          "P_mean": -0.4,
+          "P_std": 1.0,
+          "class_dropout_prob": 0.1,
+          "data_proportion": 0.75,
+          "guidance_eq": "none",
+          "kappa": 0.5,
+          "noise_dist": "logit_normal",
+          "norm_eps": 0.01,
+          "norm_p": 1.0,
+          "omega": 1.0,
+          "t_end": 1.0,
+          "t_start": 0.0
+        },
+        "model": {
+          "cls": "DiT_B_4"
+        },
+        "sampling": {
+          "num_classes": 1000,
+          "num_steps": 1,
+          "sampling_timesteps": null,
+          "schedule": "default",
+          "seed": 0
+        },
+        "training": {
+          "adam_b2": 0.95,
+          "batch_size": 256,
+          "checkpoint_per_epoch": 10,
+          "ema_val": 0.9999,
+          "fid_per_epoch": 10,
+          "half_precision": false,
+          "learning_rate": 0.0001,
+          "log_per_step": 100,
+          "num_epochs": 80,
+          "sample_per_epoch": 10,
+          "seed": 43,
+          "ema_type": "const",
+          "sample_on_training": true
+        }
+      },
+      "record": {
+        "checked_utc": "2026-10-05T16:37:37.748899+00:00",
+        "purpose": "Second training seed for every loss exponent.",
+        "selection_reason": "Post hoc repetition of all five p values after inspecting the seed-42 results.",
+        "only_experimental_change": {
+          "training.seed": {
+            "original": 42,
+            "additional": 43
+          }
+        },
+        "p": 1.0,
+        "training_seed": 43,
+        "sampling_seed": 0,
+        "from_scratch": true,
+        "resume_from_primary": false,
+        "primary_FID_epoch80": 61.3569582763792,
+        "primary_directory": "/work/meanflow-table1e/runs/p_1.0",
+        "output_directory": "/work/meanflow-table1e/runs/diagnostic_p_1.0_seed43",
+        "git_sha": "d70cb55d298ee03c53bf6da67bec281082e4e2d9",
+        "source_patch_sha256": "5dbc69b3e92ecf7c4ecec68edea1cbae9b164c9518541397f3846f5612c49e06",
+        "primary_manifest_sha256": "97e3c631e93320dc3148f758575f21a1d833b95b19e1d3b65e20816472344d8a",
+        "same_physical_gpu_uuid": "GPU-fc69ea19-3c17-a4c0-28bb-095ecf542429",
+        "physical_gpu_index": 0,
+        "gpu_name": "NVIDIA B200",
+        "gpu_vram": "183359 MiB",
+        "driver_version": "610.57.04",
+        "global_batch_size": 256,
+        "per_device_batch_size": 256,
+        "number_of_GPUs": 1,
+        "expected_effective_config": {
+          "dataset": {
+            "cache": false,
+            "image_channels": 4,
+            "image_size": 32,
+            "name": "imgnet_latent",
+            "num_classes": 1000,
+            "num_workers": 4,
+            "pin_memory": false,
+            "prefetch_factor": 2,
+            "root": "/work/meanflow-table1e/data/imagenet256_latents",
+            "vae": "mse"
+          },
+          "eval_only": false,
+          "fid": {
+            "cache_ref": "/work/meanflow-table1e/data/fid/imagenet256_authors_ref.npz",
+            "device_batch_size": 20,
+            "num_samples": 50000,
+            "on_training": true
+          },
+          "load_from": null,
+          "method": {
+            "P_mean": -0.4,
+            "P_std": 1.0,
+            "class_dropout_prob": 0.1,
+            "data_proportion": 0.75,
+            "guidance_eq": "none",
+            "kappa": 0.5,
+            "noise_dist": "logit_normal",
+            "norm_eps": 0.01,
+            "norm_p": 1.0,
+            "omega": 1.0,
+            "t_end": 1.0,
+            "t_start": 0.0
+          },
+          "model": {
+            "cls": "DiT_B_4"
+          },
+          "sampling": {
+            "num_classes": 1000,
+            "num_steps": 1,
+            "sampling_timesteps": null,
+            "schedule": "default",
+            "seed": 0
+          },
+          "training": {
+            "adam_b2": 0.95,
+            "batch_size": 256,
+            "checkpoint_per_epoch": 10,
+            "ema_type": "const",
+            "ema_val": 0.9999,
+            "fid_per_epoch": 10,
+            "half_precision": false,
+            "learning_rate": 0.0001,
+            "log_per_step": 100,
+            "num_epochs": 80,
+            "sample_on_training": true,
+            "sample_per_epoch": 10,
+            "seed": 43
+          }
+        },
+        "primary_files_to_preserve_sha256": {
+          "/work/meanflow-table1e/results/table1e.csv": "e76972f3d2470213bd41b73bacfc47254904920881fa2d20799ef04d08986c6a",
+          "/work/meanflow-table1e/results/report-summary.json": "6adf777e6e3814e8955cb895e20cf910cd2485d62317feeef3b360a3564e3c6c",
+          "/work/meanflow-table1e/provenance/reproducibility-manifest.json": "97e3c631e93320dc3148f758575f21a1d833b95b19e1d3b65e20816472344d8a",
+          "/work/meanflow-table1e/provenance/final-controller.log": "0ed8bfa103da1eff1cf47d21e8487800df6752438f80e616d6a3e17b7fce1ee1",
+          "/work/meanflow-table1e/runs/p_0.0/run-summary.json": "5f171503f4711d9c1a31f5d4184c6add33f69bd8f44cc7294bddad4c3ef280ea",
+          "/work/meanflow-table1e/runs/p_0.0/effective-config.json": "06387160510226a0a3ec5fa38d5e257271b57f96969a22edb8ad89ca8a0cddd8",
+          "/work/meanflow-table1e/runs/p_0.0/fid.csv": "512cccda35c39409884d48462d6a899be4e1fc3aae50856f9ae9dee202b7cc17",
+          "/work/meanflow-table1e/runs/p_0.0/final-checkpoint-files.json": "22916c1150e369a687c4b3d5099c818cb7adafb053d1b373f484f3e372b1e22d",
+          "/work/meanflow-table1e/runs/p_0.5/run-summary.json": "63515d384f38d33633530a863aefa7bbc38107053269bab063b351ec2a72ff96",
+          "/work/meanflow-table1e/runs/p_0.5/effective-config.json": "4dc05666ac7cc583a70d8c85f09ceca1dd886600f0f14f573904b275625e3f80",
+          "/work/meanflow-table1e/runs/p_0.5/fid.csv": "8b10cbf636869d7b8954f609638f353be5616400b53efb4a4a033fbd5f58d996",
+          "/work/meanflow-table1e/runs/p_0.5/final-checkpoint-files.json": "0df4c6646ed6d92c967db9b6b24437e944631f489d36356d3fa4633925b35053",
+          "/work/meanflow-table1e/runs/p_1.0/run-summary.json": "92ea3fdf5792ff39c4fd69137396e8e9641c016a605edb20d885c4c76a76f27a",
+          "/work/meanflow-table1e/runs/p_1.0/effective-config.json": "d82fb7d1dd657da0de8da07c1e4413eed5238f5331d7611166e4f8b7e05e1ad7",
+          "/work/meanflow-table1e/runs/p_1.0/fid.csv": "34e9c10da0a6aad085a2994183d77f7f5589ae5650b3032f67bb4649991e0e59",
+          "/work/meanflow-table1e/runs/p_1.0/final-checkpoint-files.json": "a217b028d9bb1e3741646e143e07ed484058b71d4fcd5ee42415aac376d79d64",
+          "/work/meanflow-table1e/runs/p_1.5/run-summary.json": "04c52d686793b0a881dd69092e5558973f98ae27fecbdb127d06ea822129c7d7",
+          "/work/meanflow-table1e/runs/p_1.5/effective-config.json": "1df202db4f4a985daeda2815af6545ef6792e3b8eed541508d2f818c8988c2c4",
+          "/work/meanflow-table1e/runs/p_1.5/fid.csv": "bf054a7c2e56114f0b8f84300ddabc46fb6e835a25ed19be9753bb609efcb003",
+          "/work/meanflow-table1e/runs/p_1.5/final-checkpoint-files.json": "6d2c0f199b5a789ee311861032182ed51800599dc2b245594229f263870a661d",
+          "/work/meanflow-table1e/runs/p_2.0/run-summary.json": "2c6ade92f50978fb50453222f8cf58b14d8d79b30c4a5eb9594f57f5de395ce8",
+          "/work/meanflow-table1e/runs/p_2.0/effective-config.json": "59be02571caa0b352f802816d166c5fbf9e16d15d11982d835a83d994cb5d5c1",
+          "/work/meanflow-table1e/runs/p_2.0/fid.csv": "546149d0ad96456972b78d53c95c875f273187f27be4413245926dee6ed68272",
+          "/work/meanflow-table1e/runs/p_2.0/final-checkpoint-files.json": "ae8c592cbe3b77f8fea7f6edb3f9476cc38f5ccc7c25210c912c2ac0e440e638"
+        },
+        "reporting": "Keep both seeds for every p. Report individual FIDs and mean/sample SD across seeds 42 and 43 only when both runs completed; two seeds provide a limited variability check.",
+        "billing_scope": "One GPU executes this run; all GPUs retained in the UCloud allocation may continue to be billed."
+      },
+      "packages_freeze": "absl-py==2.5.0\naiofiles==25.1.0\nastunparse==1.6.3\nattrs==26.1.0\ncached-property==2.0.1\ncertifi==2026.7.22\ncharset-normalizer==3.5.2\nclu==0.0.12\ndiffusers==0.35.1\ndm-tree==0.1.10\netils==1.14.0\nfilelock==3.32.3\nflatbuffers==25.12.19\nflax==0.12.10\nfsspec==2026.7.0\ngast==0.7.0\ngoogle-pasta==0.2.0\ngrpcio==1.84.0\nh5py==3.14.0\nhf-xet==1.6.0\nhuggingface_hub==0.36.2\nhumanize==4.16.0\nidna==3.20\nimportlib_metadata==9.0.1\njax==0.11.2\njax-cuda13-pjrt==0.11.2\njax-cuda13-plugin==0.11.2\njaxlib==0.11.2\nJinja2==3.1.6\nkeras==3.15.1\nlibclang==18.1.1\nMarkdown==3.11\nmarkdown-it-py==4.2.0\nMarkupSafe==3.0.3\nmdurl==0.1.2\nml_collections==1.1.0\nml_dtypes==0.6.0\nmpmath==1.3.0\nmsgpack==1.2.3\nnamex==0.1.0\nnetworkx==3.6.1\nnumpy==2.5.3\nnvidia-cublas==13.8.1.7\nnvidia-cuda-cccl==13.3.4.3.1\nnvidia-cuda-crt==13.4.92\nnvidia-cuda-cupti==13.4.92\nnvidia-cuda-nvcc==13.4.92\nnvidia-cuda-nvrtc==13.4.92\nnvidia-cuda-runtime==13.4.92\nnvidia-cudnn-cu13==9.27.0.42\nnvidia-cufft==12.4.0.43\nnvidia-cusolver==12.3.4.7\nnvidia-cusparse==12.8.6.72\nnvidia-nccl-cu13==2.32.3\nnvidia-nvjitlink==13.4.92\nnvidia-nvshmem-cu13==3.8.0\nnvidia-nvvm==13.4.92\nopt_einsum==3.4.0\noptax==0.2.8\noptree==0.20.0\norbax-checkpoint==0.12.6\npackaging==26.3\npillow==12.3.0\nprometheus_client==0.26.0\nprotobuf==7.36.2\npsutil==7.2.2\nPygments==2.21.0\nPyYAML==6.0.3\nregex==2026.9.29\nrequests==2.34.2\nrich==15.0.0\nsafetensors==0.8.0\nscipy==1.18.1\nsetuptools==78.1.0\nsimplejson==4.2.0\nsix==1.17.0\nsympy==1.14.0\ntensorboard==2.21.0\ntensorboard-data-server==0.7.2\ntensorflow_cpu==2.21.0\ntensorstore==0.1.85\ntermcolor==3.3.0\ntorch==2.14.1+cpu\ntorchvision==0.29.1+cpu\ntqdm==4.70.1\ntreescope==0.1.10\ntyping_extensions==4.16.0\nurllib3==2.8.0\nuvloop==0.23.0\nWerkzeug==3.1.9\nwheel==0.48.0\nwrapt==2.5.0\nzipp==4.1.1"
+    },
+    "1.5": {
+      "config": {
+        "dataset": {
+          "cache": false,
+          "image_channels": 4,
+          "image_size": 32,
+          "name": "imgnet_latent",
+          "num_classes": 1000,
+          "num_workers": 4,
+          "pin_memory": false,
+          "prefetch_factor": 2,
+          "root": "/work/meanflow-table1e/data/imagenet256_latents",
+          "vae": "mse"
+        },
+        "eval_only": false,
+        "fid": {
+          "cache_ref": "/work/meanflow-table1e/data/fid/imagenet256_authors_ref.npz",
+          "device_batch_size": 20,
+          "num_samples": 50000,
+          "on_training": true
+        },
+        "load_from": null,
+        "method": {
+          "P_mean": -0.4,
+          "P_std": 1.0,
+          "class_dropout_prob": 0.1,
+          "data_proportion": 0.75,
+          "guidance_eq": "none",
+          "kappa": 0.5,
+          "noise_dist": "logit_normal",
+          "norm_eps": 0.01,
+          "norm_p": 1.5,
+          "omega": 1.0,
+          "t_end": 1.0,
+          "t_start": 0.0
+        },
+        "model": {
+          "cls": "DiT_B_4"
+        },
+        "sampling": {
+          "num_classes": 1000,
+          "num_steps": 1,
+          "sampling_timesteps": null,
+          "schedule": "default",
+          "seed": 0
+        },
+        "training": {
+          "adam_b2": 0.95,
+          "batch_size": 256,
+          "checkpoint_per_epoch": 10,
+          "ema_val": 0.9999,
+          "fid_per_epoch": 10,
+          "half_precision": false,
+          "learning_rate": 0.0001,
+          "log_per_step": 100,
+          "num_epochs": 80,
+          "sample_per_epoch": 10,
+          "seed": 43,
+          "ema_type": "const",
+          "sample_on_training": true
+        }
+      },
+      "record": {
+        "checked_utc": "2026-10-05T16:37:57.845936+00:00",
+        "purpose": "Second training seed for every loss exponent.",
+        "selection_reason": "Post hoc repetition of all five p values after inspecting the seed-42 results.",
+        "only_experimental_change": {
+          "training.seed": {
+            "original": 42,
+            "additional": 43
+          }
+        },
+        "p": 1.5,
+        "training_seed": 43,
+        "sampling_seed": 0,
+        "from_scratch": true,
+        "resume_from_primary": false,
+        "primary_FID_epoch80": 67.32211792210887,
+        "primary_directory": "/work/meanflow-table1e/runs/p_1.5",
+        "output_directory": "/work/meanflow-table1e/runs/diagnostic_p_1.5_seed43",
+        "git_sha": "d70cb55d298ee03c53bf6da67bec281082e4e2d9",
+        "source_patch_sha256": "5dbc69b3e92ecf7c4ecec68edea1cbae9b164c9518541397f3846f5612c49e06",
+        "primary_manifest_sha256": "97e3c631e93320dc3148f758575f21a1d833b95b19e1d3b65e20816472344d8a",
+        "same_physical_gpu_uuid": "GPU-c4d54d6f-311e-aa27-ddaa-9992d7daf823",
+        "physical_gpu_index": 3,
+        "gpu_name": "NVIDIA B200",
+        "gpu_vram": "183359 MiB",
+        "driver_version": "610.57.04",
+        "global_batch_size": 256,
+        "per_device_batch_size": 256,
+        "number_of_GPUs": 1,
+        "expected_effective_config": {
+          "dataset": {
+            "cache": false,
+            "image_channels": 4,
+            "image_size": 32,
+            "name": "imgnet_latent",
+            "num_classes": 1000,
+            "num_workers": 4,
+            "pin_memory": false,
+            "prefetch_factor": 2,
+            "root": "/work/meanflow-table1e/data/imagenet256_latents",
+            "vae": "mse"
+          },
+          "eval_only": false,
+          "fid": {
+            "cache_ref": "/work/meanflow-table1e/data/fid/imagenet256_authors_ref.npz",
+            "device_batch_size": 20,
+            "num_samples": 50000,
+            "on_training": true
+          },
+          "load_from": null,
+          "method": {
+            "P_mean": -0.4,
+            "P_std": 1.0,
+            "class_dropout_prob": 0.1,
+            "data_proportion": 0.75,
+            "guidance_eq": "none",
+            "kappa": 0.5,
+            "noise_dist": "logit_normal",
+            "norm_eps": 0.01,
+            "norm_p": 1.5,
+            "omega": 1.0,
+            "t_end": 1.0,
+            "t_start": 0.0
+          },
+          "model": {
+            "cls": "DiT_B_4"
+          },
+          "sampling": {
+            "num_classes": 1000,
+            "num_steps": 1,
+            "sampling_timesteps": null,
+            "schedule": "default",
+            "seed": 0
+          },
+          "training": {
+            "adam_b2": 0.95,
+            "batch_size": 256,
+            "checkpoint_per_epoch": 10,
+            "ema_type": "const",
+            "ema_val": 0.9999,
+            "fid_per_epoch": 10,
+            "half_precision": false,
+            "learning_rate": 0.0001,
+            "log_per_step": 100,
+            "num_epochs": 80,
+            "sample_on_training": true,
+            "sample_per_epoch": 10,
+            "seed": 43
+          }
+        },
+        "primary_files_to_preserve_sha256": {
+          "/work/meanflow-table1e/results/table1e.csv": "e76972f3d2470213bd41b73bacfc47254904920881fa2d20799ef04d08986c6a",
+          "/work/meanflow-table1e/results/report-summary.json": "6adf777e6e3814e8955cb895e20cf910cd2485d62317feeef3b360a3564e3c6c",
+          "/work/meanflow-table1e/provenance/reproducibility-manifest.json": "97e3c631e93320dc3148f758575f21a1d833b95b19e1d3b65e20816472344d8a",
+          "/work/meanflow-table1e/provenance/final-controller.log": "0ed8bfa103da1eff1cf47d21e8487800df6752438f80e616d6a3e17b7fce1ee1",
+          "/work/meanflow-table1e/runs/p_0.0/run-summary.json": "5f171503f4711d9c1a31f5d4184c6add33f69bd8f44cc7294bddad4c3ef280ea",
+          "/work/meanflow-table1e/runs/p_0.0/effective-config.json": "06387160510226a0a3ec5fa38d5e257271b57f96969a22edb8ad89ca8a0cddd8",
+          "/work/meanflow-table1e/runs/p_0.0/fid.csv": "512cccda35c39409884d48462d6a899be4e1fc3aae50856f9ae9dee202b7cc17",
+          "/work/meanflow-table1e/runs/p_0.0/final-checkpoint-files.json": "22916c1150e369a687c4b3d5099c818cb7adafb053d1b373f484f3e372b1e22d",
+          "/work/meanflow-table1e/runs/p_0.5/run-summary.json": "63515d384f38d33633530a863aefa7bbc38107053269bab063b351ec2a72ff96",
+          "/work/meanflow-table1e/runs/p_0.5/effective-config.json": "4dc05666ac7cc583a70d8c85f09ceca1dd886600f0f14f573904b275625e3f80",
+          "/work/meanflow-table1e/runs/p_0.5/fid.csv": "8b10cbf636869d7b8954f609638f353be5616400b53efb4a4a033fbd5f58d996",
+          "/work/meanflow-table1e/runs/p_0.5/final-checkpoint-files.json": "0df4c6646ed6d92c967db9b6b24437e944631f489d36356d3fa4633925b35053",
+          "/work/meanflow-table1e/runs/p_1.0/run-summary.json": "92ea3fdf5792ff39c4fd69137396e8e9641c016a605edb20d885c4c76a76f27a",
+          "/work/meanflow-table1e/runs/p_1.0/effective-config.json": "d82fb7d1dd657da0de8da07c1e4413eed5238f5331d7611166e4f8b7e05e1ad7",
+          "/work/meanflow-table1e/runs/p_1.0/fid.csv": "34e9c10da0a6aad085a2994183d77f7f5589ae5650b3032f67bb4649991e0e59",
+          "/work/meanflow-table1e/runs/p_1.0/final-checkpoint-files.json": "a217b028d9bb1e3741646e143e07ed484058b71d4fcd5ee42415aac376d79d64",
+          "/work/meanflow-table1e/runs/p_1.5/run-summary.json": "04c52d686793b0a881dd69092e5558973f98ae27fecbdb127d06ea822129c7d7",
+          "/work/meanflow-table1e/runs/p_1.5/effective-config.json": "1df202db4f4a985daeda2815af6545ef6792e3b8eed541508d2f818c8988c2c4",
+          "/work/meanflow-table1e/runs/p_1.5/fid.csv": "bf054a7c2e56114f0b8f84300ddabc46fb6e835a25ed19be9753bb609efcb003",
+          "/work/meanflow-table1e/runs/p_1.5/final-checkpoint-files.json": "6d2c0f199b5a789ee311861032182ed51800599dc2b245594229f263870a661d",
+          "/work/meanflow-table1e/runs/p_2.0/run-summary.json": "2c6ade92f50978fb50453222f8cf58b14d8d79b30c4a5eb9594f57f5de395ce8",
+          "/work/meanflow-table1e/runs/p_2.0/effective-config.json": "59be02571caa0b352f802816d166c5fbf9e16d15d11982d835a83d994cb5d5c1",
+          "/work/meanflow-table1e/runs/p_2.0/fid.csv": "546149d0ad96456972b78d53c95c875f273187f27be4413245926dee6ed68272",
+          "/work/meanflow-table1e/runs/p_2.0/final-checkpoint-files.json": "ae8c592cbe3b77f8fea7f6edb3f9476cc38f5ccc7c25210c912c2ac0e440e638"
+        },
+        "reporting": "Keep both seeds for every p. Report individual FIDs and mean/sample SD across seeds 42 and 43 only when both runs completed; two seeds provide a limited variability check.",
+        "billing_scope": "One GPU executes this run; all GPUs retained in the UCloud allocation may continue to be billed."
+      },
+      "packages_freeze": "absl-py==2.5.0\naiofiles==25.1.0\nastunparse==1.6.3\nattrs==26.1.0\ncached-property==2.0.1\ncertifi==2026.7.22\ncharset-normalizer==3.5.2\nclu==0.0.12\ndiffusers==0.35.1\ndm-tree==0.1.10\netils==1.14.0\nfilelock==3.32.3\nflatbuffers==25.12.19\nflax==0.12.10\nfsspec==2026.7.0\ngast==0.7.0\ngoogle-pasta==0.2.0\ngrpcio==1.84.0\nh5py==3.14.0\nhf-xet==1.6.0\nhuggingface_hub==0.36.2\nhumanize==4.16.0\nidna==3.20\nimportlib_metadata==9.0.1\njax==0.11.2\njax-cuda13-pjrt==0.11.2\njax-cuda13-plugin==0.11.2\njaxlib==0.11.2\nJinja2==3.1.6\nkeras==3.15.1\nlibclang==18.1.1\nMarkdown==3.11\nmarkdown-it-py==4.2.0\nMarkupSafe==3.0.3\nmdurl==0.1.2\nml_collections==1.1.0\nml_dtypes==0.6.0\nmpmath==1.3.0\nmsgpack==1.2.3\nnamex==0.1.0\nnetworkx==3.6.1\nnumpy==2.5.3\nnvidia-cublas==13.8.1.7\nnvidia-cuda-cccl==13.3.4.3.1\nnvidia-cuda-crt==13.4.92\nnvidia-cuda-cupti==13.4.92\nnvidia-cuda-nvcc==13.4.92\nnvidia-cuda-nvrtc==13.4.92\nnvidia-cuda-runtime==13.4.92\nnvidia-cudnn-cu13==9.27.0.42\nnvidia-cufft==12.4.0.43\nnvidia-cusolver==12.3.4.7\nnvidia-cusparse==12.8.6.72\nnvidia-nccl-cu13==2.32.3\nnvidia-nvjitlink==13.4.92\nnvidia-nvshmem-cu13==3.8.0\nnvidia-nvvm==13.4.92\nopt_einsum==3.4.0\noptax==0.2.8\noptree==0.20.0\norbax-checkpoint==0.12.6\npackaging==26.3\npillow==12.3.0\nprometheus_client==0.26.0\nprotobuf==7.36.2\npsutil==7.2.2\nPygments==2.21.0\nPyYAML==6.0.3\nregex==2026.9.29\nrequests==2.34.2\nrich==15.0.0\nsafetensors==0.8.0\nscipy==1.18.1\nsetuptools==78.1.0\nsimplejson==4.2.0\nsix==1.17.0\nsympy==1.14.0\ntensorboard==2.21.0\ntensorboard-data-server==0.7.2\ntensorflow_cpu==2.21.0\ntensorstore==0.1.85\ntermcolor==3.3.0\ntorch==2.14.1+cpu\ntorchvision==0.29.1+cpu\ntqdm==4.70.1\ntreescope==0.1.10\ntyping_extensions==4.16.0\nurllib3==2.8.0\nuvloop==0.23.0\nWerkzeug==3.1.9\nwheel==0.48.0\nwrapt==2.5.0\nzipp==4.1.1"
+    },
+    "2.0": {
+      "config": {
+        "dataset": {
+          "cache": false,
+          "image_channels": 4,
+          "image_size": 32,
+          "name": "imgnet_latent",
+          "num_classes": 1000,
+          "num_workers": 4,
+          "pin_memory": false,
+          "prefetch_factor": 2,
+          "root": "/work/meanflow-table1e/data/imagenet256_latents",
+          "vae": "mse"
+        },
+        "eval_only": false,
+        "fid": {
+          "cache_ref": "/work/meanflow-table1e/data/fid/imagenet256_authors_ref.npz",
+          "device_batch_size": 20,
+          "num_samples": 50000,
+          "on_training": true
+        },
+        "load_from": null,
+        "method": {
+          "P_mean": -0.4,
+          "P_std": 1.0,
+          "class_dropout_prob": 0.1,
+          "data_proportion": 0.75,
+          "guidance_eq": "none",
+          "kappa": 0.5,
+          "noise_dist": "logit_normal",
+          "norm_eps": 0.01,
+          "norm_p": 2.0,
+          "omega": 1.0,
+          "t_end": 1.0,
+          "t_start": 0.0
+        },
+        "model": {
+          "cls": "DiT_B_4"
+        },
+        "sampling": {
+          "num_classes": 1000,
+          "num_steps": 1,
+          "sampling_timesteps": null,
+          "schedule": "default",
+          "seed": 0
+        },
+        "training": {
+          "adam_b2": 0.95,
+          "batch_size": 256,
+          "checkpoint_per_epoch": 10,
+          "ema_val": 0.9999,
+          "fid_per_epoch": 10,
+          "half_precision": false,
+          "learning_rate": 0.0001,
+          "log_per_step": 100,
+          "num_epochs": 80,
+          "sample_per_epoch": 10,
+          "seed": 43,
+          "ema_type": "const",
+          "sample_on_training": true
+        }
+      },
+      "record": {
+        "checked_utc": "2026-10-05T16:38:17.788202+00:00",
+        "purpose": "Second training seed for every loss exponent.",
+        "selection_reason": "Post hoc repetition of all five p values after inspecting the seed-42 results.",
+        "only_experimental_change": {
+          "training.seed": {
+            "original": 42,
+            "additional": 43
+          }
+        },
+        "p": 2.0,
+        "training_seed": 43,
+        "sampling_seed": 0,
+        "from_scratch": true,
+        "resume_from_primary": false,
+        "primary_FID_epoch80": 97.60873972580225,
+        "primary_directory": "/work/meanflow-table1e/runs/p_2.0",
+        "output_directory": "/work/meanflow-table1e/runs/diagnostic_p_2.0_seed43",
+        "git_sha": "d70cb55d298ee03c53bf6da67bec281082e4e2d9",
+        "source_patch_sha256": "5dbc69b3e92ecf7c4ecec68edea1cbae9b164c9518541397f3846f5612c49e06",
+        "primary_manifest_sha256": "97e3c631e93320dc3148f758575f21a1d833b95b19e1d3b65e20816472344d8a",
+        "same_physical_gpu_uuid": "GPU-fa390f93-b365-d803-679e-743cdf5f68df",
+        "physical_gpu_index": 4,
+        "gpu_name": "NVIDIA B200",
+        "gpu_vram": "183359 MiB",
+        "driver_version": "610.57.04",
+        "global_batch_size": 256,
+        "per_device_batch_size": 256,
+        "number_of_GPUs": 1,
+        "expected_effective_config": {
+          "dataset": {
+            "cache": false,
+            "image_channels": 4,
+            "image_size": 32,
+            "name": "imgnet_latent",
+            "num_classes": 1000,
+            "num_workers": 4,
+            "pin_memory": false,
+            "prefetch_factor": 2,
+            "root": "/work/meanflow-table1e/data/imagenet256_latents",
+            "vae": "mse"
+          },
+          "eval_only": false,
+          "fid": {
+            "cache_ref": "/work/meanflow-table1e/data/fid/imagenet256_authors_ref.npz",
+            "device_batch_size": 20,
+            "num_samples": 50000,
+            "on_training": true
+          },
+          "load_from": null,
+          "method": {
+            "P_mean": -0.4,
+            "P_std": 1.0,
+            "class_dropout_prob": 0.1,
+            "data_proportion": 0.75,
+            "guidance_eq": "none",
+            "kappa": 0.5,
+            "noise_dist": "logit_normal",
+            "norm_eps": 0.01,
+            "norm_p": 2.0,
+            "omega": 1.0,
+            "t_end": 1.0,
+            "t_start": 0.0
+          },
+          "model": {
+            "cls": "DiT_B_4"
+          },
+          "sampling": {
+            "num_classes": 1000,
+            "num_steps": 1,
+            "sampling_timesteps": null,
+            "schedule": "default",
+            "seed": 0
+          },
+          "training": {
+            "adam_b2": 0.95,
+            "batch_size": 256,
+            "checkpoint_per_epoch": 10,
+            "ema_type": "const",
+            "ema_val": 0.9999,
+            "fid_per_epoch": 10,
+            "half_precision": false,
+            "learning_rate": 0.0001,
+            "log_per_step": 100,
+            "num_epochs": 80,
+            "sample_on_training": true,
+            "sample_per_epoch": 10,
+            "seed": 43
+          }
+        },
+        "primary_files_to_preserve_sha256": {
+          "/work/meanflow-table1e/results/table1e.csv": "e76972f3d2470213bd41b73bacfc47254904920881fa2d20799ef04d08986c6a",
+          "/work/meanflow-table1e/results/report-summary.json": "6adf777e6e3814e8955cb895e20cf910cd2485d62317feeef3b360a3564e3c6c",
+          "/work/meanflow-table1e/provenance/reproducibility-manifest.json": "97e3c631e93320dc3148f758575f21a1d833b95b19e1d3b65e20816472344d8a",
+          "/work/meanflow-table1e/provenance/final-controller.log": "0ed8bfa103da1eff1cf47d21e8487800df6752438f80e616d6a3e17b7fce1ee1",
+          "/work/meanflow-table1e/runs/p_0.0/run-summary.json": "5f171503f4711d9c1a31f5d4184c6add33f69bd8f44cc7294bddad4c3ef280ea",
+          "/work/meanflow-table1e/runs/p_0.0/effective-config.json": "06387160510226a0a3ec5fa38d5e257271b57f96969a22edb8ad89ca8a0cddd8",
+          "/work/meanflow-table1e/runs/p_0.0/fid.csv": "512cccda35c39409884d48462d6a899be4e1fc3aae50856f9ae9dee202b7cc17",
+          "/work/meanflow-table1e/runs/p_0.0/final-checkpoint-files.json": "22916c1150e369a687c4b3d5099c818cb7adafb053d1b373f484f3e372b1e22d",
+          "/work/meanflow-table1e/runs/p_0.5/run-summary.json": "63515d384f38d33633530a863aefa7bbc38107053269bab063b351ec2a72ff96",
+          "/work/meanflow-table1e/runs/p_0.5/effective-config.json": "4dc05666ac7cc583a70d8c85f09ceca1dd886600f0f14f573904b275625e3f80",
+          "/work/meanflow-table1e/runs/p_0.5/fid.csv": "8b10cbf636869d7b8954f609638f353be5616400b53efb4a4a033fbd5f58d996",
+          "/work/meanflow-table1e/runs/p_0.5/final-checkpoint-files.json": "0df4c6646ed6d92c967db9b6b24437e944631f489d36356d3fa4633925b35053",
+          "/work/meanflow-table1e/runs/p_1.0/run-summary.json": "92ea3fdf5792ff39c4fd69137396e8e9641c016a605edb20d885c4c76a76f27a",
+          "/work/meanflow-table1e/runs/p_1.0/effective-config.json": "d82fb7d1dd657da0de8da07c1e4413eed5238f5331d7611166e4f8b7e05e1ad7",
+          "/work/meanflow-table1e/runs/p_1.0/fid.csv": "34e9c10da0a6aad085a2994183d77f7f5589ae5650b3032f67bb4649991e0e59",
+          "/work/meanflow-table1e/runs/p_1.0/final-checkpoint-files.json": "a217b028d9bb1e3741646e143e07ed484058b71d4fcd5ee42415aac376d79d64",
+          "/work/meanflow-table1e/runs/p_1.5/run-summary.json": "04c52d686793b0a881dd69092e5558973f98ae27fecbdb127d06ea822129c7d7",
+          "/work/meanflow-table1e/runs/p_1.5/effective-config.json": "1df202db4f4a985daeda2815af6545ef6792e3b8eed541508d2f818c8988c2c4",
+          "/work/meanflow-table1e/runs/p_1.5/fid.csv": "bf054a7c2e56114f0b8f84300ddabc46fb6e835a25ed19be9753bb609efcb003",
+          "/work/meanflow-table1e/runs/p_1.5/final-checkpoint-files.json": "6d2c0f199b5a789ee311861032182ed51800599dc2b245594229f263870a661d",
+          "/work/meanflow-table1e/runs/p_2.0/run-summary.json": "2c6ade92f50978fb50453222f8cf58b14d8d79b30c4a5eb9594f57f5de395ce8",
+          "/work/meanflow-table1e/runs/p_2.0/effective-config.json": "59be02571caa0b352f802816d166c5fbf9e16d15d11982d835a83d994cb5d5c1",
+          "/work/meanflow-table1e/runs/p_2.0/fid.csv": "546149d0ad96456972b78d53c95c875f273187f27be4413245926dee6ed68272",
+          "/work/meanflow-table1e/runs/p_2.0/final-checkpoint-files.json": "ae8c592cbe3b77f8fea7f6edb3f9476cc38f5ccc7c25210c912c2ac0e440e638"
+        },
+        "reporting": "Keep both seeds for every p. Report individual FIDs and mean/sample SD across seeds 42 and 43 only when both runs completed; two seeds provide a limited variability check.",
+        "billing_scope": "One GPU executes this run; all GPUs retained in the UCloud allocation may continue to be billed."
+      },
+      "packages_freeze": "absl-py==2.5.0\naiofiles==25.1.0\nastunparse==1.6.3\nattrs==26.1.0\ncached-property==2.0.1\ncertifi==2026.7.22\ncharset-normalizer==3.5.2\nclu==0.0.12\ndiffusers==0.35.1\ndm-tree==0.1.10\netils==1.14.0\nfilelock==3.32.3\nflatbuffers==25.12.19\nflax==0.12.10\nfsspec==2026.7.0\ngast==0.7.0\ngoogle-pasta==0.2.0\ngrpcio==1.84.0\nh5py==3.14.0\nhf-xet==1.6.0\nhuggingface_hub==0.36.2\nhumanize==4.16.0\nidna==3.20\nimportlib_metadata==9.0.1\njax==0.11.2\njax-cuda13-pjrt==0.11.2\njax-cuda13-plugin==0.11.2\njaxlib==0.11.2\nJinja2==3.1.6\nkeras==3.15.1\nlibclang==18.1.1\nMarkdown==3.11\nmarkdown-it-py==4.2.0\nMarkupSafe==3.0.3\nmdurl==0.1.2\nml_collections==1.1.0\nml_dtypes==0.6.0\nmpmath==1.3.0\nmsgpack==1.2.3\nnamex==0.1.0\nnetworkx==3.6.1\nnumpy==2.5.3\nnvidia-cublas==13.8.1.7\nnvidia-cuda-cccl==13.3.4.3.1\nnvidia-cuda-crt==13.4.92\nnvidia-cuda-cupti==13.4.92\nnvidia-cuda-nvcc==13.4.92\nnvidia-cuda-nvrtc==13.4.92\nnvidia-cuda-runtime==13.4.92\nnvidia-cudnn-cu13==9.27.0.42\nnvidia-cufft==12.4.0.43\nnvidia-cusolver==12.3.4.7\nnvidia-cusparse==12.8.6.72\nnvidia-nccl-cu13==2.32.3\nnvidia-nvjitlink==13.4.92\nnvidia-nvshmem-cu13==3.8.0\nnvidia-nvvm==13.4.92\nopt_einsum==3.4.0\noptax==0.2.8\noptree==0.20.0\norbax-checkpoint==0.12.6\npackaging==26.3\npillow==12.3.0\nprometheus_client==0.26.0\nprotobuf==7.36.2\npsutil==7.2.2\nPygments==2.21.0\nPyYAML==6.0.3\nregex==2026.9.29\nrequests==2.34.2\nrich==15.0.0\nsafetensors==0.8.0\nscipy==1.18.1\nsetuptools==78.1.0\nsimplejson==4.2.0\nsix==1.17.0\nsympy==1.14.0\ntensorboard==2.21.0\ntensorboard-data-server==0.7.2\ntensorflow_cpu==2.21.0\ntensorstore==0.1.85\ntermcolor==3.3.0\ntorch==2.14.1+cpu\ntorchvision==0.29.1+cpu\ntqdm==4.70.1\ntreescope==0.1.10\ntyping_extensions==4.16.0\nurllib3==2.8.0\nuvloop==0.23.0\nWerkzeug==3.1.9\nwheel==0.48.0\nwrapt==2.5.0\nzipp==4.1.1"
+    }
+  },
+  "launcher_bundle_sha256": {
+    "repeat_all.py": "61e5ad52d1ded26d6ef690b8fbcbc27f5f80711d7933b207b377455a669a01ed",
+    "run_seed43.py": "1c078553187a174b96307f804b6832e405ff4faf45f158da7dcc2250c7302e07"
+  },
+  "only_experimental_change_per_arm": "training.seed: 42 -> 43",
+  "selection": "Second sweep chosen after observing the original five results; all five p values repeated, no original scores replaced.",
+  "output_directories": [
+    "/work/meanflow-table1e/runs/diagnostic_p_0.0_seed43",
+    "/work/meanflow-table1e/runs/diagnostic_p_0.5_seed43",
+    "/work/meanflow-table1e/runs/diagnostic_p_1.0_seed43",
+    "/work/meanflow-table1e/runs/diagnostic_p_1.5_seed43",
+    "/work/meanflow-table1e/runs/diagnostic_p_2.0_seed43"
+  ],
+  "reporting": "Report both seeds and descriptive mean +/- sample standard deviation for n=2 completed training runs per p. Evaluation seed remains 0; this is not an FID sampling-seed study."
+}

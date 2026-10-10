@@ -1,0 +1,886 @@
+{
+  "experiments/simon_table1e/meanflow/.gitignore": {
+    "source": "meanflow/.gitignore",
+    "sha256": "7ef785f1f52725467ab107e1a434f0a9cbbc39387e8484abfed8870137c3c70e"
+  },
+  "experiments/simon_table1e/meanflow/LICENSE": {
+    "source": "meanflow/LICENSE",
+    "sha256": "526cf2427583e3684cd9e647e8096555a9989105c2081cc2163ba30d9c66fb1a"
+  },
+  "experiments/simon_table1e/meanflow/README.md": {
+    "source": "meanflow/README.md",
+    "sha256": "2c88a0a07c0aaf52526f2410926b30c0073a300d5c93ced73d1381450327dc5f"
+  },
+  "experiments/simon_table1e/meanflow/assets/samples.png": {
+    "source": "meanflow/assets/samples.png",
+    "sha256": "abb2ceb1d39acdff5dbc6b853689b4c320078da6480d50e7b919998f636198ca"
+  },
+  "experiments/simon_table1e/meanflow/assets/velocity.png": {
+    "source": "meanflow/assets/velocity.png",
+    "sha256": "eaaa9b45d3e799dc7def06ffbd3261011dbba81dae11eba9cc77636b80f7f18f"
+  },
+  "experiments/simon_table1e/meanflow/configs/default.py": {
+    "source": "meanflow/configs/default.py",
+    "sha256": "2f6d4f9ce057ec8b0cbbb597562f06e418e19751172618f4e9c4e6d353e9a5e7"
+  },
+  "experiments/simon_table1e/meanflow/configs/load_config.py": {
+    "source": "meanflow/configs/load_config.py",
+    "sha256": "f27338e08d1274b72b72dfe5752cdbbcd4471115330c9ab88df29cf5d845bc21"
+  },
+  "experiments/simon_table1e/meanflow/configs/run_b4.yml": {
+    "source": "meanflow/configs/run_b4.yml",
+    "sha256": "f56a95e5c3025294fd7d7a991f3477d68fa3d00d8232ae7847e7dbc984d32f80"
+  },
+  "experiments/simon_table1e/meanflow/main.py": {
+    "source": "meanflow/main.py",
+    "sha256": "67c235989ec1bb0da539f91081fcd41c4b169df8deaf4a3027a2f29dcb5d8444"
+  },
+  "experiments/simon_table1e/meanflow/meanflow.py": {
+    "source": "meanflow/meanflow.py",
+    "sha256": "dc0eae14e7b521ecf3d37b748b653c0430deded0be8262f73d9a3fadbaeda0c5"
+  },
+  "experiments/simon_table1e/meanflow/models/models_dit.py": {
+    "source": "meanflow/models/models_dit.py",
+    "sha256": "a8c27c8bfde30da864dd698df341c30b4f7b8018bce597c32a31678a07573017"
+  },
+  "experiments/simon_table1e/meanflow/models/timm_models.py": {
+    "source": "meanflow/models/timm_models.py",
+    "sha256": "6bcf7c924ac2e03a3588aec32ca3380e206c6585310d09025b0717bf5970f7c5"
+  },
+  "experiments/simon_table1e/meanflow/models/torch_models.py": {
+    "source": "meanflow/models/torch_models.py",
+    "sha256": "05cbc06a459ab4dd4f8536e5f19a06fea18e47e595cfd0dcd591baa80442e3c7"
+  },
+  "experiments/simon_table1e/meanflow/prepare_dataset.py": {
+    "source": "meanflow/prepare_dataset.py",
+    "sha256": "89cb66543a1be9b3b5e2fb0924fccfbd5aa97d1f8f09a1e6db324efe1ddc3a46"
+  },
+  "experiments/simon_table1e/meanflow/scripts/install.sh": {
+    "source": "meanflow/scripts/install.sh",
+    "sha256": "8fc673951ec10bc7efc00fcc2102afd77199db44ad53807550ee2b91aa4914c9"
+  },
+  "experiments/simon_table1e/meanflow/scripts/launch.sh": {
+    "source": "meanflow/scripts/launch.sh",
+    "sha256": "27f0d1d1220e825792d22eb1077b879f77b7829927de1874cfc16301fa1e6f90"
+  },
+  "experiments/simon_table1e/meanflow/scripts/prepare_data.sh": {
+    "source": "meanflow/scripts/prepare_data.sh",
+    "sha256": "82475365f967d5dfe902f0ee93d52e16972a4b241f2956da469fe7081f7a84d2"
+  },
+  "experiments/simon_table1e/meanflow/train.py": {
+    "source": "meanflow/train.py",
+    "sha256": "3534ac7bcfc2e73a3783af1615be86e24fa27c30a071ecf3882c6aeb024c775a"
+  },
+  "experiments/simon_table1e/meanflow/utils/ckpt_util.py": {
+    "source": "meanflow/utils/ckpt_util.py",
+    "sha256": "d73abdb8e994186d6bbe455b700c021677a0085510479216455882cd3ce20e8c"
+  },
+  "experiments/simon_table1e/meanflow/utils/data_util.py": {
+    "source": "meanflow/utils/data_util.py",
+    "sha256": "be2ee94a48d46a6866a17208bd420f9f260b05e538eb77fbba707d861e3beec8"
+  },
+  "experiments/simon_table1e/meanflow/utils/ema_util.py": {
+    "source": "meanflow/utils/ema_util.py",
+    "sha256": "3dd0de55ff2a9967b7352e8ccdfc650f971794a44418961e7d42d1d304519580"
+  },
+  "experiments/simon_table1e/meanflow/utils/fid_util.py": {
+    "source": "meanflow/utils/fid_util.py",
+    "sha256": "4eb25e92ef02dd20c65762d427f19f590abd727b10bdbd9da0860ff9888d0626"
+  },
+  "experiments/simon_table1e/meanflow/utils/info_util.py": {
+    "source": "meanflow/utils/info_util.py",
+    "sha256": "7353a964a7ed3d429caa91b71afc1e13a527ec63741a7b971e740fa2ca979612"
+  },
+  "experiments/simon_table1e/meanflow/utils/input_pipeline.py": {
+    "source": "meanflow/utils/input_pipeline.py",
+    "sha256": "45ae0946c2908c40c4c31bed61048367dd4cbbc6dd2bde1c290aba7861b2d155"
+  },
+  "experiments/simon_table1e/meanflow/utils/jax_fid/fid.py": {
+    "source": "meanflow/utils/jax_fid/fid.py",
+    "sha256": "4ba919dc7d9d3652a9bc996e681f405e587ed59b7801fa40e3be30dd8ffc32f2"
+  },
+  "experiments/simon_table1e/meanflow/utils/jax_fid/inception.py": {
+    "source": "meanflow/utils/jax_fid/inception.py",
+    "sha256": "2c559d0c3c5f0921b13807422227c0551b31d3201e61b03bc5eb9f95d7f162fa"
+  },
+  "experiments/simon_table1e/meanflow/utils/jax_fid/resize.py": {
+    "source": "meanflow/utils/jax_fid/resize.py",
+    "sha256": "6577e3961203e5d7af6050d4b0953b8a20eda86938845a9d5b006ad9a1ac3dd2"
+  },
+  "experiments/simon_table1e/meanflow/utils/jax_fid/utils.py": {
+    "source": "meanflow/utils/jax_fid/utils.py",
+    "sha256": "6062b9a79a2fc28e745f35a0b31599e8277f6afd08f350e9737d71561a30ef7a"
+  },
+  "experiments/simon_table1e/meanflow/utils/logging_util.py": {
+    "source": "meanflow/utils/logging_util.py",
+    "sha256": "ed13ca8f62cd1ef1b0ebc078ee25a378baf0053f780d8bc27bcf2c3acf3a224f"
+  },
+  "experiments/simon_table1e/meanflow/utils/sample_util.py": {
+    "source": "meanflow/utils/sample_util.py",
+    "sha256": "3b3cf7b9ec86528e4102302d78560d91af17921def74c1f0168ff67a3b371bc7"
+  },
+  "experiments/simon_table1e/meanflow/utils/state_util.py": {
+    "source": "meanflow/utils/state_util.py",
+    "sha256": "8d3c1882ee78116fdcc1c327e8d24e5033b14b5d2387ca37571d6add7c48ffbe"
+  },
+  "experiments/simon_table1e/meanflow/utils/vae_util.py": {
+    "source": "meanflow/utils/vae_util.py",
+    "sha256": "955622f00eaa642957a051f0f8280952e1b2c3d3d0de949cebbb6d6fbf73c6ea"
+  },
+  "experiments/simon_table1e/meanflow/utils/vis_util.py": {
+    "source": "meanflow/utils/vis_util.py",
+    "sha256": "e82e705835ea971dc58cd47d0ed6f221b613c4e10d6fda3a68c9d8ac24c61724"
+  },
+  "experiments/simon_table1e/meanflow/configs/table1e_p_0.0.yml": {
+    "source": "meanflow/configs/table1e_p_0.0.yml",
+    "sha256": "7c1b9c1907a5811e6dfdf6c8f99b6748a17b4560c6c1e1c830cad421a2a21051"
+  },
+  "experiments/simon_table1e/meanflow/configs/table1e_p_0.0_seed43.yml": {
+    "source": "meanflow/configs/table1e_p_0.0_seed43.yml",
+    "sha256": "a8efa1f450e3ee7d2741bc452470bcd7460c6c7dfac404107d7feee811abab38"
+  },
+  "experiments/simon_table1e/meanflow/configs/table1e_p_0.5.yml": {
+    "source": "meanflow/configs/table1e_p_0.5.yml",
+    "sha256": "197a97c48c5b7bd67150948005ece0e5ccaf2e0e7a31d32f55afad30b71aa15d"
+  },
+  "experiments/simon_table1e/meanflow/configs/table1e_p_0.5_seed43.yml": {
+    "source": "meanflow/configs/table1e_p_0.5_seed43.yml",
+    "sha256": "a23d355f2db66781ec99459ead79989967935b9b9286c870f71f1c2959d671fe"
+  },
+  "experiments/simon_table1e/meanflow/configs/table1e_p_1.0.yml": {
+    "source": "meanflow/configs/table1e_p_1.0.yml",
+    "sha256": "5f9085a24e7af7b15bc68a3b80492a4b02fa3494467b746bc52e8e0a132b0aa5"
+  },
+  "experiments/simon_table1e/meanflow/configs/table1e_p_1.0_seed43.yml": {
+    "source": "meanflow/configs/table1e_p_1.0_seed43.yml",
+    "sha256": "09ce974a03ff83969cce59836e7e2c0c4eb6338031fe60079b577b0a2cebb5f9"
+  },
+  "experiments/simon_table1e/meanflow/configs/table1e_p_1.5.yml": {
+    "source": "meanflow/configs/table1e_p_1.5.yml",
+    "sha256": "4ab1a109211e4df713a98854091507a5c74c250a9e63e5b44f4730c1eb6b2082"
+  },
+  "experiments/simon_table1e/meanflow/configs/table1e_p_1.5_seed43.yml": {
+    "source": "meanflow/configs/table1e_p_1.5_seed43.yml",
+    "sha256": "613424230f5e8d959ce6f33229e7ffcff477c5f00372caa4cd6921a201335409"
+  },
+  "experiments/simon_table1e/meanflow/configs/table1e_p_2.0.yml": {
+    "source": "meanflow/configs/table1e_p_2.0.yml",
+    "sha256": "c4a8b13dbcb9e5a7a3faadf41a036f03c007fcfd3901ea4500e99f0a6cb7032b"
+  },
+  "experiments/simon_table1e/meanflow/configs/table1e_p_2.0_seed43.yml": {
+    "source": "meanflow/configs/table1e_p_2.0_seed43.yml",
+    "sha256": "28cebccce3b96d285ae821a3167bf0a6419ac099017aea24c6899c64bc497b7d"
+  },
+  "experiments/simon_table1e/meanflow_table1e_runbook/README.md": {
+    "source": "meanflow_table1e_runbook/README.md",
+    "sha256": "b91d4b65ec16d5f2ccd1917e8d27390b2cd32bc1d0592add63a79e7e1fb71b8a"
+  },
+  "experiments/simon_table1e/meanflow_table1e_runbook/audit_run.py": {
+    "source": "meanflow_table1e_runbook/audit_run.py",
+    "sha256": "2f776ebe3261c7fced674f85ee845cbb4963c08a71ab049187219f4c5fe69e32"
+  },
+  "experiments/simon_table1e/meanflow_table1e_runbook/bundle-sha256.json": {
+    "source": "meanflow_table1e_runbook/bundle-sha256.json",
+    "sha256": "14f0b5166061f5c8798ba888d1412b11dc534dc2ef7b7926fde01e44a052ad65"
+  },
+  "experiments/simon_table1e/meanflow_table1e_runbook/collect_results.py": {
+    "source": "meanflow_table1e_runbook/collect_results.py",
+    "sha256": "18d0e68f18243e3cc8f8ee7b840c978ac20a0760a2f4510c379156a8b3082eb0"
+  },
+  "experiments/simon_table1e/meanflow_table1e_runbook/launch_all.py": {
+    "source": "meanflow_table1e_runbook/launch_all.py",
+    "sha256": "efeec0193cf979a86997c29adf4efe920c45abc86c6f5e8b83800fa7ddb48480"
+  },
+  "experiments/simon_table1e/meanflow_table1e_runbook/preflight.py": {
+    "source": "meanflow_table1e_runbook/preflight.py",
+    "sha256": "98f0e150245ab22ccdc28e9421e46c74293b6e0079c968231b24bc4ff614cb5b"
+  },
+  "experiments/simon_table1e/meanflow_table1e_runbook/run_arm.zsh": {
+    "source": "meanflow_table1e_runbook/run_arm.zsh",
+    "sha256": "549018fc3d210d64506f7f28711b8d358a3db4ed2b0565fbf4afba35ecf96d2d"
+  },
+  "experiments/simon_table1e/meanflow_table1e_runbook/status.py": {
+    "source": "meanflow_table1e_runbook/status.py",
+    "sha256": "95a557fc7a54c5abf540532c88a02efc64a67af1727d0e7af3b54876db17d5e5"
+  },
+  "experiments/simon_table1e/meanflow_table1e_runbook/test_recording.py": {
+    "source": "meanflow_table1e_runbook/test_recording.py",
+    "sha256": "716e8d850a6d5cb728fc60dfc90124b3635656d3d57db068e0fe2329484f39d0"
+  },
+  "experiments/simon_table1e/seed43_runbook/README.md": {
+    "source": "seed43_runbook/README.md",
+    "sha256": "139bd26073b70a3b5f3ddc3a4c91dcef6257e66d147ec134a7dc5918b4cce484"
+  },
+  "experiments/simon_table1e/seed43_runbook/repeat_all.py": {
+    "source": "seed43_runbook/repeat_all.py",
+    "sha256": "61e5ad52d1ded26d6ef690b8fbcbc27f5f80711d7933b207b377455a669a01ed"
+  },
+  "experiments/simon_table1e/seed43_runbook/run_seed43.py": {
+    "source": "seed43_runbook/run_seed43.py",
+    "sha256": "1c078553187a174b96307f804b6832e405ff4faf45f158da7dcc2250c7302e07"
+  },
+  "experiments/simon_table1e/provenance/reproducibility-manifest.json": {
+    "source": "provenance/reproducibility-manifest.json",
+    "sha256": "97e3c631e93320dc3148f758575f21a1d833b95b19e1d3b65e20816472344d8a"
+  },
+  "experiments/simon_table1e/provenance/full-run-source.tar.gz": {
+    "source": "provenance/full-run-source.tar.gz",
+    "sha256": "ed01399571f7817d0ab4e4f5ce13b866adf8341a4e311bbdc1e8946be02f4210"
+  },
+  "experiments/simon_table1e/provenance/full-run-gpu-compat.patch": {
+    "source": "provenance/full-run-gpu-compat.patch",
+    "sha256": "5dbc69b3e92ecf7c4ecec68edea1cbae9b164c9518541397f3846f5612c49e06"
+  },
+  "experiments/simon_table1e/provenance/git-sha.txt": {
+    "source": "provenance/git-sha.txt",
+    "sha256": "832e11aa335ae93c81db9ffa16d8034a0e79211c9859845bf8330b819f5619be"
+  },
+  "experiments/simon_table1e/provenance/git-branch.txt": {
+    "source": "provenance/git-branch.txt",
+    "sha256": "6403203dd5a0867eb14d104ee8a73730bd72dd9ad92e78d996a6dba0a5dcfc01"
+  },
+  "experiments/simon_table1e/provenance/git-status-current.txt": {
+    "source": "provenance/git-status-current.txt",
+    "sha256": "64fdb21b9eb20244afb54836f1a1b851d9cb093e1b8a5f758aa6140c5adb8d70"
+  },
+  "experiments/simon_table1e/provenance/fid-reference.json": {
+    "source": "provenance/fid-reference.json",
+    "sha256": "1b12838482f4639006230ccb56eab302179be9a832773b3fbac82ebb7ebac6a7"
+  },
+  "experiments/simon_table1e/provenance/vae-snapshot.json": {
+    "source": "provenance/vae-snapshot.json",
+    "sha256": "bed5984c6ef92b2e6d5198f6c0cb656841f65e007d708e55ca9f56b031066203"
+  },
+  "experiments/simon_table1e/provenance/vae-revision.txt": {
+    "source": "provenance/vae-revision.txt",
+    "sha256": "c976fcd048c0b07bae9309c8b16d5b0a56e9721c454a21a8d91b8f7265c262f5"
+  },
+  "experiments/simon_table1e/provenance/latent-cache-verification.json": {
+    "source": "provenance/latent-cache-verification.json",
+    "sha256": "68feb40889b555909b91041ed3b4bf509638eb0a797eedad2a2c5d329e0cee45"
+  },
+  "experiments/simon_table1e/provenance/latent-file-order.txt": {
+    "source": "provenance/latent-file-order.txt",
+    "sha256": "06f913986ef1ce1bc36c42f680d8535e0a35183629ef1376355a8a2176953405"
+  },
+  "experiments/simon_table1e/provenance/latent-preprocessing-start.txt": {
+    "source": "provenance/latent-preprocessing-start.txt",
+    "sha256": "2ccff15521779bb4961577d79a5632d6c928d0c1d764a01bbb7ae0f08de58299"
+  },
+  "experiments/simon_table1e/provenance/latent-preprocessing-end.txt": {
+    "source": "provenance/latent-preprocessing-end.txt",
+    "sha256": "3b2bf03b8186cc6c9461002b773a18fb05a1edbb3bd247900c8ec6267cee3066"
+  },
+  "experiments/simon_table1e/provenance/latent-preprocessing-exit-status.txt": {
+    "source": "provenance/latent-preprocessing-exit-status.txt",
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "experiments/simon_table1e/provenance/imagenet-image-count.txt": {
+    "source": "provenance/imagenet-image-count.txt",
+    "sha256": "bab681b2e75c4195e249af3ed7251610bfd4b79103cf261c729a1d49d522e65e"
+  },
+  "experiments/simon_table1e/provenance/imagenet-class-count.txt": {
+    "source": "provenance/imagenet-class-count.txt",
+    "sha256": "83c02ac2d48c863dab2ccf6870455aadfc2cec073b8db269b517c879d76aa6d9"
+  },
+  "experiments/simon_table1e/provenance/parallel-run-timing.json": {
+    "source": "provenance/parallel-run-timing.json",
+    "sha256": "ee51521568937e77322acfff65d9e712e02f726dfb2995bcf52566c8bb54c01f"
+  },
+  "experiments/simon_table1e/provenance/seed43-all-plan.json": {
+    "source": "provenance/seed43-all-plan.json",
+    "sha256": "604f993e02d3585a32246f8fe6ff5f43ae1740a15bc35c2786716eed8c69886a"
+  },
+  "experiments/simon_table1e/provenance/seed43-all-controller-summary.json": {
+    "source": "provenance/seed43-all-controller-summary.json",
+    "sha256": "63aaa2df37dbb69777a74eae3e433ad9a284ede76f3decb2b32643b5c896e8b5"
+  },
+  "experiments/simon_table1e/provenance/table1e-configs.json": {
+    "source": "provenance/table1e-configs.json",
+    "sha256": "2a585cb01b5903c1669db760a605280d7a8e4f813e7be103953cd2f0d0de949c"
+  },
+  "experiments/simon_table1e/provenance/ipc-workaround.json": {
+    "source": "provenance/ipc-workaround.json",
+    "sha256": "cfb34bd13fee39df72038e4c40081252cc9a041a3295203ef97db6f280d740cc"
+  },
+  "experiments/simon_table1e/provenance/prepare_latents.zsh": {
+    "source": "provenance/prepare_latents.zsh",
+    "sha256": "5a4012ff34f8389e41b1a2c0243d509db6b7863e476907ec87233914ed5e78aa"
+  },
+  "experiments/simon_table1e/provenance/install_training_deps.zsh": {
+    "source": "provenance/install_training_deps.zsh",
+    "sha256": "968ff7652243d46c99ec86e2b683641ca6ac475f61d73a45bacc5417fbb9a795"
+  },
+  "experiments/simon_table1e/provenance/training_compat.py": {
+    "source": "provenance/training_compat.py",
+    "sha256": "76627bdb73c5a06c824bdb0128a7995aa1d5b40da84928f0904dab5b26e1a2d6"
+  },
+  "experiments/simon_table1e/provenance/setup_table1e.py": {
+    "source": "provenance/setup_table1e.py",
+    "sha256": "93f48fb7931f107f5868b28c22ad34e6c06479dd8542437b538246db103ca901"
+  },
+  "experiments/simon_table1e/provenance/vae_smoke.py": {
+    "source": "provenance/vae_smoke.py",
+    "sha256": "0d12ea0fbe6c821cfb0fbf14f44fd56aa75ae20ba7cddfd41a012411a4650065"
+  },
+  "experiments/simon_table1e/provenance/p1_smoke.py": {
+    "source": "provenance/p1_smoke.py",
+    "sha256": "f7f0c981208b17a1b87969e4db272ef7eabca0d8ab1312f8ca923876579aa0fe"
+  },
+  "experiments/simon_table1e/provenance/run_smoke.zsh": {
+    "source": "provenance/run_smoke.zsh",
+    "sha256": "fcf4ff78a2cd2e258885ec3b7aa2fd2a024545823405aa7f14f87722ff29a35f"
+  },
+  "experiments/simon_table1e/provenance/run_smoke-before-ipc-fix.zsh": {
+    "source": "provenance/run_smoke-before-ipc-fix.zsh",
+    "sha256": "4cbbe7ead39a2ff3c35d95561e1c87da857dfce12920cd8b4411e2a9cf904f50"
+  },
+  "experiments/simon_table1e/environment/python-version.txt": {
+    "source": "provenance/python-version.txt",
+    "sha256": "5b3e43dc38ca01e3f5a7854ba50d4330864b0c1e0f646650b2c78cf072acc366"
+  },
+  "experiments/simon_table1e/environment/full-run-packages.txt": {
+    "source": "provenance/full-run-packages.txt",
+    "sha256": "37c683edbfcb9add1a5862050310d36ae76b1bfe6eaa7fc20dd3a7ff83247d38"
+  },
+  "experiments/simon_table1e/environment/preprocessing-packages.txt": {
+    "source": "provenance/preprocessing-packages.txt",
+    "sha256": "f26bfe979162b9029ccf25e3b66d6d5855445e8f1b298af3d6391e166d8a33f9"
+  },
+  "experiments/simon_table1e/environment/pre-training-freeze.txt": {
+    "source": "provenance/pre-training-freeze.txt",
+    "sha256": "f26bfe979162b9029ccf25e3b66d6d5855445e8f1b298af3d6391e166d8a33f9"
+  },
+  "experiments/simon_table1e/environment/jax-constraints.txt": {
+    "source": "provenance/jax-constraints.txt",
+    "sha256": "163653c94f25c72fa0b2ef61eea8e5828caf5b4e9b6f470fb322b8b5b568836d"
+  },
+  "experiments/simon_table1e/environment/jax-devices.txt": {
+    "source": "provenance/jax-devices.txt",
+    "sha256": "b220c699a91757077ce40520613667b2dd044cc5336a1b9bb5619b9e6182968e"
+  },
+  "experiments/simon_table1e/environment/training-packages.txt": {
+    "source": "provenance/training-packages.txt",
+    "sha256": "37c683edbfcb9add1a5862050310d36ae76b1bfe6eaa7fc20dd3a7ff83247d38"
+  },
+  "experiments/simon_table1e/runs/p_0.0/metrics.csv": {
+    "source": "runs/p_0.0/metrics.csv",
+    "sha256": "b00002f3ac8a47c9f000f724fb915175d3dc6804fc48cd969a2a73d6312368c2"
+  },
+  "experiments/simon_table1e/runs/p_0.0/fid.csv": {
+    "source": "runs/p_0.0/fid.csv",
+    "sha256": "512cccda35c39409884d48462d6a899be4e1fc3aae50856f9ae9dee202b7cc17"
+  },
+  "experiments/simon_table1e/runs/p_0.0/run-summary.json": {
+    "source": "runs/p_0.0/run-summary.json",
+    "sha256": "5f171503f4711d9c1a31f5d4184c6add33f69bd8f44cc7294bddad4c3ef280ea"
+  },
+  "experiments/simon_table1e/runs/p_0.0/effective-config.json": {
+    "source": "runs/p_0.0/effective-config.json",
+    "sha256": "06387160510226a0a3ec5fa38d5e257271b57f96969a22edb8ad89ca8a0cddd8"
+  },
+  "experiments/simon_table1e/runs/p_0.0/config.yml": {
+    "source": "runs/p_0.0/config.yml",
+    "sha256": "7c1b9c1907a5811e6dfdf6c8f99b6748a17b4560c6c1e1c830cad421a2a21051"
+  },
+  "experiments/simon_table1e/runs/p_0.0/command.json": {
+    "source": "runs/p_0.0/command.json",
+    "sha256": "e5ad0a3172ddbe408dae79c36bd4596aa7784d3f2351bf513956329f7ad7bd59"
+  },
+  "experiments/simon_table1e/runs/p_0.0/runtime.json": {
+    "source": "runs/p_0.0/runtime.json",
+    "sha256": "139f9c4d35657496ed9312ac2b03b4b8617c3a33a4624e6d32590f9e021ff41a"
+  },
+  "experiments/simon_table1e/runs/p_0.0/start.txt": {
+    "source": "runs/p_0.0/start.txt",
+    "sha256": "be4546da4c4f83e0363e597dd1e5565c9ebf556966bd3975fe24f17e94abd324"
+  },
+  "experiments/simon_table1e/runs/p_0.0/end.txt": {
+    "source": "runs/p_0.0/end.txt",
+    "sha256": "6440fbecefc349a458d28e756c89b5f265bf9a81040df41cb902c536a4b77905"
+  },
+  "experiments/simon_table1e/runs/p_0.0/exit-status.txt": {
+    "source": "runs/p_0.0/exit-status.txt",
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "experiments/simon_table1e/runs/p_0.0/final-checkpoint-files.json": {
+    "source": "runs/p_0.0/final-checkpoint-files.json",
+    "sha256": "22916c1150e369a687c4b3d5099c818cb7adafb053d1b373f484f3e372b1e22d"
+  },
+  "experiments/simon_table1e/runs/p_0.5/metrics.csv": {
+    "source": "runs/p_0.5/metrics.csv",
+    "sha256": "428963dae7db789051fa31023791975fdf09212848fd486b4f635fe44edcd8b7"
+  },
+  "experiments/simon_table1e/runs/p_0.5/fid.csv": {
+    "source": "runs/p_0.5/fid.csv",
+    "sha256": "8b10cbf636869d7b8954f609638f353be5616400b53efb4a4a033fbd5f58d996"
+  },
+  "experiments/simon_table1e/runs/p_0.5/run-summary.json": {
+    "source": "runs/p_0.5/run-summary.json",
+    "sha256": "63515d384f38d33633530a863aefa7bbc38107053269bab063b351ec2a72ff96"
+  },
+  "experiments/simon_table1e/runs/p_0.5/effective-config.json": {
+    "source": "runs/p_0.5/effective-config.json",
+    "sha256": "4dc05666ac7cc583a70d8c85f09ceca1dd886600f0f14f573904b275625e3f80"
+  },
+  "experiments/simon_table1e/runs/p_0.5/config.yml": {
+    "source": "runs/p_0.5/config.yml",
+    "sha256": "197a97c48c5b7bd67150948005ece0e5ccaf2e0e7a31d32f55afad30b71aa15d"
+  },
+  "experiments/simon_table1e/runs/p_0.5/command.json": {
+    "source": "runs/p_0.5/command.json",
+    "sha256": "e85fcca36822c3a722d8a481db3186b7abd2d7c3d35c4d33b756809cb70adf45"
+  },
+  "experiments/simon_table1e/runs/p_0.5/runtime.json": {
+    "source": "runs/p_0.5/runtime.json",
+    "sha256": "139f9c4d35657496ed9312ac2b03b4b8617c3a33a4624e6d32590f9e021ff41a"
+  },
+  "experiments/simon_table1e/runs/p_0.5/start.txt": {
+    "source": "runs/p_0.5/start.txt",
+    "sha256": "be4546da4c4f83e0363e597dd1e5565c9ebf556966bd3975fe24f17e94abd324"
+  },
+  "experiments/simon_table1e/runs/p_0.5/end.txt": {
+    "source": "runs/p_0.5/end.txt",
+    "sha256": "a7a5315e01ea35d865b03841a192841f827a11d0b4645fbbfe47a2acc0e77393"
+  },
+  "experiments/simon_table1e/runs/p_0.5/exit-status.txt": {
+    "source": "runs/p_0.5/exit-status.txt",
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "experiments/simon_table1e/runs/p_0.5/final-checkpoint-files.json": {
+    "source": "runs/p_0.5/final-checkpoint-files.json",
+    "sha256": "0df4c6646ed6d92c967db9b6b24437e944631f489d36356d3fa4633925b35053"
+  },
+  "experiments/simon_table1e/runs/p_1.0/metrics.csv": {
+    "source": "runs/p_1.0/metrics.csv",
+    "sha256": "1ab90dff32d0b1669ea6c407fffcbe2cb371b74f10ec6b3a1dc5062ba30d16b8"
+  },
+  "experiments/simon_table1e/runs/p_1.0/fid.csv": {
+    "source": "runs/p_1.0/fid.csv",
+    "sha256": "34e9c10da0a6aad085a2994183d77f7f5589ae5650b3032f67bb4649991e0e59"
+  },
+  "experiments/simon_table1e/runs/p_1.0/run-summary.json": {
+    "source": "runs/p_1.0/run-summary.json",
+    "sha256": "92ea3fdf5792ff39c4fd69137396e8e9641c016a605edb20d885c4c76a76f27a"
+  },
+  "experiments/simon_table1e/runs/p_1.0/effective-config.json": {
+    "source": "runs/p_1.0/effective-config.json",
+    "sha256": "d82fb7d1dd657da0de8da07c1e4413eed5238f5331d7611166e4f8b7e05e1ad7"
+  },
+  "experiments/simon_table1e/runs/p_1.0/config.yml": {
+    "source": "runs/p_1.0/config.yml",
+    "sha256": "5f9085a24e7af7b15bc68a3b80492a4b02fa3494467b746bc52e8e0a132b0aa5"
+  },
+  "experiments/simon_table1e/runs/p_1.0/command.json": {
+    "source": "runs/p_1.0/command.json",
+    "sha256": "8a02db1dc8c9efd4222e39106cd6f59ca71b4e9fd9c7bb6c3d12d5f72a14ca8e"
+  },
+  "experiments/simon_table1e/runs/p_1.0/runtime.json": {
+    "source": "runs/p_1.0/runtime.json",
+    "sha256": "139f9c4d35657496ed9312ac2b03b4b8617c3a33a4624e6d32590f9e021ff41a"
+  },
+  "experiments/simon_table1e/runs/p_1.0/start.txt": {
+    "source": "runs/p_1.0/start.txt",
+    "sha256": "be4546da4c4f83e0363e597dd1e5565c9ebf556966bd3975fe24f17e94abd324"
+  },
+  "experiments/simon_table1e/runs/p_1.0/end.txt": {
+    "source": "runs/p_1.0/end.txt",
+    "sha256": "be9aa942f91ddd6b8ea8ac22d4657e0b61b74014a1d7fa9afa51c56a759caa7c"
+  },
+  "experiments/simon_table1e/runs/p_1.0/exit-status.txt": {
+    "source": "runs/p_1.0/exit-status.txt",
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "experiments/simon_table1e/runs/p_1.0/final-checkpoint-files.json": {
+    "source": "runs/p_1.0/final-checkpoint-files.json",
+    "sha256": "a217b028d9bb1e3741646e143e07ed484058b71d4fcd5ee42415aac376d79d64"
+  },
+  "experiments/simon_table1e/runs/p_1.5/metrics.csv": {
+    "source": "runs/p_1.5/metrics.csv",
+    "sha256": "1e56ef907ec7fe5f28f37efa6c1ea3017ca662efc1206446953cac24e7907cc0"
+  },
+  "experiments/simon_table1e/runs/p_1.5/fid.csv": {
+    "source": "runs/p_1.5/fid.csv",
+    "sha256": "bf054a7c2e56114f0b8f84300ddabc46fb6e835a25ed19be9753bb609efcb003"
+  },
+  "experiments/simon_table1e/runs/p_1.5/run-summary.json": {
+    "source": "runs/p_1.5/run-summary.json",
+    "sha256": "04c52d686793b0a881dd69092e5558973f98ae27fecbdb127d06ea822129c7d7"
+  },
+  "experiments/simon_table1e/runs/p_1.5/effective-config.json": {
+    "source": "runs/p_1.5/effective-config.json",
+    "sha256": "1df202db4f4a985daeda2815af6545ef6792e3b8eed541508d2f818c8988c2c4"
+  },
+  "experiments/simon_table1e/runs/p_1.5/config.yml": {
+    "source": "runs/p_1.5/config.yml",
+    "sha256": "4ab1a109211e4df713a98854091507a5c74c250a9e63e5b44f4730c1eb6b2082"
+  },
+  "experiments/simon_table1e/runs/p_1.5/command.json": {
+    "source": "runs/p_1.5/command.json",
+    "sha256": "821cde725d71254957b05badf84eaafd13bce99780cf9b904881d1ca8d90897b"
+  },
+  "experiments/simon_table1e/runs/p_1.5/runtime.json": {
+    "source": "runs/p_1.5/runtime.json",
+    "sha256": "139f9c4d35657496ed9312ac2b03b4b8617c3a33a4624e6d32590f9e021ff41a"
+  },
+  "experiments/simon_table1e/runs/p_1.5/start.txt": {
+    "source": "runs/p_1.5/start.txt",
+    "sha256": "be4546da4c4f83e0363e597dd1e5565c9ebf556966bd3975fe24f17e94abd324"
+  },
+  "experiments/simon_table1e/runs/p_1.5/end.txt": {
+    "source": "runs/p_1.5/end.txt",
+    "sha256": "69c874d6f5a6700eda67c8df3a5e504d3dbed3d1eab6ae9c2af48d47498504cb"
+  },
+  "experiments/simon_table1e/runs/p_1.5/exit-status.txt": {
+    "source": "runs/p_1.5/exit-status.txt",
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "experiments/simon_table1e/runs/p_1.5/final-checkpoint-files.json": {
+    "source": "runs/p_1.5/final-checkpoint-files.json",
+    "sha256": "6d2c0f199b5a789ee311861032182ed51800599dc2b245594229f263870a661d"
+  },
+  "experiments/simon_table1e/runs/p_2.0/metrics.csv": {
+    "source": "runs/p_2.0/metrics.csv",
+    "sha256": "207afbef2afee3c14d928a04f6a4f3783a1ba71d8d7ea4c61dc85b6b49a5c485"
+  },
+  "experiments/simon_table1e/runs/p_2.0/fid.csv": {
+    "source": "runs/p_2.0/fid.csv",
+    "sha256": "546149d0ad96456972b78d53c95c875f273187f27be4413245926dee6ed68272"
+  },
+  "experiments/simon_table1e/runs/p_2.0/run-summary.json": {
+    "source": "runs/p_2.0/run-summary.json",
+    "sha256": "2c6ade92f50978fb50453222f8cf58b14d8d79b30c4a5eb9594f57f5de395ce8"
+  },
+  "experiments/simon_table1e/runs/p_2.0/effective-config.json": {
+    "source": "runs/p_2.0/effective-config.json",
+    "sha256": "59be02571caa0b352f802816d166c5fbf9e16d15d11982d835a83d994cb5d5c1"
+  },
+  "experiments/simon_table1e/runs/p_2.0/config.yml": {
+    "source": "runs/p_2.0/config.yml",
+    "sha256": "c4a8b13dbcb9e5a7a3faadf41a036f03c007fcfd3901ea4500e99f0a6cb7032b"
+  },
+  "experiments/simon_table1e/runs/p_2.0/command.json": {
+    "source": "runs/p_2.0/command.json",
+    "sha256": "2ffbe9ffedb917a3567a26507fd6f86354b09729754581d351fd55d1b185f7cf"
+  },
+  "experiments/simon_table1e/runs/p_2.0/runtime.json": {
+    "source": "runs/p_2.0/runtime.json",
+    "sha256": "139f9c4d35657496ed9312ac2b03b4b8617c3a33a4624e6d32590f9e021ff41a"
+  },
+  "experiments/simon_table1e/runs/p_2.0/start.txt": {
+    "source": "runs/p_2.0/start.txt",
+    "sha256": "be4546da4c4f83e0363e597dd1e5565c9ebf556966bd3975fe24f17e94abd324"
+  },
+  "experiments/simon_table1e/runs/p_2.0/end.txt": {
+    "source": "runs/p_2.0/end.txt",
+    "sha256": "17f0eebbcc23bd8f34346fcba48c4c67f7367c250f3a1d2586cd2c7d7054139f"
+  },
+  "experiments/simon_table1e/runs/p_2.0/exit-status.txt": {
+    "source": "runs/p_2.0/exit-status.txt",
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "experiments/simon_table1e/runs/p_2.0/final-checkpoint-files.json": {
+    "source": "runs/p_2.0/final-checkpoint-files.json",
+    "sha256": "ae8c592cbe3b77f8fea7f6edb3f9476cc38f5ccc7c25210c912c2ac0e440e638"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.0_seed43/metrics.csv": {
+    "source": "runs/diagnostic_p_0.0_seed43/metrics.csv",
+    "sha256": "3cd4ea90a9dc2342af2c9abc99a5d663a35ef64b25059caa454d4314998597b7"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.0_seed43/fid.csv": {
+    "source": "runs/diagnostic_p_0.0_seed43/fid.csv",
+    "sha256": "907f8dde9dc623fa13d477c4aad6380862db2c8a74f7440eb6f6cf97ad225526"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.0_seed43/run-summary.json": {
+    "source": "runs/diagnostic_p_0.0_seed43/run-summary.json",
+    "sha256": "dced1a18f6209847662f8b6701a0fcb11298acd599fdac1a72fffc81a33f8bcb"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.0_seed43/effective-config.json": {
+    "source": "runs/diagnostic_p_0.0_seed43/effective-config.json",
+    "sha256": "6cc7efd54980511a74df76eac2fc6fd068d80d435daa0642da089dc784fc38c8"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.0_seed43/config.yml": {
+    "source": "runs/diagnostic_p_0.0_seed43/config.yml",
+    "sha256": "a8efa1f450e3ee7d2741bc452470bcd7460c6c7dfac404107d7feee811abab38"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.0_seed43/command.json": {
+    "source": "runs/diagnostic_p_0.0_seed43/command.json",
+    "sha256": "5603660fc1303ddf5fe73eb331a0f9be8df58fa799820d9bf42d73b6f29e2e40"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.0_seed43/runtime.json": {
+    "source": "runs/diagnostic_p_0.0_seed43/runtime.json",
+    "sha256": "139f9c4d35657496ed9312ac2b03b4b8617c3a33a4624e6d32590f9e021ff41a"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.0_seed43/packages.txt": {
+    "source": "runs/diagnostic_p_0.0_seed43/packages.txt",
+    "sha256": "37c683edbfcb9add1a5862050310d36ae76b1bfe6eaa7fc20dd3a7ff83247d38"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.0_seed43/start.txt": {
+    "source": "runs/diagnostic_p_0.0_seed43/start.txt",
+    "sha256": "900f7f533fb8b1437fb215f91f6a1038bb299c2eebb14943ec4fa208d7a713c9"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.0_seed43/end.txt": {
+    "source": "runs/diagnostic_p_0.0_seed43/end.txt",
+    "sha256": "b2c827364fb1839cc99c2ed1e0c2b62c2ef98981c5a098d5d9c69455b32ddd28"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.0_seed43/exit-status.txt": {
+    "source": "runs/diagnostic_p_0.0_seed43/exit-status.txt",
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.0_seed43/final-checkpoint-files.json": {
+    "source": "runs/diagnostic_p_0.0_seed43/final-checkpoint-files.json",
+    "sha256": "de332c6329a3e4e514522ea7fd975de53ab90f11290955944b35bfcc1e7d7b88"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.0_seed43/seed-check-provenance.json": {
+    "source": "runs/diagnostic_p_0.0_seed43/seed-check-provenance.json",
+    "sha256": "f499d84e699c1b00e7428706a98ce6fa2a7744eb420884250272e0df214d8765"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.0_seed43/launcher.py": {
+    "source": "runs/diagnostic_p_0.0_seed43/launcher.py",
+    "sha256": "1c078553187a174b96307f804b6832e405ff4faf45f158da7dcc2250c7302e07"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.0_seed43/guarded-recording-entrypoint.py": {
+    "source": "runs/diagnostic_p_0.0_seed43/guarded-recording-entrypoint.py",
+    "sha256": "95416f63707be36dfaa6355d6972b49ef35420c8388c1e88419c32a27555fca6"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.5_seed43/metrics.csv": {
+    "source": "runs/diagnostic_p_0.5_seed43/metrics.csv",
+    "sha256": "49291c3d463ac36ce515a61310b32a73a2588ebd9bc0e4ca9a7d7702ea7c032c"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.5_seed43/fid.csv": {
+    "source": "runs/diagnostic_p_0.5_seed43/fid.csv",
+    "sha256": "15482467212e2405f58e3a70a6c82cec19df21fbfd3188853186642032e0cd54"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.5_seed43/run-summary.json": {
+    "source": "runs/diagnostic_p_0.5_seed43/run-summary.json",
+    "sha256": "f6e81966d0c0ec7d9165ac30a1fc90329c4b7db6ac6e8feb0a70975c87cc05ed"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.5_seed43/effective-config.json": {
+    "source": "runs/diagnostic_p_0.5_seed43/effective-config.json",
+    "sha256": "dff996bfc520a92a38559a6c3d5fe617ce8a3053fa912520722765ab67da84fe"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.5_seed43/config.yml": {
+    "source": "runs/diagnostic_p_0.5_seed43/config.yml",
+    "sha256": "a23d355f2db66781ec99459ead79989967935b9b9286c870f71f1c2959d671fe"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.5_seed43/command.json": {
+    "source": "runs/diagnostic_p_0.5_seed43/command.json",
+    "sha256": "0f194cb7996c91898d5216fb307ff0df5db69c1bd460fd9dbf7556bc49318a59"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.5_seed43/runtime.json": {
+    "source": "runs/diagnostic_p_0.5_seed43/runtime.json",
+    "sha256": "139f9c4d35657496ed9312ac2b03b4b8617c3a33a4624e6d32590f9e021ff41a"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.5_seed43/packages.txt": {
+    "source": "runs/diagnostic_p_0.5_seed43/packages.txt",
+    "sha256": "37c683edbfcb9add1a5862050310d36ae76b1bfe6eaa7fc20dd3a7ff83247d38"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.5_seed43/start.txt": {
+    "source": "runs/diagnostic_p_0.5_seed43/start.txt",
+    "sha256": "a52fb03ecce84ce732afbd3794d4f951c8a792eda80af5cd16d8df97064fc1ec"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.5_seed43/end.txt": {
+    "source": "runs/diagnostic_p_0.5_seed43/end.txt",
+    "sha256": "f12b4f989c1a674622f298a1946627245d677d612c6fa56ffd406d783b44371e"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.5_seed43/exit-status.txt": {
+    "source": "runs/diagnostic_p_0.5_seed43/exit-status.txt",
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.5_seed43/final-checkpoint-files.json": {
+    "source": "runs/diagnostic_p_0.5_seed43/final-checkpoint-files.json",
+    "sha256": "cc887948718ae39535922f96766ffee87a9192bfd9889098cbb37f069002cf8e"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.5_seed43/seed-check-provenance.json": {
+    "source": "runs/diagnostic_p_0.5_seed43/seed-check-provenance.json",
+    "sha256": "3f87ac2dd75547c854e642cdb754c4e4298229e3977a0f84594e6d6f4f4a3b30"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.5_seed43/launcher.py": {
+    "source": "runs/diagnostic_p_0.5_seed43/launcher.py",
+    "sha256": "1c078553187a174b96307f804b6832e405ff4faf45f158da7dcc2250c7302e07"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_0.5_seed43/guarded-recording-entrypoint.py": {
+    "source": "runs/diagnostic_p_0.5_seed43/guarded-recording-entrypoint.py",
+    "sha256": "95416f63707be36dfaa6355d6972b49ef35420c8388c1e88419c32a27555fca6"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.0_seed43/metrics.csv": {
+    "source": "runs/diagnostic_p_1.0_seed43/metrics.csv",
+    "sha256": "aae449cc854ecee2d1806ec2190767219ea8e3d767c1dae3ffb17aab41a3ef09"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.0_seed43/fid.csv": {
+    "source": "runs/diagnostic_p_1.0_seed43/fid.csv",
+    "sha256": "34fd24131da95cf6269f854cb533e7b22e5500b053c4073964e10cbc4237598b"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.0_seed43/run-summary.json": {
+    "source": "runs/diagnostic_p_1.0_seed43/run-summary.json",
+    "sha256": "12fcc36d08cc71f5685a5f76caf60065b7ab41329564cff558b0af51996ffd8f"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.0_seed43/effective-config.json": {
+    "source": "runs/diagnostic_p_1.0_seed43/effective-config.json",
+    "sha256": "2688a5baf6ea2ae8cf87a79c9c0d5be284273ce215390529f5b600e3fdff34c5"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.0_seed43/config.yml": {
+    "source": "runs/diagnostic_p_1.0_seed43/config.yml",
+    "sha256": "09ce974a03ff83969cce59836e7e2c0c4eb6338031fe60079b577b0a2cebb5f9"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.0_seed43/command.json": {
+    "source": "runs/diagnostic_p_1.0_seed43/command.json",
+    "sha256": "2867d15495fa88cc40599b3dddcb81e6bf42b4f6992b67f484a8911fb1f8a63f"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.0_seed43/runtime.json": {
+    "source": "runs/diagnostic_p_1.0_seed43/runtime.json",
+    "sha256": "139f9c4d35657496ed9312ac2b03b4b8617c3a33a4624e6d32590f9e021ff41a"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.0_seed43/packages.txt": {
+    "source": "runs/diagnostic_p_1.0_seed43/packages.txt",
+    "sha256": "37c683edbfcb9add1a5862050310d36ae76b1bfe6eaa7fc20dd3a7ff83247d38"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.0_seed43/start.txt": {
+    "source": "runs/diagnostic_p_1.0_seed43/start.txt",
+    "sha256": "bcffcf87ebac345999bb11a3fc908a9842181f0ba911a2f12b2d48cd8a7e9a22"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.0_seed43/end.txt": {
+    "source": "runs/diagnostic_p_1.0_seed43/end.txt",
+    "sha256": "37e70f6b1c92d3472a391828014ffe244be430f004936ce7b29123999aa995a9"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.0_seed43/exit-status.txt": {
+    "source": "runs/diagnostic_p_1.0_seed43/exit-status.txt",
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.0_seed43/final-checkpoint-files.json": {
+    "source": "runs/diagnostic_p_1.0_seed43/final-checkpoint-files.json",
+    "sha256": "523adce15dc2147dad0607f7d696b1e52030677076d4198250c187dc3de01819"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.0_seed43/seed-check-provenance.json": {
+    "source": "runs/diagnostic_p_1.0_seed43/seed-check-provenance.json",
+    "sha256": "5a60746d70f2f936c63470890cd7aad265876fcbb3c9f146a7a6942fc62bd0df"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.0_seed43/launcher.py": {
+    "source": "runs/diagnostic_p_1.0_seed43/launcher.py",
+    "sha256": "1c078553187a174b96307f804b6832e405ff4faf45f158da7dcc2250c7302e07"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.0_seed43/guarded-recording-entrypoint.py": {
+    "source": "runs/diagnostic_p_1.0_seed43/guarded-recording-entrypoint.py",
+    "sha256": "95416f63707be36dfaa6355d6972b49ef35420c8388c1e88419c32a27555fca6"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.5_seed43/metrics.csv": {
+    "source": "runs/diagnostic_p_1.5_seed43/metrics.csv",
+    "sha256": "23dce42d55f74341d0968b63c3c95c1d9a8e4c7c5cb02c1560885c41aaf9c9e8"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.5_seed43/fid.csv": {
+    "source": "runs/diagnostic_p_1.5_seed43/fid.csv",
+    "sha256": "bb1597dd2d056568a69f28072a810d47ad4c2bea3a59491e80d3c2c992fc3ab6"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.5_seed43/run-summary.json": {
+    "source": "runs/diagnostic_p_1.5_seed43/run-summary.json",
+    "sha256": "2ff37a93ad6a5d260b28a9eaa8399e91a4073cd4914199a946b7909b7063dd23"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.5_seed43/effective-config.json": {
+    "source": "runs/diagnostic_p_1.5_seed43/effective-config.json",
+    "sha256": "603a43d7bfb6f558ea5df658b38acc992b2d2061de0df8b6363a0c8479b4a34d"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.5_seed43/config.yml": {
+    "source": "runs/diagnostic_p_1.5_seed43/config.yml",
+    "sha256": "613424230f5e8d959ce6f33229e7ffcff477c5f00372caa4cd6921a201335409"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.5_seed43/command.json": {
+    "source": "runs/diagnostic_p_1.5_seed43/command.json",
+    "sha256": "88ac410f2c30ac180da7b2383581e94502d28b2262dd802d6eefc5e2b6a18a0a"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.5_seed43/runtime.json": {
+    "source": "runs/diagnostic_p_1.5_seed43/runtime.json",
+    "sha256": "139f9c4d35657496ed9312ac2b03b4b8617c3a33a4624e6d32590f9e021ff41a"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.5_seed43/packages.txt": {
+    "source": "runs/diagnostic_p_1.5_seed43/packages.txt",
+    "sha256": "37c683edbfcb9add1a5862050310d36ae76b1bfe6eaa7fc20dd3a7ff83247d38"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.5_seed43/start.txt": {
+    "source": "runs/diagnostic_p_1.5_seed43/start.txt",
+    "sha256": "4b9b7e80147571fa99d94be3be1e9d090367278a0387a795c96cd71b48e621bc"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.5_seed43/end.txt": {
+    "source": "runs/diagnostic_p_1.5_seed43/end.txt",
+    "sha256": "e39bb6a9d8ffc2ae6ba4a2c7f73dfe57b6b2c669ca09e77fa003fc4355cebb27"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.5_seed43/exit-status.txt": {
+    "source": "runs/diagnostic_p_1.5_seed43/exit-status.txt",
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.5_seed43/final-checkpoint-files.json": {
+    "source": "runs/diagnostic_p_1.5_seed43/final-checkpoint-files.json",
+    "sha256": "3ffe039fa6cec274d5de90f943fb7a65dccef6a86fb9732cb59f27b5b0349cec"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.5_seed43/seed-check-provenance.json": {
+    "source": "runs/diagnostic_p_1.5_seed43/seed-check-provenance.json",
+    "sha256": "f5431691067abc8fe333bfba88edffcdadd230c0a7ac63e0dec8094c11f49489"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.5_seed43/launcher.py": {
+    "source": "runs/diagnostic_p_1.5_seed43/launcher.py",
+    "sha256": "1c078553187a174b96307f804b6832e405ff4faf45f158da7dcc2250c7302e07"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_1.5_seed43/guarded-recording-entrypoint.py": {
+    "source": "runs/diagnostic_p_1.5_seed43/guarded-recording-entrypoint.py",
+    "sha256": "95416f63707be36dfaa6355d6972b49ef35420c8388c1e88419c32a27555fca6"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_2.0_seed43/metrics.csv": {
+    "source": "runs/diagnostic_p_2.0_seed43/metrics.csv",
+    "sha256": "6c65e1308dafac6114dd55bd856858bc01e2d676db0ebaa405e757c759e5f28e"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_2.0_seed43/fid.csv": {
+    "source": "runs/diagnostic_p_2.0_seed43/fid.csv",
+    "sha256": "c20f5d0fce1e509ea149054afa11f1c262e0b37abd8a1c8f7bab4360cb0b43ca"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_2.0_seed43/run-summary.json": {
+    "source": "runs/diagnostic_p_2.0_seed43/run-summary.json",
+    "sha256": "0fcc6f5b607b5b173185ef2ba87d68029f2c945dad29537964ae6c7b63f998cb"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_2.0_seed43/effective-config.json": {
+    "source": "runs/diagnostic_p_2.0_seed43/effective-config.json",
+    "sha256": "3a9acb8d08b697c9343f87142dec34616274d4c4139a979b78ae85eddb2d85d7"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_2.0_seed43/config.yml": {
+    "source": "runs/diagnostic_p_2.0_seed43/config.yml",
+    "sha256": "28cebccce3b96d285ae821a3167bf0a6419ac099017aea24c6899c64bc497b7d"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_2.0_seed43/command.json": {
+    "source": "runs/diagnostic_p_2.0_seed43/command.json",
+    "sha256": "3017ffcbba73584b31ad037cf74a1fac9a836dcefdfdef1f2c52475e7e28a958"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_2.0_seed43/runtime.json": {
+    "source": "runs/diagnostic_p_2.0_seed43/runtime.json",
+    "sha256": "139f9c4d35657496ed9312ac2b03b4b8617c3a33a4624e6d32590f9e021ff41a"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_2.0_seed43/packages.txt": {
+    "source": "runs/diagnostic_p_2.0_seed43/packages.txt",
+    "sha256": "37c683edbfcb9add1a5862050310d36ae76b1bfe6eaa7fc20dd3a7ff83247d38"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_2.0_seed43/start.txt": {
+    "source": "runs/diagnostic_p_2.0_seed43/start.txt",
+    "sha256": "298ee4e61d363818b30bdd80806d2b45ac20223073a518c230dad6e561523f12"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_2.0_seed43/end.txt": {
+    "source": "runs/diagnostic_p_2.0_seed43/end.txt",
+    "sha256": "756e0f5f8a8aa3e9b80d938b2d2f70538960d07ad383c6fde753c24bc1f1974c"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_2.0_seed43/exit-status.txt": {
+    "source": "runs/diagnostic_p_2.0_seed43/exit-status.txt",
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_2.0_seed43/final-checkpoint-files.json": {
+    "source": "runs/diagnostic_p_2.0_seed43/final-checkpoint-files.json",
+    "sha256": "5b2fd7b8d251d40695a94ac808d77d71b6106d249cb0ed7eda66c5a0b90e29e5"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_2.0_seed43/seed-check-provenance.json": {
+    "source": "runs/diagnostic_p_2.0_seed43/seed-check-provenance.json",
+    "sha256": "742b46af4dda92d99dbf56dc31969d96f481059162ae9227d096d188fd1eaa61"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_2.0_seed43/launcher.py": {
+    "source": "runs/diagnostic_p_2.0_seed43/launcher.py",
+    "sha256": "1c078553187a174b96307f804b6832e405ff4faf45f158da7dcc2250c7302e07"
+  },
+  "experiments/simon_table1e/runs/diagnostic_p_2.0_seed43/guarded-recording-entrypoint.py": {
+    "source": "runs/diagnostic_p_2.0_seed43/guarded-recording-entrypoint.py",
+    "sha256": "95416f63707be36dfaa6355d6972b49ef35420c8388c1e88419c32a27555fca6"
+  }
+}

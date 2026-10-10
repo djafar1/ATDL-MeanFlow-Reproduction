@@ -1,0 +1,8 @@
+{
+  "repo_id": "pcuenq/sd-vae-ft-mse-flax",
+  "revision": "7581b0a0489cc8483c876a728b830b9ce087cf03",
+  "sha256": {
+    "config.json": "7fa2c4918328827323b6c95caa5d0918363916c7a736eec2c6c6ec6316fb4579",
+    "diffusion_flax_model.msgpack": "4f45517affbc93f169d2f5022c6c7d6c7912477f571e8011ddddeca115001562"
+  }
+}

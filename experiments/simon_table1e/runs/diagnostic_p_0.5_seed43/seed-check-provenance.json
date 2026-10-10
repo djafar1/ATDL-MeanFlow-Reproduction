@@ -1,0 +1,122 @@
+{
+  "checked_utc": "2026-10-05T16:37:18.310764+00:00",
+  "purpose": "Second training seed for every loss exponent.",
+  "selection_reason": "Post hoc repetition of all five p values after inspecting the seed-42 results.",
+  "only_experimental_change": {
+    "training.seed": {
+      "original": 42,
+      "additional": 43
+    }
+  },
+  "p": 0.5,
+  "training_seed": 43,
+  "sampling_seed": 0,
+  "from_scratch": true,
+  "resume_from_primary": false,
+  "primary_FID_epoch80": 64.60214722548977,
+  "primary_directory": "/work/meanflow-table1e/runs/p_0.5",
+  "output_directory": "/work/meanflow-table1e/runs/diagnostic_p_0.5_seed43",
+  "git_sha": "d70cb55d298ee03c53bf6da67bec281082e4e2d9",
+  "source_patch_sha256": "5dbc69b3e92ecf7c4ecec68edea1cbae9b164c9518541397f3846f5612c49e06",
+  "primary_manifest_sha256": "97e3c631e93320dc3148f758575f21a1d833b95b19e1d3b65e20816472344d8a",
+  "same_physical_gpu_uuid": "GPU-b887cdf4-f601-f229-6cb6-d67867be093a",
+  "physical_gpu_index": 2,
+  "gpu_name": "NVIDIA B200",
+  "gpu_vram": "183359 MiB",
+  "driver_version": "610.57.04",
+  "global_batch_size": 256,
+  "per_device_batch_size": 256,
+  "number_of_GPUs": 1,
+  "expected_effective_config": {
+    "dataset": {
+      "cache": false,
+      "image_channels": 4,
+      "image_size": 32,
+      "name": "imgnet_latent",
+      "num_classes": 1000,
+      "num_workers": 4,
+      "pin_memory": false,
+      "prefetch_factor": 2,
+      "root": "/work/meanflow-table1e/data/imagenet256_latents",
+      "vae": "mse"
+    },
+    "eval_only": false,
+    "fid": {
+      "cache_ref": "/work/meanflow-table1e/data/fid/imagenet256_authors_ref.npz",
+      "device_batch_size": 20,
+      "num_samples": 50000,
+      "on_training": true
+    },
+    "load_from": null,
+    "method": {
+      "P_mean": -0.4,
+      "P_std": 1.0,
+      "class_dropout_prob": 0.1,
+      "data_proportion": 0.75,
+      "guidance_eq": "none",
+      "kappa": 0.5,
+      "noise_dist": "logit_normal",
+      "norm_eps": 0.01,
+      "norm_p": 0.5,
+      "omega": 1.0,
+      "t_end": 1.0,
+      "t_start": 0.0
+    },
+    "model": {
+      "cls": "DiT_B_4"
+    },
+    "sampling": {
+      "num_classes": 1000,
+      "num_steps": 1,
+      "sampling_timesteps": null,
+      "schedule": "default",
+      "seed": 0
+    },
+    "training": {
+      "adam_b2": 0.95,
+      "batch_size": 256,
+      "checkpoint_per_epoch": 10,
+      "ema_type": "const",
+      "ema_val": 0.9999,
+      "fid_per_epoch": 10,
+      "half_precision": false,
+      "learning_rate": 0.0001,
+      "log_per_step": 100,
+      "num_epochs": 80,
+      "sample_on_training": true,
+      "sample_per_epoch": 10,
+      "seed": 43
+    }
+  },
+  "primary_files_to_preserve_sha256": {
+    "/work/meanflow-table1e/results/table1e.csv": "e76972f3d2470213bd41b73bacfc47254904920881fa2d20799ef04d08986c6a",
+    "/work/meanflow-table1e/results/report-summary.json": "6adf777e6e3814e8955cb895e20cf910cd2485d62317feeef3b360a3564e3c6c",
+    "/work/meanflow-table1e/provenance/reproducibility-manifest.json": "97e3c631e93320dc3148f758575f21a1d833b95b19e1d3b65e20816472344d8a",
+    "/work/meanflow-table1e/provenance/final-controller.log": "0ed8bfa103da1eff1cf47d21e8487800df6752438f80e616d6a3e17b7fce1ee1",
+    "/work/meanflow-table1e/runs/p_0.0/run-summary.json": "5f171503f4711d9c1a31f5d4184c6add33f69bd8f44cc7294bddad4c3ef280ea",
+    "/work/meanflow-table1e/runs/p_0.0/effective-config.json": "06387160510226a0a3ec5fa38d5e257271b57f96969a22edb8ad89ca8a0cddd8",
+    "/work/meanflow-table1e/runs/p_0.0/fid.csv": "512cccda35c39409884d48462d6a899be4e1fc3aae50856f9ae9dee202b7cc17",
+    "/work/meanflow-table1e/runs/p_0.0/final-checkpoint-files.json": "22916c1150e369a687c4b3d5099c818cb7adafb053d1b373f484f3e372b1e22d",
+    "/work/meanflow-table1e/runs/p_0.5/run-summary.json": "63515d384f38d33633530a863aefa7bbc38107053269bab063b351ec2a72ff96",
+    "/work/meanflow-table1e/runs/p_0.5/effective-config.json": "4dc05666ac7cc583a70d8c85f09ceca1dd886600f0f14f573904b275625e3f80",
+    "/work/meanflow-table1e/runs/p_0.5/fid.csv": "8b10cbf636869d7b8954f609638f353be5616400b53efb4a4a033fbd5f58d996",
+    "/work/meanflow-table1e/runs/p_0.5/final-checkpoint-files.json": "0df4c6646ed6d92c967db9b6b24437e944631f489d36356d3fa4633925b35053",
+    "/work/meanflow-table1e/runs/p_1.0/run-summary.json": "92ea3fdf5792ff39c4fd69137396e8e9641c016a605edb20d885c4c76a76f27a",
+    "/work/meanflow-table1e/runs/p_1.0/effective-config.json": "d82fb7d1dd657da0de8da07c1e4413eed5238f5331d7611166e4f8b7e05e1ad7",
+    "/work/meanflow-table1e/runs/p_1.0/fid.csv": "34e9c10da0a6aad085a2994183d77f7f5589ae5650b3032f67bb4649991e0e59",
+    "/work/meanflow-table1e/runs/p_1.0/final-checkpoint-files.json": "a217b028d9bb1e3741646e143e07ed484058b71d4fcd5ee42415aac376d79d64",
+    "/work/meanflow-table1e/runs/p_1.5/run-summary.json": "04c52d686793b0a881dd69092e5558973f98ae27fecbdb127d06ea822129c7d7",
+    "/work/meanflow-table1e/runs/p_1.5/effective-config.json": "1df202db4f4a985daeda2815af6545ef6792e3b8eed541508d2f818c8988c2c4",
+    "/work/meanflow-table1e/runs/p_1.5/fid.csv": "bf054a7c2e56114f0b8f84300ddabc46fb6e835a25ed19be9753bb609efcb003",
+    "/work/meanflow-table1e/runs/p_1.5/final-checkpoint-files.json": "6d2c0f199b5a789ee311861032182ed51800599dc2b245594229f263870a661d",
+    "/work/meanflow-table1e/runs/p_2.0/run-summary.json": "2c6ade92f50978fb50453222f8cf58b14d8d79b30c4a5eb9594f57f5de395ce8",
+    "/work/meanflow-table1e/runs/p_2.0/effective-config.json": "59be02571caa0b352f802816d166c5fbf9e16d15d11982d835a83d994cb5d5c1",
+    "/work/meanflow-table1e/runs/p_2.0/fid.csv": "546149d0ad96456972b78d53c95c875f273187f27be4413245926dee6ed68272",
+    "/work/meanflow-table1e/runs/p_2.0/final-checkpoint-files.json": "ae8c592cbe3b77f8fea7f6edb3f9476cc38f5ccc7c25210c912c2ac0e440e638"
+  },
+  "reporting": "Keep both seeds for every p. Report individual FIDs and mean/sample SD across seeds 42 and 43 only when both runs completed; two seeds provide a limited variability check.",
+  "billing_scope": "One GPU executes this run; all GPUs retained in the UCloud allocation may continue to be billed.",
+  "config_sha256": "a23d355f2db66781ec99459ead79989967935b9b9286c870f71f1c2959d671fe",
+  "launcher_sha256": "1c078553187a174b96307f804b6832e405ff4faf45f158da7dcc2250c7302e07",
+  "recorder_sha256": "2f776ebe3261c7fced674f85ee845cbb4963c08a71ab049187219f4c5fe69e32"
+}

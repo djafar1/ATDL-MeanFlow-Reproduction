@@ -1,0 +1,52 @@
+[
+  {
+    "path": "checkpoint_400320/_CHECKPOINT_METADATA",
+    "size": 258,
+    "sha256": "4190882bd302b746f18706e5c96e418e483d7d96e883d3473ff877a0a915c148"
+  },
+  {
+    "path": "checkpoint_400320/_METADATA",
+    "size": 265266,
+    "sha256": "9a25cb03ca4cb189e39258ceee40af98c9e286be38fa93d6cdb50ea662dc9bc9"
+  },
+  {
+    "path": "checkpoint_400320/commit_success.txt",
+    "size": 105,
+    "sha256": "12e10bc3d6be2bdf0a0061c1145b33c6654ce9c97585f2e1c350fe6dc137e59b"
+  },
+  {
+    "path": "checkpoint_400320/d/e9df1c27a2e62d0c8485e7be578eb989",
+    "size": 6710,
+    "sha256": "b0b92c13cd410e1ab586888a5f4fe3733ca891693b24f1f88f53b1a5d22abe32"
+  },
+  {
+    "path": "checkpoint_400320/manifest.ocdbt",
+    "size": 118,
+    "sha256": "2395139051f10b3ddf86633c28d0dfa01daa866283976dec80517b89c6576251"
+  },
+  {
+    "path": "checkpoint_400320/ocdbt.process_0/d/b63d4a6d9f35c89823a6479b985808b1",
+    "size": 212,
+    "sha256": "c6bb636a8b68be89e0876b21d01ac41a32687c6d2b4b32b81e20564c0b853640"
+  },
+  {
+    "path": "checkpoint_400320/ocdbt.process_0/d/c84868a47eb7111dbe05408154b5483c",
+    "size": 730505216,
+    "sha256": "352dfa4a79a526ed72da84d63963fed88ecc9da5c2f55b3e45c19c7aa29f5036"
+  },
+  {
+    "path": "checkpoint_400320/ocdbt.process_0/d/cd7c18ba59af0dc6433986a50c06bbf2",
+    "size": 9776,
+    "sha256": "7695f35cf5ec4cf940841a7c3b54655d378278ab2f1f3020448247278d390df4"
+  },
+  {
+    "path": "checkpoint_400320/ocdbt.process_0/d/eec8fc05cb5da5db740da5972c9c3485",
+    "size": 1205145600,
+    "sha256": "1fdef7caf7692468e0eca1508a517c1ccc87ffb2208375e798fb756163af0837"
+  },
+  {
+    "path": "checkpoint_400320/ocdbt.process_0/manifest.ocdbt",
+    "size": 267,
+    "sha256": "b4d1f6a27d1545f889e366cf33cdcbcb4fcbccc5b08ba102ac3c9187e804c402"
+  }
+]

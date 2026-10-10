@@ -1,0 +1,232 @@
+diff --git a/main.py b/main.py
+index 5802ef1..197e5ff 100644
+--- a/main.py
++++ b/main.py
+@@ -1,8 +1,10 @@
+ """ Main file for running the ImageNet experiments.
+ """
++import os
+ import jax
+ 
+-jax.distributed.initialize()
++if os.environ.get("MEANFLOW_SINGLE_PROCESS") != "1":
++    jax.distributed.initialize()
+ 
+ from absl import app, flags
+ from ml_collections import config_flags
+diff --git a/meanflow.py b/meanflow.py
+index 3332ee7..ae8e681 100644
+--- a/meanflow.py
++++ b/meanflow.py
+@@ -232,7 +232,7 @@ class MeanFlow(nn.Module):
+ 
+     # -----------------------------------------------------------------
+     # Compute loss
+-    u_tgt = v_g - jnp.clip(t - r, a_min=0.0, a_max=1.0) * du_dt
++    u_tgt = v_g - jnp.clip(t - r, 0.0, 1.0) * du_dt
+     u_tgt = jax.lax.stop_gradient(u_tgt)
+ 
+     loss = (u - u_tgt) ** 2
+diff --git a/prepare_dataset.py b/prepare_dataset.py
+index 44d87e1..f3b2220 100644
+--- a/prepare_dataset.py
++++ b/prepare_dataset.py
+@@ -19,10 +19,10 @@ import jax
+ from absl import app, flags
+ 
+ # Initialize JAX distributed processing
+-jax.distributed.initialize()
++if os.environ.get("MEANFLOW_SINGLE_PROCESS") != "1":
++    jax.distributed.initialize()
+ 
+ from utils.data_util import compute_latent_dataset
+-from utils.fid_util import compute_fid_stats
+ from utils.logging_util import log_for_0
+ 
+ FLAGS = flags.FLAGS
+@@ -84,6 +84,7 @@ def main(argv):
+     
+     # Compute FID statistics
+     if FLAGS.compute_fid:
++        from utils.fid_util import compute_fid_stats
+         log_for_0("="*50)
+         log_for_0("COMPUTING FID STATISTICS")
+         log_for_0("="*50)
+diff --git a/train.py b/train.py
+index bebf4b4..ed64ce5 100644
+--- a/train.py
++++ b/train.py
+@@ -45,7 +45,7 @@ def initialized(key, image_size, model):
+   variables = init({'params': key}, x, t, y)
+   log_for_0('Initializing params done.')
+ 
+-  param_count = sum(x.size for x in jax.tree_leaves(variables['params']))
++  param_count = sum(x.size for x in jax.tree_util.tree_leaves(variables['params']))
+   log_for_0("Total trainable parameters: " + str(param_count))
+   return variables, variables['params']
+ 
+@@ -89,7 +89,7 @@ def create_train_state(
+ def compute_metrics(dict_losses):
+   metrics = dict_losses.copy()
+   metrics = lax.all_gather(metrics, axis_name='batch')
+-  metrics = jax.tree_map(lambda x: x.flatten(), metrics)  # (batch_size,)
++  metrics = jax.tree_util.tree_map(lambda x: x.flatten(), metrics)  # (batch_size,)
+   return metrics
+ 
+ 
+@@ -180,7 +180,7 @@ def get_fid_evaluator(workdir, config, writer, p_sample_step, latent_manager):
+     samples_all = sample_util.generate_fid_samples(
+           state, workdir, config, p_sample_step, run_p_sample_step_inner
+     )
+-    mu, sigma = fid_util.compute_stats(samples_all, inception_net)
++    mu, sigma = fid_util.compute_stats(samples_all, inception_net, num_workers=0)
+     fid_score = fid_util.compute_fid(mu, stats_ref["mu"], sigma, stats_ref["sigma"])
+     log_for_0(f'FID w/ EMA at {samples_all.shape[0]} samples: {fid_score}')
+     
+diff --git a/utils/data_util.py b/utils/data_util.py
+index b0faab9..b590235 100644
+--- a/utils/data_util.py
++++ b/utils/data_util.py
+@@ -29,7 +29,7 @@ def create_imagenet_dataloader(imagenet_root, split, batch_size, image_size, num
+     else:
+         # For latent computation: full preprocessing pipeline
+         transform = transforms.Compose([
+-            transforms.Lambda(lambda pil_image: center_crop_arr(pil_image, image_size)),
++            transforms.Lambda(partial(center_crop_arr, image_size=image_size)),
+             transforms.ToTensor(),
+             transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5], inplace=True)
+         ])
+@@ -68,6 +68,7 @@ def create_imagenet_dataloader(imagenet_root, split, batch_size, image_size, num
+         worker_init_fn=partial(worker_init_fn, rank=rank),
+         sampler=sampler,
+         num_workers=num_workers,
++        multiprocessing_context='spawn' if num_workers > 0 else None,
+         prefetch_factor=2 if num_workers > 0 else None,
+         pin_memory=False,
+         persistent_workers=True if num_workers > 0 else False,
+@@ -133,7 +134,7 @@ def compute_latent_dataset(imagenet_root, output_dir, vae_type, batch_size, imag
+     
+     # Initialize VAE
+     log_for_0(f"Loading VAE model: sd-vae-ft-{vae_type}-flax")
+-    vae, vae_params = FlaxAutoencoderKL.from_pretrained(f"pcuenq/sd-vae-ft-{vae_type}-flax")
++    vae, vae_params = FlaxAutoencoderKL.from_pretrained(os.environ.get("MEANFLOW_VAE_PATH", f"pcuenq/sd-vae-ft-{vae_type}-flax"), local_files_only=bool(os.environ.get("MEANFLOW_VAE_PATH")))
+     
+     # Create encode function
+     def encode_fn(vae_model, vae_params, batch):
+@@ -155,8 +156,7 @@ def compute_latent_dataset(imagenet_root, output_dir, vae_type, batch_size, imag
+         
+         # Check if already exists and not overwriting
+         if not overwrite and os.path.exists(split_output_dir) and os.listdir(split_output_dir):
+-            log_for_0(f"Split {split} already exists, skipping...")
+-            continue
++            raise RuntimeError(f"Cache directory is nonempty: {split_output_dir}. Verify or recover it before rerunning.")
+             
+         log_for_0(f"Processing {split} split...")
+         
+diff --git a/utils/ema_util.py b/utils/ema_util.py
+index 005ce6b..71c5265 100644
+--- a/utils/ema_util.py
++++ b/utils/ema_util.py
+@@ -22,4 +22,4 @@ def ema_schedules(config):
+ 
+ 
+ def update_ema(ema_params, params, alpha):
+-  return jax.tree_map(lambda e, p: alpha * e + (1 - alpha) * p, ema_params, params)
+\ No newline at end of file
++  return jax.tree_util.tree_map(lambda e, p: alpha * e + (1 - alpha) * p, ema_params, params)
+\ No newline at end of file
+diff --git a/utils/input_pipeline.py b/utils/input_pipeline.py
+index 8654f9a..4d32a43 100644
+--- a/utils/input_pipeline.py
++++ b/utils/input_pipeline.py
+@@ -171,6 +171,7 @@ def create_latent_split(dataset_cfg, batch_size, split):
+       worker_init_fn=partial(worker_init_fn, rank=rank),
+       sampler=sampler,
+       num_workers=dataset_cfg.num_workers,
++      multiprocessing_context='spawn' if dataset_cfg.num_workers > 0 else None,
+       prefetch_factor=dataset_cfg.prefetch_factor if dataset_cfg.num_workers > 0 else None,
+       pin_memory=dataset_cfg.pin_memory,
+       persistent_workers=True if dataset_cfg.num_workers > 0 else False,
+diff --git a/utils/jax_fid/fid.py b/utils/jax_fid/fid.py
+index edea281..76e71e3 100755
+--- a/utils/jax_fid/fid.py
++++ b/utils/jax_fid/fid.py
+@@ -4,7 +4,6 @@ import jax
+ import jax.numpy as jnp
+ import numpy as np
+ import scipy
+-from keras.preprocessing.image import ImageDataGenerator
+ from PIL import Image
+ from torch.utils.data import DataLoader, Dataset
+ from torchvision import transforms
+@@ -34,6 +33,9 @@ def compute_statistics_with_mmap(path, mmap_filname, params, apply_fn, batch_siz
+         mu, sigma = stats["mu"], stats["sigma"]
+         return mu, sigma
+     
++
++    from keras.preprocessing.image import ImageDataGenerator
++
+     preprocessing_fn = lambda x: x.astype(float) / 255
+     image_data_generator = ImageDataGenerator(preprocessing_function=preprocessing_fn)
+     directory_iterator = image_data_generator.flow_from_directory(
+@@ -112,7 +114,7 @@ def compute_frechet_distance(mu1, mu2, sigma1, sigma2, eps=1e-6):
+ 
+     diff = mu1 - mu2
+ 
+-    covmean, _ = scipy.linalg.sqrtm(sigma1.dot(sigma2), disp=False)
++    covmean = scipy.linalg.sqrtm(sigma1.dot(sigma2))
+     if not np.isfinite(covmean).all():
+         msg = (
+             "fid calculation produces singular product; "
+diff --git a/utils/vae_util.py b/utils/vae_util.py
+index b48bad2..b5cd1d4 100644
+--- a/utils/vae_util.py
++++ b/utils/vae_util.py
+@@ -36,7 +36,7 @@ class LatentDist(object): # https://github.com/huggingface/diffusers/blob/v0.29.
+ class LatentManager:
+     def __init__(self, vae_type, decode_batch_size, input_size):
+         # init VAE
+-        vae, vae_params = FlaxAutoencoderKL.from_pretrained(f"pcuenq/sd-vae-ft-{vae_type}-flax")
++        vae, vae_params = FlaxAutoencoderKL.from_pretrained(os.environ.get("MEANFLOW_VAE_PATH", f"pcuenq/sd-vae-ft-{vae_type}-flax"), local_files_only=bool(os.environ.get("MEANFLOW_VAE_PATH")))
+         self.vae = vae
+         self.vae_params = vae_params
+ 
+@@ -69,7 +69,10 @@ class LatentManager:
+ 
+         lowered = p_decode_fn.lower(p_vae_variable, z_dummy)
+         compiled_decod_fn = lowered.compile()
+-        Bflops = compiled_decod_fn.cost_analysis()[0]['flops'] / 1e9
++        analysis = compiled_decod_fn.cost_analysis()
++        if isinstance(analysis, (list, tuple)):
++            analysis = analysis[0]
++        Bflops = analysis['flops'] / 1e9
+         log_for_0('Compiling VAE decoder done')
+         log_for_0(f'FLOPs (1e9): {Bflops}')
+   
+@@ -98,7 +101,12 @@ class LatentManager:
+ class LatentDataset(torch.utils.data.Dataset):
+     def __init__(self, root, use_flip=False):
+         self.root = root
+-        self.file_list = [file for file in os.listdir(root) if file.endswith('.pt')]
++        order_file = os.environ.get('MEANFLOW_LATENT_MANIFEST')
++        if order_file:
++            with open(order_file) as f:
++                self.file_list = f.read().splitlines()
++        else:
++            self.file_list = [file for file in os.listdir(root) if file.endswith('.pt')]
+         self.use_flip = use_flip
+ 
+     def __len__(self):
+diff --git a/utils/vis_util.py b/utils/vis_util.py
+index 75a7c10..c428d0e 100755
+--- a/utils/vis_util.py
++++ b/utils/vis_util.py
+@@ -8,7 +8,7 @@ def make_grid_visualization(vis, grid=8, max_bz=8):
+   col = grid
+   row = min(grid, n // col) 
+   if n % (col * row) != 0:
+-    n = col * row * max_bz
++    n = min(n // (col * row), max_bz) * (col * row)
+     vis = vis[:n]
+     n, h, w, c = vis.shape
+   assert n % (col * row) == 0

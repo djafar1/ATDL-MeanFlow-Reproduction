@@ -1,0 +1,14 @@
+{
+  "started_utc": "2026-10-05T05:52:36.576182+00:00",
+  "ended_utc": "2026-10-05T12:12:11.290391+00:00",
+  "controller_wall_seconds": 22774.714212341933,
+  "launcher_exit_codes": {
+    "1.0": 0,
+    "0.0": 0,
+    "0.5": 0,
+    "1.5": 0,
+    "2.0": 0
+  },
+  "five_gpu_block_hours": 31.631547522858373,
+  "billing_note": "Five-GPU occupied block estimate; UCloud allocation billing may include idle time before/after."
+}

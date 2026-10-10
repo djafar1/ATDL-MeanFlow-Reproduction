@@ -1,0 +1,194 @@
+{
+  "status": "completed",
+  "exit_code": 0,
+  "error": null,
+  "p": 1.0,
+  "final_train_step": 400320,
+  "epochs_completed": 80,
+  "final_FID_epoch80": 61.3569582763792,
+  "end_to_end_wall_seconds": 22769.910632581974,
+  "gpu_hours_for_this_one_gpu_run": 6.324975175717215,
+  "FID_evaluations": [
+    {
+      "epoch": 10,
+      "train_step": 50040,
+      "sampling_seed": 0,
+      "NFE": 1,
+      "EMA": true,
+      "generation_seconds": 103.11375581601169,
+      "num_samples": 50000,
+      "inception_and_stats_seconds": 111.04799059702782,
+      "stats_file": "fid/epoch_010.npz",
+      "stats_sha256": "a1e38b9fbc3d4c2df65bccf364328ff5c0e6906ed5e6476f90823489fc48c141",
+      "fid_math_seconds": 20.012272563006263,
+      "FID_ema": 121.20036636785659,
+      "utc": "2026-10-05T06:42:08.038531+00:00",
+      "wall_seconds": 2971.0518288049498,
+      "evaluation_seconds": 234.54125680599827
+    },
+    {
+      "epoch": 20,
+      "train_step": 100080,
+      "sampling_seed": 0,
+      "NFE": 1,
+      "EMA": true,
+      "generation_seconds": 68.97565347899217,
+      "num_samples": 50000,
+      "inception_and_stats_seconds": 88.18943012802629,
+      "stats_file": "fid/epoch_020.npz",
+      "stats_sha256": "88e638142c9f20fed0e3fe9dcbf1affe2ff072a7616984750cc7cfea9adc7bb1",
+      "fid_math_seconds": 16.064614278031513,
+      "FID_ema": 91.176517800297,
+      "utc": "2026-10-05T07:28:09.254450+00:00",
+      "wall_seconds": 5732.267745726975,
+      "evaluation_seconds": 173.53019393398426
+    },
+    {
+      "epoch": 30,
+      "train_step": 150120,
+      "sampling_seed": 0,
+      "NFE": 1,
+      "EMA": true,
+      "generation_seconds": 72.48578316089697,
+      "num_samples": 50000,
+      "inception_and_stats_seconds": 127.02929131302517,
+      "stats_file": "fid/epoch_030.npz",
+      "stats_sha256": "e15e9515aa66825a1917b39b05322089684c9a00e3f8c506cc577ea446ee4245",
+      "fid_math_seconds": 14.675815918017179,
+      "FID_ema": 80.32884991317638,
+      "utc": "2026-10-05T08:16:31.574759+00:00",
+      "wall_seconds": 8634.588055718981,
+      "evaluation_seconds": 214.49130191199947
+    },
+    {
+      "epoch": 40,
+      "train_step": 200160,
+      "sampling_seed": 0,
+      "NFE": 1,
+      "EMA": true,
+      "generation_seconds": 66.49983413994778,
+      "num_samples": 50000,
+      "inception_and_stats_seconds": 71.09813755599316,
+      "stats_file": "fid/epoch_040.npz",
+      "stats_sha256": "993cb5550e8a469c6097f3b3175a0bc44dbc72f6e863f83f1ab6f4dff34b87a7",
+      "fid_math_seconds": 19.0720810580533,
+      "FID_ema": 73.85673982586167,
+      "utc": "2026-10-05T09:04:17.714493+00:00",
+      "wall_seconds": 11500.72779999295,
+      "evaluation_seconds": 156.96735612605698
+    },
+    {
+      "epoch": 50,
+      "train_step": 250200,
+      "sampling_seed": 0,
+      "NFE": 1,
+      "EMA": true,
+      "generation_seconds": 87.31848458899185,
+      "num_samples": 50000,
+      "inception_and_stats_seconds": 98.11610913695768,
+      "stats_file": "fid/epoch_050.npz",
+      "stats_sha256": "0da2d4055c4f7a016b4d1f767d448d5a0728f5e4409efd3efe0efb9d0b1f84ca",
+      "fid_math_seconds": 18.810920777963474,
+      "FID_ema": 69.91210003555,
+      "utc": "2026-10-05T09:53:43.533406+00:00",
+      "wall_seconds": 14466.546702697931,
+      "evaluation_seconds": 204.5432360440027
+    },
+    {
+      "epoch": 60,
+      "train_step": 300240,
+      "sampling_seed": 0,
+      "NFE": 1,
+      "EMA": true,
+      "generation_seconds": 70.46559777203947,
+      "num_samples": 50000,
+      "inception_and_stats_seconds": 77.35965055797715,
+      "stats_file": "fid/epoch_060.npz",
+      "stats_sha256": "f7bf11ed330c04b7137a1d15b9a17810e25cb9929088e5b8c097f386713653bf",
+      "fid_math_seconds": 19.307808890007436,
+      "FID_ema": 66.22578514244498,
+      "utc": "2026-10-05T10:40:08.334522+00:00",
+      "wall_seconds": 17251.347814326,
+      "evaluation_seconds": 167.43572519195732
+    },
+    {
+      "epoch": 70,
+      "train_step": 350280,
+      "sampling_seed": 0,
+      "NFE": 1,
+      "EMA": true,
+      "generation_seconds": 71.59281871002167,
+      "num_samples": 50000,
+      "inception_and_stats_seconds": 90.85946734703612,
+      "stats_file": "fid/epoch_070.npz",
+      "stats_sha256": "bc9e18b18f7f1373ff6095f6c119c7baca405e7229ec5ca64362f8387864dc63",
+      "fid_math_seconds": 17.282965202932246,
+      "FID_ema": 63.2822377443311,
+      "utc": "2026-10-05T11:26:14.592595+00:00",
+      "wall_seconds": 20017.60589630803,
+      "evaluation_seconds": 180.03707314899657
+    },
+    {
+      "epoch": 80,
+      "train_step": 400320,
+      "sampling_seed": 0,
+      "NFE": 1,
+      "EMA": true,
+      "generation_seconds": 71.32237650291063,
+      "num_samples": 50000,
+      "inception_and_stats_seconds": 84.10785532998852,
+      "stats_file": "fid/epoch_080.npz",
+      "stats_sha256": "8f229c941ed39efe2ece66a6ea5bf2070cf23891c694a175bbb810288c3c7eda",
+      "fid_math_seconds": 16.840311546926387,
+      "FID_ema": 61.3569582763792,
+      "utc": "2026-10-05T12:12:03.784875+00:00",
+      "wall_seconds": 22766.798169480928,
+      "evaluation_seconds": 172.57925513398368
+    }
+  ],
+  "total_FID_evaluation_seconds": 1504.1253982969793,
+  "checkpoint_saves": [
+    {
+      "step": 50040,
+      "seconds": 2.2194033439736813
+    },
+    {
+      "step": 100080,
+      "seconds": 1.650439701974392
+    },
+    {
+      "step": 150120,
+      "seconds": 2.765487964032218
+    },
+    {
+      "step": 200160,
+      "seconds": 2.106766048935242
+    },
+    {
+      "step": 250200,
+      "seconds": 2.3901427590753883
+    },
+    {
+      "step": 300240,
+      "seconds": 2.2055792019236833
+    },
+    {
+      "step": 350280,
+      "seconds": 2.3660589889623225
+    },
+    {
+      "step": 400320,
+      "seconds": 2.3458742590155452
+    }
+  ],
+  "total_checkpoint_save_seconds": 18.049752267892472,
+  "median_logged_steps_per_second_after_step500": 19.067989321245147,
+  "process_peak_RSS_linux_KiB": 40186508,
+  "initial_state_seconds": 9.65403959096875,
+  "parameter_count": 131165248,
+  "parameter_dtypes": [
+    "float32"
+  ],
+  "inception_setup_seconds": 20.39078715100186,
+  "training_compilation_reported_seconds": 54.85
+}

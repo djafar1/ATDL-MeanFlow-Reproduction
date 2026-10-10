@@ -1,0 +1,828 @@
+nohup: ignoring input
+I1006 19:07:23.933493 139767564435584 logging_util.py:10] JAX process: 0 / 1
+I1006 19:07:23.933645 139767564435584 logging_util.py:10] JAX local devices: [CudaDevice(id=0)]
+I1006 19:07:23.935100 139767564435584 logging_util.py:10] FLAGS.config: 
+dataset:
+  cache: false
+  image_channels: 4
+  image_size: 32
+  name: imgnet_latent
+  num_classes: 1000
+  num_workers: 4
+  pin_memory: false
+  prefetch_factor: 2
+  root: /tmp/latents_imagenet256
+  vae: mse
+eval_only: false
+fid:
+  cache_ref: /work/MeanFlow/data/fid/imagenet256_fid_stats.npz
+  device_batch_size: 20
+  num_samples: 50000
+  on_training: false
+load_from: /work/MeanFlow/runs/table1a_0_b200/checkpoint_375300
+method:
+  P_mean: -0.4
+  P_std: 1.0
+  class_dropout_prob: 0.1
+  data_proportion: 1.0
+  guidance_eq: none
+  kappa: 0.5
+  noise_dist: logit_normal
+  norm_eps: 0.01
+  norm_p: 1.0
+  omega: 1.0
+  t_end: 1.0
+  t_start: 0.0
+model:
+  cls: DiT_B_4
+sampling:
+  num_classes: 1000
+  num_steps: 1
+  sampling_timesteps: null
+  schedule: default
+  seed: 0
+training:
+  adam_b2: 0.95
+  batch_size: 256
+  checkpoint_per_epoch: 1
+  ema_type: const
+  ema_val: 0.9999
+  fid_per_epoch: 10
+  half_precision: false
+  learning_rate: 0.0001
+  log_per_step: 100
+  num_epochs: 80
+  sample_on_training: false
+  sample_per_epoch: 10
+  seed: 42
+
+I1006 19:07:24.052151 139767564435584 logging_util.py:10] config.training.batch_size: 256
+I1006 19:07:24.052292 139767564435584 logging_util.py:10] local_batch_size: 256
+I1006 19:07:24.052324 139767564435584 logging_util.py:10] jax.local_device_count: 1
+I1006 19:07:24.241417 139767564435584 logging_util.py:10] Dataset LatentDataset
+    Number of datapoints: 1281167
+    Root location: /tmp/latents_imagenet256/train
+    Use flip: True
+I1006 19:07:24.242165 139767564435584 logging_util.py:10] Steps per Epoch: 5004
+I1006 19:07:24.445312 139767564435584 logging_util.py:10] Initializing params...
+I1006 19:07:34.464524 139767564435584 logging_util.py:10] Initializing params done.
+I1006 19:07:34.465023 139767564435584 logging_util.py:10] Total trainable parameters: 131165248
+I1006 19:07:35.393975 139767564435584 logging_util.py:10] ---------------------------------------------------------------------------------------------
+I1006 19:07:35.394116 139767564435584 logging_util.py:10]  blocks/layers_0/adaLN_modulation/layers_1/_flax_linear/bias    |        (4608,) |     4,608 
+I1006 19:07:35.394144 139767564435584 logging_util.py:10]  blocks/layers_0/adaLN_modulation/layers_1/_flax_linear/kernel  |    (768, 4608) | 3,538,944 
+I1006 19:07:35.394164 139767564435584 logging_util.py:10]  blocks/layers_0/attn/proj/_flax_linear/bias                    |         (768,) |       768 
+I1006 19:07:35.394182 139767564435584 logging_util.py:10]  blocks/layers_0/attn/proj/_flax_linear/kernel                  |     (768, 768) |   589,824 
+I1006 19:07:35.394198 139767564435584 logging_util.py:10]  blocks/layers_0/attn/qkv/_flax_linear/bias                     |        (2304,) |     2,304 
+I1006 19:07:35.394214 139767564435584 logging_util.py:10]  blocks/layers_0/attn/qkv/_flax_linear/kernel                   |    (768, 2304) | 1,769,472 
+I1006 19:07:35.394229 139767564435584 logging_util.py:10]  blocks/layers_0/mlp/fc1/_flax_linear/bias                      |        (3072,) |     3,072 
+I1006 19:07:35.394243 139767564435584 logging_util.py:10]  blocks/layers_0/mlp/fc1/_flax_linear/kernel                    |    (768, 3072) | 2,359,296 
+I1006 19:07:35.394257 139767564435584 logging_util.py:10]  blocks/layers_0/mlp/fc2/_flax_linear/bias                      |         (768,) |       768 
+I1006 19:07:35.394271 139767564435584 logging_util.py:10]  blocks/layers_0/mlp/fc2/_flax_linear/kernel                    |    (3072, 768) | 2,359,296 
+I1006 19:07:35.394285 139767564435584 logging_util.py:10]  blocks/layers_1/adaLN_modulation/layers_1/_flax_linear/bias    |        (4608,) |     4,608 
+I1006 19:07:35.394299 139767564435584 logging_util.py:10]  blocks/layers_1/adaLN_modulation/layers_1/_flax_linear/kernel  |    (768, 4608) | 3,538,944 
+I1006 19:07:35.394313 139767564435584 logging_util.py:10]  blocks/layers_1/attn/proj/_flax_linear/bias                    |         (768,) |       768 
+I1006 19:07:35.394330 139767564435584 logging_util.py:10]  blocks/layers_1/attn/proj/_flax_linear/kernel                  |     (768, 768) |   589,824 
+I1006 19:07:35.394345 139767564435584 logging_util.py:10]  blocks/layers_1/attn/qkv/_flax_linear/bias                     |        (2304,) |     2,304 
+I1006 19:07:35.394361 139767564435584 logging_util.py:10]  blocks/layers_1/attn/qkv/_flax_linear/kernel                   |    (768, 2304) | 1,769,472 
+I1006 19:07:35.394376 139767564435584 logging_util.py:10]  blocks/layers_1/mlp/fc1/_flax_linear/bias                      |        (3072,) |     3,072 
+I1006 19:07:35.394389 139767564435584 logging_util.py:10]  blocks/layers_1/mlp/fc1/_flax_linear/kernel                    |    (768, 3072) | 2,359,296 
+I1006 19:07:35.394402 139767564435584 logging_util.py:10]  blocks/layers_1/mlp/fc2/_flax_linear/bias                      |         (768,) |       768 
+I1006 19:07:35.394416 139767564435584 logging_util.py:10]  blocks/layers_1/mlp/fc2/_flax_linear/kernel                    |    (3072, 768) | 2,359,296 
+I1006 19:07:35.394428 139767564435584 logging_util.py:10]  blocks/layers_10/adaLN_modulation/layers_1/_flax_linear/bias   |        (4608,) |     4,608 
+I1006 19:07:35.394441 139767564435584 logging_util.py:10]  blocks/layers_10/adaLN_modulation/layers_1/_flax_linear/kernel |    (768, 4608) | 3,538,944 
+I1006 19:07:35.394453 139767564435584 logging_util.py:10]  blocks/layers_10/attn/proj/_flax_linear/bias                   |         (768,) |       768 
+I1006 19:07:35.394465 139767564435584 logging_util.py:10]  blocks/layers_10/attn/proj/_flax_linear/kernel                 |     (768, 768) |   589,824 
+I1006 19:07:35.394477 139767564435584 logging_util.py:10]  blocks/layers_10/attn/qkv/_flax_linear/bias                    |        (2304,) |     2,304 
+I1006 19:07:35.394490 139767564435584 logging_util.py:10]  blocks/layers_10/attn/qkv/_flax_linear/kernel                  |    (768, 2304) | 1,769,472 
+I1006 19:07:35.394502 139767564435584 logging_util.py:10]  blocks/layers_10/mlp/fc1/_flax_linear/bias                     |        (3072,) |     3,072 
+I1006 19:07:35.394515 139767564435584 logging_util.py:10]  blocks/layers_10/mlp/fc1/_flax_linear/kernel                   |    (768, 3072) | 2,359,296 
+I1006 19:07:35.394527 139767564435584 logging_util.py:10]  blocks/layers_10/mlp/fc2/_flax_linear/bias                     |         (768,) |       768 
+I1006 19:07:35.394540 139767564435584 logging_util.py:10]  blocks/layers_10/mlp/fc2/_flax_linear/kernel                   |    (3072, 768) | 2,359,296 
+I1006 19:07:35.394552 139767564435584 logging_util.py:10]  blocks/layers_11/adaLN_modulation/layers_1/_flax_linear/bias   |        (4608,) |     4,608 
+I1006 19:07:35.394564 139767564435584 logging_util.py:10]  blocks/layers_11/adaLN_modulation/layers_1/_flax_linear/kernel |    (768, 4608) | 3,538,944 
+I1006 19:07:35.394576 139767564435584 logging_util.py:10]  blocks/layers_11/attn/proj/_flax_linear/bias                   |         (768,) |       768 
+I1006 19:07:35.394589 139767564435584 logging_util.py:10]  blocks/layers_11/attn/proj/_flax_linear/kernel                 |     (768, 768) |   589,824 
+I1006 19:07:35.394602 139767564435584 logging_util.py:10]  blocks/layers_11/attn/qkv/_flax_linear/bias                    |        (2304,) |     2,304 
+I1006 19:07:35.394614 139767564435584 logging_util.py:10]  blocks/layers_11/attn/qkv/_flax_linear/kernel                  |    (768, 2304) | 1,769,472 
+I1006 19:07:35.394626 139767564435584 logging_util.py:10]  blocks/layers_11/mlp/fc1/_flax_linear/bias                     |        (3072,) |     3,072 
+I1006 19:07:35.394639 139767564435584 logging_util.py:10]  blocks/layers_11/mlp/fc1/_flax_linear/kernel                   |    (768, 3072) | 2,359,296 
+I1006 19:07:35.394651 139767564435584 logging_util.py:10]  blocks/layers_11/mlp/fc2/_flax_linear/bias                     |         (768,) |       768 
+I1006 19:07:35.394664 139767564435584 logging_util.py:10]  blocks/layers_11/mlp/fc2/_flax_linear/kernel                   |    (3072, 768) | 2,359,296 
+I1006 19:07:35.394678 139767564435584 logging_util.py:10]  blocks/layers_2/adaLN_modulation/layers_1/_flax_linear/bias    |        (4608,) |     4,608 
+I1006 19:07:35.394690 139767564435584 logging_util.py:10]  blocks/layers_2/adaLN_modulation/layers_1/_flax_linear/kernel  |    (768, 4608) | 3,538,944 
+I1006 19:07:35.394706 139767564435584 logging_util.py:10]  blocks/layers_2/attn/proj/_flax_linear/bias                    |         (768,) |       768 
+I1006 19:07:35.394719 139767564435584 logging_util.py:10]  blocks/layers_2/attn/proj/_flax_linear/kernel                  |     (768, 768) |   589,824 
+I1006 19:07:35.394734 139767564435584 logging_util.py:10]  blocks/layers_2/attn/qkv/_flax_linear/bias                     |        (2304,) |     2,304 
+I1006 19:07:35.394753 139767564435584 logging_util.py:10]  blocks/layers_2/attn/qkv/_flax_linear/kernel                   |    (768, 2304) | 1,769,472 
+I1006 19:07:35.394769 139767564435584 logging_util.py:10]  blocks/layers_2/mlp/fc1/_flax_linear/bias                      |        (3072,) |     3,072 
+I1006 19:07:35.394782 139767564435584 logging_util.py:10]  blocks/layers_2/mlp/fc1/_flax_linear/kernel                    |    (768, 3072) | 2,359,296 
+I1006 19:07:35.394794 139767564435584 logging_util.py:10]  blocks/layers_2/mlp/fc2/_flax_linear/bias                      |         (768,) |       768 
+I1006 19:07:35.394806 139767564435584 logging_util.py:10]  blocks/layers_2/mlp/fc2/_flax_linear/kernel                    |    (3072, 768) | 2,359,296 
+I1006 19:07:35.394818 139767564435584 logging_util.py:10]  blocks/layers_3/adaLN_modulation/layers_1/_flax_linear/bias    |        (4608,) |     4,608 
+I1006 19:07:35.394831 139767564435584 logging_util.py:10]  blocks/layers_3/adaLN_modulation/layers_1/_flax_linear/kernel  |    (768, 4608) | 3,538,944 
+I1006 19:07:35.394843 139767564435584 logging_util.py:10]  blocks/layers_3/attn/proj/_flax_linear/bias                    |         (768,) |       768 
+I1006 19:07:35.394855 139767564435584 logging_util.py:10]  blocks/layers_3/attn/proj/_flax_linear/kernel                  |     (768, 768) |   589,824 
+I1006 19:07:35.394868 139767564435584 logging_util.py:10]  blocks/layers_3/attn/qkv/_flax_linear/bias                     |        (2304,) |     2,304 
+I1006 19:07:35.394880 139767564435584 logging_util.py:10]  blocks/layers_3/attn/qkv/_flax_linear/kernel                   |    (768, 2304) | 1,769,472 
+I1006 19:07:35.394891 139767564435584 logging_util.py:10]  blocks/layers_3/mlp/fc1/_flax_linear/bias                      |        (3072,) |     3,072 
+I1006 19:07:35.394913 139767564435584 logging_util.py:10]  blocks/layers_3/mlp/fc1/_flax_linear/kernel                    |    (768, 3072) | 2,359,296 
+I1006 19:07:35.394925 139767564435584 logging_util.py:10]  blocks/layers_3/mlp/fc2/_flax_linear/bias                      |         (768,) |       768 
+I1006 19:07:35.394937 139767564435584 logging_util.py:10]  blocks/layers_3/mlp/fc2/_flax_linear/kernel                    |    (3072, 768) | 2,359,296 
+I1006 19:07:35.394948 139767564435584 logging_util.py:10]  blocks/layers_4/adaLN_modulation/layers_1/_flax_linear/bias    |        (4608,) |     4,608 
+I1006 19:07:35.394960 139767564435584 logging_util.py:10]  blocks/layers_4/adaLN_modulation/layers_1/_flax_linear/kernel  |    (768, 4608) | 3,538,944 
+I1006 19:07:35.394973 139767564435584 logging_util.py:10]  blocks/layers_4/attn/proj/_flax_linear/bias                    |         (768,) |       768 
+I1006 19:07:35.394984 139767564435584 logging_util.py:10]  blocks/layers_4/attn/proj/_flax_linear/kernel                  |     (768, 768) |   589,824 
+I1006 19:07:35.394996 139767564435584 logging_util.py:10]  blocks/layers_4/attn/qkv/_flax_linear/bias                     |        (2304,) |     2,304 
+I1006 19:07:35.395009 139767564435584 logging_util.py:10]  blocks/layers_4/attn/qkv/_flax_linear/kernel                   |    (768, 2304) | 1,769,472 
+I1006 19:07:35.395021 139767564435584 logging_util.py:10]  blocks/layers_4/mlp/fc1/_flax_linear/bias                      |        (3072,) |     3,072 
+I1006 19:07:35.395034 139767564435584 logging_util.py:10]  blocks/layers_4/mlp/fc1/_flax_linear/kernel                    |    (768, 3072) | 2,359,296 
+I1006 19:07:35.395046 139767564435584 logging_util.py:10]  blocks/layers_4/mlp/fc2/_flax_linear/bias                      |         (768,) |       768 
+I1006 19:07:35.395058 139767564435584 logging_util.py:10]  blocks/layers_4/mlp/fc2/_flax_linear/kernel                    |    (3072, 768) | 2,359,296 
+I1006 19:07:35.395069 139767564435584 logging_util.py:10]  blocks/layers_5/adaLN_modulation/layers_1/_flax_linear/bias    |        (4608,) |     4,608 
+I1006 19:07:35.395081 139767564435584 logging_util.py:10]  blocks/layers_5/adaLN_modulation/layers_1/_flax_linear/kernel  |    (768, 4608) | 3,538,944 
+I1006 19:07:35.395093 139767564435584 logging_util.py:10]  blocks/layers_5/attn/proj/_flax_linear/bias                    |         (768,) |       768 
+I1006 19:07:35.395105 139767564435584 logging_util.py:10]  blocks/layers_5/attn/proj/_flax_linear/kernel                  |     (768, 768) |   589,824 
+I1006 19:07:35.395117 139767564435584 logging_util.py:10]  blocks/layers_5/attn/qkv/_flax_linear/bias                     |        (2304,) |     2,304 
+I1006 19:07:35.395128 139767564435584 logging_util.py:10]  blocks/layers_5/attn/qkv/_flax_linear/kernel                   |    (768, 2304) | 1,769,472 
+I1006 19:07:35.395140 139767564435584 logging_util.py:10]  blocks/layers_5/mlp/fc1/_flax_linear/bias                      |        (3072,) |     3,072 
+I1006 19:07:35.395152 139767564435584 logging_util.py:10]  blocks/layers_5/mlp/fc1/_flax_linear/kernel                    |    (768, 3072) | 2,359,296 
+I1006 19:07:35.395164 139767564435584 logging_util.py:10]  blocks/layers_5/mlp/fc2/_flax_linear/bias                      |         (768,) |       768 
+I1006 19:07:35.395176 139767564435584 logging_util.py:10]  blocks/layers_5/mlp/fc2/_flax_linear/kernel                    |    (3072, 768) | 2,359,296 
+I1006 19:07:35.395188 139767564435584 logging_util.py:10]  blocks/layers_6/adaLN_modulation/layers_1/_flax_linear/bias    |        (4608,) |     4,608 
+I1006 19:07:35.395200 139767564435584 logging_util.py:10]  blocks/layers_6/adaLN_modulation/layers_1/_flax_linear/kernel  |    (768, 4608) | 3,538,944 
+I1006 19:07:35.395211 139767564435584 logging_util.py:10]  blocks/layers_6/attn/proj/_flax_linear/bias                    |         (768,) |       768 
+I1006 19:07:35.395225 139767564435584 logging_util.py:10]  blocks/layers_6/attn/proj/_flax_linear/kernel                  |     (768, 768) |   589,824 
+I1006 19:07:35.395237 139767564435584 logging_util.py:10]  blocks/layers_6/attn/qkv/_flax_linear/bias                     |        (2304,) |     2,304 
+I1006 19:07:35.395250 139767564435584 logging_util.py:10]  blocks/layers_6/attn/qkv/_flax_linear/kernel                   |    (768, 2304) | 1,769,472 
+I1006 19:07:35.395262 139767564435584 logging_util.py:10]  blocks/layers_6/mlp/fc1/_flax_linear/bias                      |        (3072,) |     3,072 
+I1006 19:07:35.395274 139767564435584 logging_util.py:10]  blocks/layers_6/mlp/fc1/_flax_linear/kernel                    |    (768, 3072) | 2,359,296 
+I1006 19:07:35.395286 139767564435584 logging_util.py:10]  blocks/layers_6/mlp/fc2/_flax_linear/bias                      |         (768,) |       768 
+I1006 19:07:35.395298 139767564435584 logging_util.py:10]  blocks/layers_6/mlp/fc2/_flax_linear/kernel                    |    (3072, 768) | 2,359,296 
+I1006 19:07:35.395310 139767564435584 logging_util.py:10]  blocks/layers_7/adaLN_modulation/layers_1/_flax_linear/bias    |        (4608,) |     4,608 
+I1006 19:07:35.395322 139767564435584 logging_util.py:10]  blocks/layers_7/adaLN_modulation/layers_1/_flax_linear/kernel  |    (768, 4608) | 3,538,944 
+I1006 19:07:35.395334 139767564435584 logging_util.py:10]  blocks/layers_7/attn/proj/_flax_linear/bias                    |         (768,) |       768 
+I1006 19:07:35.395345 139767564435584 logging_util.py:10]  blocks/layers_7/attn/proj/_flax_linear/kernel                  |     (768, 768) |   589,824 
+I1006 19:07:35.395359 139767564435584 logging_util.py:10]  blocks/layers_7/attn/qkv/_flax_linear/bias                     |        (2304,) |     2,304 
+I1006 19:07:35.395371 139767564435584 logging_util.py:10]  blocks/layers_7/attn/qkv/_flax_linear/kernel                   |    (768, 2304) | 1,769,472 
+I1006 19:07:35.395384 139767564435584 logging_util.py:10]  blocks/layers_7/mlp/fc1/_flax_linear/bias                      |        (3072,) |     3,072 
+I1006 19:07:35.395395 139767564435584 logging_util.py:10]  blocks/layers_7/mlp/fc1/_flax_linear/kernel                    |    (768, 3072) | 2,359,296 
+I1006 19:07:35.395407 139767564435584 logging_util.py:10]  blocks/layers_7/mlp/fc2/_flax_linear/bias                      |         (768,) |       768 
+I1006 19:07:35.395420 139767564435584 logging_util.py:10]  blocks/layers_7/mlp/fc2/_flax_linear/kernel                    |    (3072, 768) | 2,359,296 
+I1006 19:07:35.395432 139767564435584 logging_util.py:10]  blocks/layers_8/adaLN_modulation/layers_1/_flax_linear/bias    |        (4608,) |     4,608 
+I1006 19:07:35.395445 139767564435584 logging_util.py:10]  blocks/layers_8/adaLN_modulation/layers_1/_flax_linear/kernel  |    (768, 4608) | 3,538,944 
+I1006 19:07:35.395457 139767564435584 logging_util.py:10]  blocks/layers_8/attn/proj/_flax_linear/bias                    |         (768,) |       768 
+I1006 19:07:35.395469 139767564435584 logging_util.py:10]  blocks/layers_8/attn/proj/_flax_linear/kernel                  |     (768, 768) |   589,824 
+I1006 19:07:35.395481 139767564435584 logging_util.py:10]  blocks/layers_8/attn/qkv/_flax_linear/bias                     |        (2304,) |     2,304 
+I1006 19:07:35.395494 139767564435584 logging_util.py:10]  blocks/layers_8/attn/qkv/_flax_linear/kernel                   |    (768, 2304) | 1,769,472 
+I1006 19:07:35.395506 139767564435584 logging_util.py:10]  blocks/layers_8/mlp/fc1/_flax_linear/bias                      |        (3072,) |     3,072 
+I1006 19:07:35.395518 139767564435584 logging_util.py:10]  blocks/layers_8/mlp/fc1/_flax_linear/kernel                    |    (768, 3072) | 2,359,296 
+I1006 19:07:35.395530 139767564435584 logging_util.py:10]  blocks/layers_8/mlp/fc2/_flax_linear/bias                      |         (768,) |       768 
+I1006 19:07:35.395543 139767564435584 logging_util.py:10]  blocks/layers_8/mlp/fc2/_flax_linear/kernel                    |    (3072, 768) | 2,359,296 
+I1006 19:07:35.395555 139767564435584 logging_util.py:10]  blocks/layers_9/adaLN_modulation/layers_1/_flax_linear/bias    |        (4608,) |     4,608 
+I1006 19:07:35.395567 139767564435584 logging_util.py:10]  blocks/layers_9/adaLN_modulation/layers_1/_flax_linear/kernel  |    (768, 4608) | 3,538,944 
+I1006 19:07:35.395579 139767564435584 logging_util.py:10]  blocks/layers_9/attn/proj/_flax_linear/bias                    |         (768,) |       768 
+I1006 19:07:35.395591 139767564435584 logging_util.py:10]  blocks/layers_9/attn/proj/_flax_linear/kernel                  |     (768, 768) |   589,824 
+I1006 19:07:35.395602 139767564435584 logging_util.py:10]  blocks/layers_9/attn/qkv/_flax_linear/bias                     |        (2304,) |     2,304 
+I1006 19:07:35.395614 139767564435584 logging_util.py:10]  blocks/layers_9/attn/qkv/_flax_linear/kernel                   |    (768, 2304) | 1,769,472 
+I1006 19:07:35.395626 139767564435584 logging_util.py:10]  blocks/layers_9/mlp/fc1/_flax_linear/bias                      |        (3072,) |     3,072 
+I1006 19:07:35.395638 139767564435584 logging_util.py:10]  blocks/layers_9/mlp/fc1/_flax_linear/kernel                    |    (768, 3072) | 2,359,296 
+I1006 19:07:35.395650 139767564435584 logging_util.py:10]  blocks/layers_9/mlp/fc2/_flax_linear/bias                      |         (768,) |       768 
+I1006 19:07:35.395662 139767564435584 logging_util.py:10]  blocks/layers_9/mlp/fc2/_flax_linear/kernel                    |    (3072, 768) | 2,359,296 
+I1006 19:07:35.395674 139767564435584 logging_util.py:10]  final_layer/adaLN_modulation/layers_1/_flax_linear/bias        |        (1536,) |     1,536 
+I1006 19:07:35.395687 139767564435584 logging_util.py:10]  final_layer/adaLN_modulation/layers_1/_flax_linear/kernel      |    (768, 1536) | 1,179,648 
+I1006 19:07:35.395699 139767564435584 logging_util.py:10]  final_layer/linear/_flax_linear/bias                           |          (64,) |        64 
+I1006 19:07:35.395711 139767564435584 logging_util.py:10]  final_layer/linear/_flax_linear/kernel                         |      (768, 64) |    49,152 
+I1006 19:07:35.395723 139767564435584 logging_util.py:10]  h_embedder/mlp/layers_0/_flax_linear/bias                      |         (768,) |       768 
+I1006 19:07:35.395735 139767564435584 logging_util.py:10]  h_embedder/mlp/layers_0/_flax_linear/kernel                    |     (256, 768) |   196,608 
+I1006 19:07:35.395747 139767564435584 logging_util.py:10]  h_embedder/mlp/layers_2/_flax_linear/bias                      |         (768,) |       768 
+I1006 19:07:35.395759 139767564435584 logging_util.py:10]  h_embedder/mlp/layers_2/_flax_linear/kernel                    |     (768, 768) |   589,824 
+I1006 19:07:35.395771 139767564435584 logging_util.py:10]  t_embedder/mlp/layers_0/_flax_linear/bias                      |         (768,) |       768 
+I1006 19:07:35.395783 139767564435584 logging_util.py:10]  t_embedder/mlp/layers_0/_flax_linear/kernel                    |     (256, 768) |   196,608 
+I1006 19:07:35.395794 139767564435584 logging_util.py:10]  t_embedder/mlp/layers_2/_flax_linear/bias                      |         (768,) |       768 
+I1006 19:07:35.395807 139767564435584 logging_util.py:10]  t_embedder/mlp/layers_2/_flax_linear/kernel                    |     (768, 768) |   589,824 
+I1006 19:07:35.395818 139767564435584 logging_util.py:10]  x_embedder/proj/bias                                           |         (768,) |       768 
+I1006 19:07:35.395830 139767564435584 logging_util.py:10]  x_embedder/proj/kernel                                         | (4, 4, 4, 768) |    49,152 
+I1006 19:07:35.395843 139767564435584 logging_util.py:10]  y_embedder/embedding_table/_flax_embedding/embedding           |    (1001, 768) |   768,768 
+I1006 19:07:35.395854 139767564435584 logging_util.py:10] ---------------------------------------------------------------------------------------------
+I1006 19:07:35.395866 139767564435584 logging_util.py:10] Total parameters: 131,165,248
+I1006 19:07:35.772260 139767564435584 checkpoints.py:1108] Restoring orbax checkpoint from /work/MeanFlow/runs/table1a_0_b200/checkpoint_375300
+I1006 19:07:35.772411 139767564435584 pytree_checkpoint_handler.py:597] save_device_host_concurrent_bytes=None
+I1006 19:07:35.773058 139767564435584 abstract_checkpointer.py:35] orbax-checkpoint version: 0.11.39
+I1006 19:07:35.779026 139767564435584 event_tracking.py:70] [process=0] [sync] Started load checkpoint @ /work/MeanFlow/runs/table1a_0_b200/checkpoint_375300.
+I1006 19:07:35.780853 139767564435584 checkpointer.py:307] Restoring checkpoint from /work/MeanFlow/runs/table1a_0_b200/checkpoint_375300.
+I1006 19:07:35.781080 139767564435584 event_tracking.py:125] [process=0] [sync] Finished blocking load in 0.00 seconds. Continuing load @ /work/MeanFlow/runs/table1a_0_b200/checkpoint_375300.
+I1006 19:07:35.838802 139767564435584 array_metadata_store.py:284] [process=0][thread=MainThread] No metadata found for any process_index, checkpoint_dir=/work/MeanFlow/runs/table1a_0_b200/checkpoint_375300. Time taken: 0.003614s. If the checkpoint does not contain jax.Array then it is expected. If checkpoint contains jax.Array then it should lead to an error eventually; if no error is raised then it is a bug.
+I1006 19:07:36.455455 139767564435584 jax_array_handlers.py:862] [process=0] /jax/orbax/read/worker/io/requested throughput: 3.070 GiB/s (total gbytes: 2.0 GiB) (time elapsed: 0.6367061138153076 s) (per-host)
+W1006 19:07:36.460355 139767564435584 transform_utils.py:230] The transformations API will eventually be replaced by an upgraded design. The current API will not be removed until this point, but it will no longer be actively worked on.
+I1006 19:07:36.465205 139767564435584 event_tracking.py:138] [process=0] [sync] Finished load in 0.69 seconds @ /work/MeanFlow/runs/table1a_0_b200/checkpoint_375300
+I1006 19:07:36.467023 139767564435584 logging_util.py:10] Restored from checkpoint at /work/MeanFlow/runs/table1a_0_b200/checkpoint_375300
+I1006 19:07:36.925676 139767564435584 _client.py:1085] HTTP Request: HEAD https://huggingface.co/pcuenq/sd-vae-ft-mse-flax/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+I1006 19:07:37.073009 139767564435584 _client.py:1085] HTTP Request: HEAD https://huggingface.co/enterprise-explorers/sd-vae-ft-mse-flax/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+I1006 19:07:37.096796 139767564435584 _client.py:1085] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/enterprise-explorers/sd-vae-ft-mse-flax/7581b0a0489cc8483c876a728b830b9ce087cf03/config.json?%2Fenterprise-explorers%2Fsd-vae-ft-mse-flax%2Fresolve%2Fmain%2Fconfig.json=&etag=%220d6aca439f3e241645dd8d5335094d9d613de0e6%22 "HTTP/1.1 200 OK"
+I1006 19:07:37.240791 139767564435584 _client.py:1085] HTTP Request: HEAD https://huggingface.co/pcuenq/sd-vae-ft-mse-flax/resolve/main/diffusion_flax_model.msgpack "HTTP/1.1 307 Temporary Redirect"
+I1006 19:07:37.384753 139767564435584 _client.py:1085] HTTP Request: HEAD https://huggingface.co/enterprise-explorers/sd-vae-ft-mse-flax/resolve/main/diffusion_flax_model.msgpack "HTTP/1.1 302 Found"
+I1006 19:07:38.133464 139767564435584 logging_util.py:10] Compiling vae.apply...
+2026-10-06 19:07:40.346840: E external/xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-10-06 19:07:40.505239: E external/xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-10-06 19:07:40.944537: E external/xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-10-06 19:07:41.105632: E external/xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-10-06 19:07:41.431330: W external/xla/xla/tsl/framework/bfc_allocator.cc:310] Allocator (GPU_0_bfc) ran out of memory trying to allocate 135.32GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2026-10-06 19:07:41.431376: W external/xla/xla/tsl/framework/bfc_allocator.cc:310] Allocator (GPU_0_bfc) ran out of memory trying to allocate 135.32GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2026-10-06 19:07:42.293288: E external/xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-10-06 19:07:42.561316: E external/xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-10-06 19:07:43.330326: E external/xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-10-06 19:07:43.574677: E external/xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-10-06 19:07:44.370901: E external/xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-10-06 19:07:44.614812: E external/xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-10-06 19:07:46.995330: E external/xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+2026-10-06 19:07:47.228113: E external/xla/xla/stream_executor/cuda/cuda_timer.cc:86] Delay kernel timed out: measured time has sub-optimal accuracy. There may be a missing warmup execution, please investigate in Nsight Systems.
+I1006 19:07:49.000514 139767564435584 logging_util.py:10] Compiling VAE decoder done
+I1006 19:07:49.000693 139767564435584 logging_util.py:10] FLOPs (1e9): 23.079424
+I1006 19:07:49.015802 139767564435584 logging_util.py:10] Initial compilation, this might take some minutes...
+I1006 19:07:49.057926 139767564435584 logging_util.py:10] epoch 75...
+I1006 19:07:49.058053 139767564435584 logging_util.py:10] epoch 75...
+I1006 19:08:03.200444 139767564435584 logging_util.py:10] Initial compilation completed. Reset timer.
+I1006 19:08:03.200726 139767564435584 logging_util.py:10] p_train_step compiled in 14.14s
+I1006 19:08:07.130534 139422372697792 logging_writer.py:48] [375400] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.4516, v_loss=3140.14
+I1006 19:08:07.131704 139767564435584 logging_util.py:10] train epoch: 75, step: 375399, loss: 0.999997, steps/sec: 25.45
+I1006 19:08:11.078150 139767564435584 logging_util.py:10] train epoch: 75, step: 375499, loss: 0.999997, steps/sec: 25.33
+I1006 19:08:11.078541 139422372697792 logging_writer.py:48] [375500] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.3283, v_loss=3150.65
+I1006 19:08:15.026996 139767564435584 logging_util.py:10] train epoch: 75, step: 375599, loss: 0.999997, steps/sec: 25.32
+I1006 19:08:15.027406 139422372697792 logging_writer.py:48] [375600] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.3241, v_loss=3136.34
+I1006 19:08:18.980168 139767564435584 logging_util.py:10] train epoch: 75, step: 375699, loss: 0.999997, steps/sec: 25.30
+I1006 19:08:18.980429 139422372697792 logging_writer.py:48] [375700] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.295, v_loss=3136.37
+I1006 19:08:23.117078 139767564435584 logging_util.py:10] train epoch: 75, step: 375799, loss: 0.999997, steps/sec: 24.17
+I1006 19:08:23.117333 139422372697792 logging_writer.py:48] [375800] ep=75, loss=0.999997, lr=0.0001, steps_per_second=24.1726, v_loss=3138.96
+I1006 19:08:27.075363 139767564435584 logging_util.py:10] train epoch: 75, step: 375899, loss: 0.999997, steps/sec: 25.26
+I1006 19:08:27.075606 139422372697792 logging_writer.py:48] [375900] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.2644, v_loss=3135.54
+I1006 19:08:31.023546 139767564435584 logging_util.py:10] train epoch: 75, step: 375999, loss: 0.999997, steps/sec: 25.33
+I1006 19:08:31.023826 139422372697792 logging_writer.py:48] [376000] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.3273, v_loss=3136.13
+I1006 19:08:34.972633 139767564435584 logging_util.py:10] train epoch: 75, step: 376099, loss: 0.999997, steps/sec: 25.32
+I1006 19:08:34.972985 139422372697792 logging_writer.py:48] [376100] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.3227, v_loss=3134.81
+I1006 19:08:38.930437 139767564435584 logging_util.py:10] train epoch: 75, step: 376199, loss: 0.999997, steps/sec: 25.27
+I1006 19:08:38.930615 139422372697792 logging_writer.py:48] [376200] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.2662, v_loss=3134.11
+I1006 19:08:43.051054 139767564435584 logging_util.py:10] train epoch: 75, step: 376299, loss: 0.999997, steps/sec: 24.27
+I1006 19:08:43.051372 139422372697792 logging_writer.py:48] [376300] ep=75, loss=0.999997, lr=0.0001, steps_per_second=24.2686, v_loss=3132.18
+I1006 19:08:47.008714 139767564435584 logging_util.py:10] train epoch: 75, step: 376399, loss: 0.999997, steps/sec: 25.27
+I1006 19:08:47.008962 139422372697792 logging_writer.py:48] [376400] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.2669, v_loss=3128.62
+I1006 19:08:50.967478 139767564435584 logging_util.py:10] train epoch: 75, step: 376499, loss: 0.999997, steps/sec: 25.26
+I1006 19:08:50.967745 139422372697792 logging_writer.py:48] [376500] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.261, v_loss=3139.58
+I1006 19:08:55.061520 139767564435584 logging_util.py:10] train epoch: 75, step: 376599, loss: 0.999997, steps/sec: 24.43
+I1006 19:08:55.061750 139422372697792 logging_writer.py:48] [376600] ep=75, loss=0.999997, lr=0.0001, steps_per_second=24.4252, v_loss=3133.66
+I1006 19:08:59.021750 139767564435584 logging_util.py:10] train epoch: 75, step: 376699, loss: 0.999997, steps/sec: 25.25
+I1006 19:08:59.022144 139422372697792 logging_writer.py:48] [376700] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.2519, v_loss=3140.77
+I1006 19:09:02.982806 139767564435584 logging_util.py:10] train epoch: 75, step: 376799, loss: 0.999997, steps/sec: 25.25
+I1006 19:09:02.983165 139422372697792 logging_writer.py:48] [376800] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.2455, v_loss=3137.93
+I1006 19:09:06.940483 139767564435584 logging_util.py:10] train epoch: 75, step: 376899, loss: 0.999997, steps/sec: 25.27
+I1006 19:09:06.940829 139422372697792 logging_writer.py:48] [376900] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.267, v_loss=3130.4
+I1006 19:09:10.889285 139767564435584 logging_util.py:10] train epoch: 75, step: 376999, loss: 0.999997, steps/sec: 25.32
+I1006 19:09:10.889624 139422372697792 logging_writer.py:48] [377000] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.3245, v_loss=3135.54
+I1006 19:09:14.840900 139767564435584 logging_util.py:10] train epoch: 75, step: 377099, loss: 0.999997, steps/sec: 25.31
+I1006 19:09:14.841184 139422372697792 logging_writer.py:48] [377100] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.3057, v_loss=3139.09
+I1006 19:09:18.801338 139767564435584 logging_util.py:10] train epoch: 75, step: 377199, loss: 0.999997, steps/sec: 25.25
+I1006 19:09:18.801675 139422372697792 logging_writer.py:48] [377200] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.2503, v_loss=3137.41
+I1006 19:09:22.757910 139767564435584 logging_util.py:10] train epoch: 75, step: 377299, loss: 0.999997, steps/sec: 25.27
+I1006 19:09:22.758191 139422372697792 logging_writer.py:48] [377300] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.2739, v_loss=3132.38
+I1006 19:09:26.988980 139767564435584 logging_util.py:10] train epoch: 75, step: 377399, loss: 0.999997, steps/sec: 23.63
+I1006 19:09:26.989237 139422372697792 logging_writer.py:48] [377400] ep=75, loss=0.999997, lr=0.0001, steps_per_second=23.6348, v_loss=3134.29
+I1006 19:09:30.948129 139767564435584 logging_util.py:10] train epoch: 75, step: 377499, loss: 0.999997, steps/sec: 25.26
+I1006 19:09:30.948462 139422372697792 logging_writer.py:48] [377500] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.2585, v_loss=3135.12
+I1006 19:09:35.084023 139767564435584 logging_util.py:10] train epoch: 75, step: 377599, loss: 0.999997, steps/sec: 24.18
+I1006 19:09:35.084268 139422372697792 logging_writer.py:48] [377600] ep=75, loss=0.999997, lr=0.0001, steps_per_second=24.1778, v_loss=3140.79
+I1006 19:09:39.040151 139767564435584 logging_util.py:10] train epoch: 75, step: 377699, loss: 0.999997, steps/sec: 25.28
+I1006 19:09:39.040455 139422372697792 logging_writer.py:48] [377700] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.2776, v_loss=3138.96
+I1006 19:09:42.996220 139767564435584 logging_util.py:10] train epoch: 75, step: 377799, loss: 0.999997, steps/sec: 25.28
+I1006 19:09:42.996486 139422372697792 logging_writer.py:48] [377800] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.2774, v_loss=3144.04
+I1006 19:09:46.937870 139767564435584 logging_util.py:10] train epoch: 75, step: 377899, loss: 0.999997, steps/sec: 25.37
+I1006 19:09:46.938200 139422372697792 logging_writer.py:48] [377900] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.3704, v_loss=3131.75
+I1006 19:09:50.900580 139767564435584 logging_util.py:10] train epoch: 75, step: 377999, loss: 0.999997, steps/sec: 25.23
+I1006 19:09:50.900839 139422372697792 logging_writer.py:48] [378000] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.2349, v_loss=3138.24
+I1006 19:09:54.851849 139767564435584 logging_util.py:10] train epoch: 75, step: 378099, loss: 0.999997, steps/sec: 25.31
+I1006 19:09:54.852179 139422372697792 logging_writer.py:48] [378100] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.3087, v_loss=3138.25
+I1006 19:09:59.009240 139767564435584 logging_util.py:10] train epoch: 75, step: 378199, loss: 0.999997, steps/sec: 24.05
+I1006 19:09:59.009482 139422372697792 logging_writer.py:48] [378200] ep=75, loss=0.999997, lr=0.0001, steps_per_second=24.0532, v_loss=3141.12
+I1006 19:10:02.963277 139767564435584 logging_util.py:10] train epoch: 75, step: 378299, loss: 0.999997, steps/sec: 25.29
+I1006 19:10:02.963528 139422372697792 logging_writer.py:48] [378300] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.2907, v_loss=3133.73
+I1006 19:10:06.918015 139767564435584 logging_util.py:10] train epoch: 75, step: 378399, loss: 0.999997, steps/sec: 25.29
+I1006 19:10:06.918289 139422372697792 logging_writer.py:48] [378400] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.2864, v_loss=3136.83
+I1006 19:10:10.866329 139767564435584 logging_util.py:10] train epoch: 75, step: 378499, loss: 0.999997, steps/sec: 25.33
+I1006 19:10:10.866781 139422372697792 logging_writer.py:48] [378500] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.3281, v_loss=3136.61
+I1006 19:10:14.827469 139767564435584 logging_util.py:10] train epoch: 75, step: 378599, loss: 0.999997, steps/sec: 25.24
+I1006 19:10:14.827639 139422372697792 logging_writer.py:48] [378600] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.2442, v_loss=3133.07
+I1006 19:10:18.779757 139767564435584 logging_util.py:10] train epoch: 75, step: 378699, loss: 0.999997, steps/sec: 25.30
+I1006 19:10:18.780009 139422372697792 logging_writer.py:48] [378700] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.3018, v_loss=3139.28
+I1006 19:10:22.744045 139767564435584 logging_util.py:10] train epoch: 75, step: 378799, loss: 0.999997, steps/sec: 25.23
+I1006 19:10:22.744333 139422372697792 logging_writer.py:48] [378800] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.2255, v_loss=3132.69
+I1006 19:10:26.696136 139767564435584 logging_util.py:10] train epoch: 75, step: 378899, loss: 0.999997, steps/sec: 25.30
+I1006 19:10:26.696352 139422372697792 logging_writer.py:48] [378900] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.3027, v_loss=3131.52
+I1006 19:10:31.032506 139767564435584 logging_util.py:10] train epoch: 75, step: 378999, loss: 0.999997, steps/sec: 23.06
+I1006 19:10:31.032762 139422372697792 logging_writer.py:48] [379000] ep=75, loss=0.999997, lr=0.0001, steps_per_second=23.0609, v_loss=3137.04
+I1006 19:10:34.991195 139767564435584 logging_util.py:10] train epoch: 75, step: 379099, loss: 0.999997, steps/sec: 25.26
+I1006 19:10:34.991449 139422372697792 logging_writer.py:48] [379100] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.261, v_loss=3145.72
+I1006 19:10:38.945786 139767564435584 logging_util.py:10] train epoch: 75, step: 379199, loss: 0.999997, steps/sec: 25.29
+I1006 19:10:38.946089 139422372697792 logging_writer.py:48] [379200] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.2872, v_loss=3137.11
+I1006 19:10:42.900634 139767564435584 logging_util.py:10] train epoch: 75, step: 379299, loss: 0.999997, steps/sec: 25.29
+I1006 19:10:42.900906 139422372697792 logging_writer.py:48] [379300] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.2852, v_loss=3131.31
+I1006 19:10:46.859376 139767564435584 logging_util.py:10] train epoch: 75, step: 379399, loss: 0.999997, steps/sec: 25.26
+I1006 19:10:46.859636 139422372697792 logging_writer.py:48] [379400] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.2606, v_loss=3130.79
+I1006 19:10:50.819912 139767564435584 logging_util.py:10] train epoch: 75, step: 379499, loss: 0.999997, steps/sec: 25.25
+I1006 19:10:50.820074 139422372697792 logging_writer.py:48] [379500] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.249, v_loss=3138.13
+I1006 19:10:54.778823 139767564435584 logging_util.py:10] train epoch: 75, step: 379599, loss: 0.999997, steps/sec: 25.26
+I1006 19:10:54.779124 139422372697792 logging_writer.py:48] [379600] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.2595, v_loss=3141.53
+I1006 19:10:58.739514 139767564435584 logging_util.py:10] train epoch: 75, step: 379699, loss: 0.999997, steps/sec: 25.25
+I1006 19:10:58.739753 139422372697792 logging_writer.py:48] [379700] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.248, v_loss=3137.81
+I1006 19:11:02.899723 139767564435584 logging_util.py:10] train epoch: 75, step: 379799, loss: 0.999997, steps/sec: 24.04
+I1006 19:11:02.899986 139422372697792 logging_writer.py:48] [379800] ep=75, loss=0.999997, lr=0.0001, steps_per_second=24.0373, v_loss=3141.68
+I1006 19:11:06.869031 139767564435584 logging_util.py:10] train epoch: 75, step: 379899, loss: 0.999997, steps/sec: 25.19
+I1006 19:11:06.869291 139422372697792 logging_writer.py:48] [379900] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.1936, v_loss=3142.51
+I1006 19:11:10.826314 139767564435584 logging_util.py:10] train epoch: 75, step: 379999, loss: 0.999997, steps/sec: 25.27
+I1006 19:11:10.826565 139422372697792 logging_writer.py:48] [380000] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.2696, v_loss=3148.59
+I1006 19:11:14.783195 139767564435584 logging_util.py:10] train epoch: 75, step: 380099, loss: 0.999997, steps/sec: 25.27
+I1006 19:11:14.783614 139422372697792 logging_writer.py:48] [380100] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.2736, v_loss=3132.04
+I1006 19:11:18.740921 139767564435584 logging_util.py:10] train epoch: 75, step: 380199, loss: 0.999997, steps/sec: 25.27
+I1006 19:11:18.741160 139422372697792 logging_writer.py:48] [380200] ep=75, loss=0.999997, lr=0.0001, steps_per_second=25.2659, v_loss=3132.76
+I1006 19:11:22.861605 139767564435584 logging_util.py:10] train epoch: 75, step: 380299, loss: 0.999997, steps/sec: 24.27
+I1006 19:11:22.861892 139422372697792 logging_writer.py:48] [380300] ep=75, loss=0.999997, lr=0.0001, steps_per_second=24.268, v_loss=3132.62
+I1006 19:11:23.458744 139767564435584 logging_util.py:10] Saving checkpoint step 380304.
+I1006 19:11:23.459113 139767564435584 checkpoints.py:571] Saving checkpoint at step: 380304
+I1006 19:11:23.459403 139767564435584 checkpoints.py:814] Using Orbax as backend to save Flax checkpoints. For potential troubleshooting see: https://flax.readthedocs.io/en/latest/guides/training_techniques/use_checkpointing.html#orbax-as-backend-troubleshooting
+I1006 19:11:23.459482 139767564435584 pytree_checkpoint_handler.py:597] save_device_host_concurrent_bytes=None
+I1006 19:11:23.461171 139767564435584 event_tracking.py:70] [process=0] [sync] Started save checkpoint @ /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_380304.
+I1006 19:11:23.462541 139767564435584 atomicity.py:140] Creating tmp directory /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_380304.orbax-checkpoint-tmp
+I1006 19:11:23.465659 139767564435584 checkpoint.py:188] Wrote Metadata={'item_handlers': None, 'metrics': {}, 'performance_metrics': {}, 'init_timestamp_nsecs': 1791306683464168591, 'commit_timestamp_nsecs': None, 'custom_metadata': {}}, json={"item_handlers": null, "metrics": {}, "performance_metrics": {}, "init_timestamp_nsecs": 1791306683464168591, "commit_timestamp_nsecs": null, "custom_metadata": {}} to /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_380304.orbax-checkpoint-tmp/_CHECKPOINT_METADATA
+I1006 19:11:23.786069 139767564435584 signaling_client.py:380] Using ThreadSafeKeyValueSignalingClient
+I1006 19:11:23.787926 139767564435584 future.py:372] [process=0][thread=MainThread][operation_id=1] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+I1006 19:11:24.803294 139463141349056 array_metadata_store.py:248] [process=0][thread=write_metadata_after_commits] No metadata found for process_index=0, checkpoint_dir=/work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_380304.orbax-checkpoint-tmp. If the checkpoint does not contain jax.Array then it is expected. If checkpoint contains jax.Array then it should lead to an error eventually; if no error is raised then it is a bug.
+I1006 19:11:24.819829 139767564435584 checkpoint.py:228] Read Metadata={'item_handlers': None, 'metrics': {}, 'performance_metrics': {}, 'init_timestamp_nsecs': 1791306683464168591, 'commit_timestamp_nsecs': None, 'custom_metadata': {}} from /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_380304.orbax-checkpoint-tmp/_CHECKPOINT_METADATA
+I1006 19:11:24.820593 139767564435584 checkpoint.py:247] Updated Metadata={'item_handlers': 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler', 'metrics': {}, 'performance_metrics': {}, 'init_timestamp_nsecs': 1791306683464168591, 'commit_timestamp_nsecs': None, 'custom_metadata': {}} to /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_380304.orbax-checkpoint-tmp/_CHECKPOINT_METADATA
+I1006 19:11:24.820665 139767564435584 event_tracking.py:125] [process=0] [sync] Finished blocking save in 1.36 seconds. Continuing save @ /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_380304.
+I1006 19:11:24.822345 139767564435584 array_metadata_store.py:284] [process=0][thread=MainThread] No metadata found for any process_index, checkpoint_dir=/work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_380304.orbax-checkpoint-tmp. Time taken: 0.000273s. If the checkpoint does not contain jax.Array then it is expected. If checkpoint contains jax.Array then it should lead to an error eventually; if no error is raised then it is a bug.
+I1006 19:11:24.830558 139767564435584 atomicity.py:535] Renaming /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_380304.orbax-checkpoint-tmp to /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_380304
+I1006 19:11:24.834620 139767564435584 atomicity.py:847] [process=0][thread=MainThread] Finished saving checkpoint (finalized tmp dir) to `/work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_380304`.
+I1006 19:11:24.835040 139767564435584 event_tracking.py:138] [process=0] [sync] Finished save in 1.37 seconds @ /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_380304
+I1006 19:11:24.835103 139767564435584 logging_util.py:10] Checkpoint step 380304 saved.
+I1006 19:11:24.861077 139767564435584 logging_util.py:10] epoch 76...
+I1006 19:11:24.861203 139767564435584 logging_util.py:10] epoch 76...
+I1006 19:11:28.725901 139767564435584 logging_util.py:10] train epoch: 76, step: 380399, loss: 0.999997, steps/sec: 25.88
+I1006 19:11:28.726246 139422372697792 logging_writer.py:48] [380400] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.8769, v_loss=3139.77
+I1006 19:11:32.882946 139767564435584 logging_util.py:10] train epoch: 76, step: 380499, loss: 0.999997, steps/sec: 24.06
+I1006 19:11:32.883219 139422372697792 logging_writer.py:48] [380500] ep=76, loss=0.999997, lr=0.0001, steps_per_second=24.055, v_loss=3147.06
+I1006 19:11:36.834346 139767564435584 logging_util.py:10] train epoch: 76, step: 380599, loss: 0.999997, steps/sec: 25.31
+I1006 19:11:36.834600 139422372697792 logging_writer.py:48] [380600] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.3074, v_loss=3136.01
+I1006 19:11:40.781337 139767564435584 logging_util.py:10] train epoch: 76, step: 380699, loss: 0.999997, steps/sec: 25.34
+I1006 19:11:40.781584 139422372697792 logging_writer.py:48] [380700] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.3357, v_loss=3137.89
+I1006 19:11:44.739352 139767564435584 logging_util.py:10] train epoch: 76, step: 380799, loss: 0.999997, steps/sec: 25.27
+I1006 19:11:44.739624 139422372697792 logging_writer.py:48] [380800] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2656, v_loss=3138.51
+I1006 19:11:48.701535 139767564435584 logging_util.py:10] train epoch: 76, step: 380899, loss: 0.999997, steps/sec: 25.24
+I1006 19:11:48.701794 139422372697792 logging_writer.py:48] [380900] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2382, v_loss=3136.24
+I1006 19:11:52.658642 139767564435584 logging_util.py:10] train epoch: 76, step: 380999, loss: 0.999997, steps/sec: 25.27
+I1006 19:11:52.658924 139422372697792 logging_writer.py:48] [381000] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2716, v_loss=3138.81
+I1006 19:11:56.629240 139767564435584 logging_util.py:10] train epoch: 76, step: 381099, loss: 0.999997, steps/sec: 25.18
+I1006 19:11:56.629491 139422372697792 logging_writer.py:48] [381100] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.1845, v_loss=3132.92
+I1006 19:12:00.593691 139767564435584 logging_util.py:10] train epoch: 76, step: 381199, loss: 0.999997, steps/sec: 25.22
+I1006 19:12:00.593954 139422372697792 logging_writer.py:48] [381200] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2242, v_loss=3135.81
+I1006 19:12:04.726024 139767564435584 logging_util.py:10] train epoch: 76, step: 381299, loss: 0.999997, steps/sec: 24.20
+I1006 19:12:04.726379 139422372697792 logging_writer.py:48] [381300] ep=76, loss=0.999997, lr=0.0001, steps_per_second=24.2008, v_loss=3134.25
+I1006 19:12:08.687912 139767564435584 logging_util.py:10] train epoch: 76, step: 381399, loss: 0.999997, steps/sec: 25.24
+I1006 19:12:08.688153 139422372697792 logging_writer.py:48] [381400] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2392, v_loss=3130.89
+I1006 19:12:12.650019 139767564435584 logging_util.py:10] train epoch: 76, step: 381499, loss: 0.999997, steps/sec: 25.24
+I1006 19:12:12.650262 139422372697792 logging_writer.py:48] [381500] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2388, v_loss=3142.04
+I1006 19:12:16.693258 139767564435584 logging_util.py:10] train epoch: 76, step: 381599, loss: 0.999997, steps/sec: 24.73
+I1006 19:12:16.693636 139422372697792 logging_writer.py:48] [381600] ep=76, loss=0.999997, lr=0.0001, steps_per_second=24.7331, v_loss=3129.66
+I1006 19:12:20.653086 139767564435584 logging_util.py:10] train epoch: 76, step: 381699, loss: 0.999997, steps/sec: 25.25
+I1006 19:12:20.653363 139422372697792 logging_writer.py:48] [381700] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2532, v_loss=3138.07
+I1006 19:12:24.610853 139767564435584 logging_util.py:10] train epoch: 76, step: 381799, loss: 0.999997, steps/sec: 25.27
+I1006 19:12:24.611088 139422372697792 logging_writer.py:48] [381800] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2667, v_loss=3137.4
+I1006 19:12:28.586802 139767564435584 logging_util.py:10] train epoch: 76, step: 381899, loss: 0.999997, steps/sec: 25.15
+I1006 19:12:28.586990 139422372697792 logging_writer.py:48] [381900] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.1514, v_loss=3126.74
+I1006 19:12:32.552713 139767564435584 logging_util.py:10] train epoch: 76, step: 381999, loss: 0.999997, steps/sec: 25.21
+I1006 19:12:32.553034 139422372697792 logging_writer.py:48] [382000] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2148, v_loss=3137.57
+I1006 19:12:36.753015 139767564435584 logging_util.py:10] train epoch: 76, step: 382099, loss: 0.999997, steps/sec: 23.81
+I1006 19:12:36.753368 139422372697792 logging_writer.py:48] [382100] ep=76, loss=0.999997, lr=0.0001, steps_per_second=23.808, v_loss=3143.02
+I1006 19:12:40.722375 139767564435584 logging_util.py:10] train epoch: 76, step: 382199, loss: 0.999997, steps/sec: 25.19
+I1006 19:12:40.722636 139422372697792 logging_writer.py:48] [382200] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.1927, v_loss=3133.04
+I1006 19:12:44.675304 139767564435584 logging_util.py:10] train epoch: 76, step: 382299, loss: 0.999997, steps/sec: 25.30
+I1006 19:12:44.675537 139422372697792 logging_writer.py:48] [382300] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2975, v_loss=3132.86
+I1006 19:12:48.643828 139767564435584 logging_util.py:10] train epoch: 76, step: 382399, loss: 0.999997, steps/sec: 25.20
+I1006 19:12:48.644423 139422372697792 logging_writer.py:48] [382400] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2003, v_loss=3136.01
+I1006 19:12:52.602756 139767564435584 logging_util.py:10] train epoch: 76, step: 382499, loss: 0.999997, steps/sec: 25.26
+I1006 19:12:52.603031 139422372697792 logging_writer.py:48] [382500] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2574, v_loss=3136.3
+I1006 19:12:56.562453 139767564435584 logging_util.py:10] train epoch: 76, step: 382599, loss: 0.999997, steps/sec: 25.25
+I1006 19:12:56.562723 139422372697792 logging_writer.py:48] [382600] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2545, v_loss=3134.8
+I1006 19:13:00.518810 139767564435584 logging_util.py:10] train epoch: 76, step: 382699, loss: 0.999997, steps/sec: 25.28
+I1006 19:13:00.519238 139422372697792 logging_writer.py:48] [382700] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2767, v_loss=3140.99
+I1006 19:13:04.477027 139767564435584 logging_util.py:10] train epoch: 76, step: 382799, loss: 0.999997, steps/sec: 25.26
+I1006 19:13:04.477257 139422372697792 logging_writer.py:48] [382800] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2629, v_loss=3142.12
+I1006 19:13:08.706160 139767564435584 logging_util.py:10] train epoch: 76, step: 382899, loss: 0.999997, steps/sec: 23.65
+I1006 19:13:08.706439 139422372697792 logging_writer.py:48] [382900] ep=76, loss=0.999997, lr=0.0001, steps_per_second=23.6458, v_loss=3133.85
+I1006 19:13:12.742836 139767564435584 logging_util.py:10] train epoch: 76, step: 382999, loss: 0.999997, steps/sec: 24.77
+I1006 19:13:12.743093 139422372697792 logging_writer.py:48] [383000] ep=76, loss=0.999997, lr=0.0001, steps_per_second=24.7727, v_loss=3136.83
+I1006 19:13:16.703210 139767564435584 logging_util.py:10] train epoch: 76, step: 383099, loss: 0.999997, steps/sec: 25.25
+I1006 19:13:16.703456 139422372697792 logging_writer.py:48] [383100] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.25, v_loss=3137.47
+I1006 19:13:20.662322 139767564435584 logging_util.py:10] train epoch: 76, step: 383199, loss: 0.999997, steps/sec: 25.26
+I1006 19:13:20.662564 139422372697792 logging_writer.py:48] [383200] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2582, v_loss=3136.11
+I1006 19:13:24.615354 139767564435584 logging_util.py:10] train epoch: 76, step: 383299, loss: 0.999997, steps/sec: 25.30
+I1006 19:13:24.615576 139422372697792 logging_writer.py:48] [383300] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2971, v_loss=3132.09
+I1006 19:13:28.578359 139767564435584 logging_util.py:10] train epoch: 76, step: 383399, loss: 0.999997, steps/sec: 25.23
+I1006 19:13:28.578602 139422372697792 logging_writer.py:48] [383400] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2334, v_loss=3136.92
+I1006 19:13:32.534755 139767564435584 logging_util.py:10] train epoch: 76, step: 383499, loss: 0.999997, steps/sec: 25.28
+I1006 19:13:32.535005 139422372697792 logging_writer.py:48] [383500] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2755, v_loss=3137.36
+I1006 19:13:36.489838 139767564435584 logging_util.py:10] train epoch: 76, step: 383599, loss: 0.999997, steps/sec: 25.28
+I1006 19:13:36.490101 139422372697792 logging_writer.py:48] [383600] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2839, v_loss=3128.99
+I1006 19:13:40.612677 139767564435584 logging_util.py:10] train epoch: 76, step: 383699, loss: 0.999997, steps/sec: 24.26
+I1006 19:13:40.613035 139422372697792 logging_writer.py:48] [383700] ep=76, loss=0.999997, lr=0.0001, steps_per_second=24.2558, v_loss=3135.85
+I1006 19:13:44.565021 139767564435584 logging_util.py:10] train epoch: 76, step: 383799, loss: 0.999997, steps/sec: 25.30
+I1006 19:13:44.565289 139422372697792 logging_writer.py:48] [383800] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.3009, v_loss=3134.99
+I1006 19:13:48.526881 139767564435584 logging_util.py:10] train epoch: 76, step: 383899, loss: 0.999997, steps/sec: 25.24
+I1006 19:13:48.527144 139422372697792 logging_writer.py:48] [383900] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2406, v_loss=3134.88
+I1006 19:13:52.484904 139767564435584 logging_util.py:10] train epoch: 76, step: 383999, loss: 0.999997, steps/sec: 25.27
+I1006 19:13:52.485481 139422372697792 logging_writer.py:48] [384000] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2672, v_loss=3139.77
+I1006 19:13:56.441715 139767564435584 logging_util.py:10] train epoch: 76, step: 384099, loss: 0.999997, steps/sec: 25.27
+I1006 19:13:56.441970 139422372697792 logging_writer.py:48] [384100] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2707, v_loss=3143.23
+I1006 19:14:00.407379 139767564435584 logging_util.py:10] train epoch: 76, step: 384199, loss: 0.999997, steps/sec: 25.22
+I1006 19:14:00.407645 139422372697792 logging_writer.py:48] [384200] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2166, v_loss=3136.48
+I1006 19:14:04.364171 139767564435584 logging_util.py:10] train epoch: 76, step: 384299, loss: 0.999997, steps/sec: 25.27
+I1006 19:14:04.364404 139422372697792 logging_writer.py:48] [384300] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2729, v_loss=3127.18
+I1006 19:14:08.324214 139767564435584 logging_util.py:10] train epoch: 76, step: 384399, loss: 0.999997, steps/sec: 25.25
+I1006 19:14:08.324547 139422372697792 logging_writer.py:48] [384400] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2526, v_loss=3129.42
+I1006 19:14:12.444659 139767564435584 logging_util.py:10] train epoch: 76, step: 384499, loss: 0.999997, steps/sec: 24.27
+I1006 19:14:12.444930 139422372697792 logging_writer.py:48] [384500] ep=76, loss=0.999997, lr=0.0001, steps_per_second=24.269, v_loss=3141.87
+I1006 19:14:16.402807 139767564435584 logging_util.py:10] train epoch: 76, step: 384599, loss: 0.999997, steps/sec: 25.26
+I1006 19:14:16.403077 139422372697792 logging_writer.py:48] [384600] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2642, v_loss=3138.26
+I1006 19:14:20.355916 139767564435584 logging_util.py:10] train epoch: 76, step: 384699, loss: 0.999997, steps/sec: 25.30
+I1006 19:14:20.356152 139422372697792 logging_writer.py:48] [384700] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2966, v_loss=3137.97
+I1006 19:14:24.317747 139767564435584 logging_util.py:10] train epoch: 76, step: 384799, loss: 0.999997, steps/sec: 25.24
+I1006 19:14:24.318000 139422372697792 logging_writer.py:48] [384800] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2409, v_loss=3138.45
+I1006 19:14:28.280585 139767564435584 logging_util.py:10] train epoch: 76, step: 384899, loss: 0.999997, steps/sec: 25.24
+I1006 19:14:28.281082 139422372697792 logging_writer.py:48] [384900] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2365, v_loss=3138.16
+I1006 19:14:32.247457 139767564435584 logging_util.py:10] train epoch: 76, step: 384999, loss: 0.999997, steps/sec: 25.21
+I1006 19:14:32.247721 139422372697792 logging_writer.py:48] [385000] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.2069, v_loss=3140.7
+I1006 19:14:36.196049 139767564435584 logging_util.py:10] train epoch: 76, step: 385099, loss: 0.999997, steps/sec: 25.33
+I1006 19:14:36.196285 139422372697792 logging_writer.py:48] [385100] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.3252, v_loss=3138.91
+I1006 19:14:40.144170 139767564435584 logging_util.py:10] train epoch: 76, step: 385199, loss: 0.999997, steps/sec: 25.33
+I1006 19:14:40.144578 139422372697792 logging_writer.py:48] [385200] ep=76, loss=0.999997, lr=0.0001, steps_per_second=25.3293, v_loss=3133.23
+I1006 19:14:44.318512 139767564435584 logging_util.py:10] train epoch: 76, step: 385299, loss: 0.999997, steps/sec: 23.96
+I1006 19:14:44.318748 139422372697792 logging_writer.py:48] [385300] ep=76, loss=0.999997, lr=0.0001, steps_per_second=23.9552, v_loss=3129.15
+I1006 19:14:45.709668 139767564435584 logging_util.py:10] Saving checkpoint step 385308.
+I1006 19:14:45.710003 139767564435584 checkpoints.py:571] Saving checkpoint at step: 385308
+I1006 19:14:45.710324 139767564435584 checkpoints.py:814] Using Orbax as backend to save Flax checkpoints. For potential troubleshooting see: https://flax.readthedocs.io/en/latest/guides/training_techniques/use_checkpointing.html#orbax-as-backend-troubleshooting
+I1006 19:14:45.710380 139767564435584 pytree_checkpoint_handler.py:597] save_device_host_concurrent_bytes=None
+I1006 19:14:45.711984 139767564435584 event_tracking.py:70] [process=0] [sync] Started save checkpoint @ /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_385308.
+I1006 19:14:45.713123 139767564435584 atomicity.py:140] Creating tmp directory /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_385308.orbax-checkpoint-tmp
+I1006 19:14:46.800013 139767564435584 future.py:372] [process=0][thread=MainThread][operation_id=2] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+I1006 19:14:47.690563 139463015524032 array_metadata_store.py:248] [process=0][thread=write_metadata_after_commits] No metadata found for process_index=0, checkpoint_dir=/work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_385308.orbax-checkpoint-tmp. If the checkpoint does not contain jax.Array then it is expected. If checkpoint contains jax.Array then it should lead to an error eventually; if no error is raised then it is a bug.
+I1006 19:14:47.705979 139767564435584 event_tracking.py:125] [process=0] [sync] Finished blocking save in 1.99 seconds. Continuing save @ /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_385308.
+I1006 19:14:47.707326 139767564435584 array_metadata_store.py:284] [process=0][thread=MainThread] No metadata found for any process_index, checkpoint_dir=/work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_385308.orbax-checkpoint-tmp. Time taken: 0.000226s. If the checkpoint does not contain jax.Array then it is expected. If checkpoint contains jax.Array then it should lead to an error eventually; if no error is raised then it is a bug.
+I1006 19:14:47.714548 139767564435584 atomicity.py:535] Renaming /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_385308.orbax-checkpoint-tmp to /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_385308
+I1006 19:14:47.716428 139767564435584 atomicity.py:847] [process=0][thread=MainThread] Finished saving checkpoint (finalized tmp dir) to `/work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_385308`.
+I1006 19:14:47.716725 139767564435584 event_tracking.py:138] [process=0] [sync] Finished save in 2.00 seconds @ /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_385308
+I1006 19:14:47.716771 139767564435584 logging_util.py:10] Checkpoint step 385308 saved.
+I1006 19:14:47.764695 139767564435584 logging_util.py:10] epoch 77...
+I1006 19:14:47.764789 139767564435584 logging_util.py:10] epoch 77...
+I1006 19:14:51.476794 139767564435584 logging_util.py:10] train epoch: 77, step: 385399, loss: 0.999997, steps/sec: 26.94
+I1006 19:14:51.477038 139422372697792 logging_writer.py:48] [385400] ep=77, loss=0.999997, lr=0.0001, steps_per_second=26.9406, v_loss=3141.21
+I1006 19:14:55.423168 139767564435584 logging_util.py:10] train epoch: 77, step: 385499, loss: 0.999997, steps/sec: 25.34
+I1006 19:14:55.423546 139422372697792 logging_writer.py:48] [385500] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.341, v_loss=3144.04
+I1006 19:14:59.384477 139767564435584 logging_util.py:10] train epoch: 77, step: 385599, loss: 0.999997, steps/sec: 25.24
+I1006 19:14:59.384701 139422372697792 logging_writer.py:48] [385600] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.243, v_loss=3138.83
+I1006 19:15:03.518359 139767564435584 logging_util.py:10] train epoch: 77, step: 385699, loss: 0.999997, steps/sec: 24.19
+I1006 19:15:03.518611 139422372697792 logging_writer.py:48] [385700] ep=77, loss=0.999997, lr=0.0001, steps_per_second=24.1903, v_loss=3134.56
+I1006 19:15:07.472310 139767564435584 logging_util.py:10] train epoch: 77, step: 385799, loss: 0.999997, steps/sec: 25.29
+I1006 19:15:07.472605 139422372697792 logging_writer.py:48] [385800] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2915, v_loss=3140.15
+I1006 19:15:11.424943 139767564435584 logging_util.py:10] train epoch: 77, step: 385899, loss: 0.999997, steps/sec: 25.30
+I1006 19:15:11.425230 139422372697792 logging_writer.py:48] [385900] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2996, v_loss=3133.85
+I1006 19:15:15.542063 139767564435584 logging_util.py:10] train epoch: 77, step: 385999, loss: 0.999997, steps/sec: 24.29
+I1006 19:15:15.542301 139422372697792 logging_writer.py:48] [386000] ep=77, loss=0.999997, lr=0.0001, steps_per_second=24.2885, v_loss=3131.2
+I1006 19:15:19.502549 139767564435584 logging_util.py:10] train epoch: 77, step: 386099, loss: 0.999997, steps/sec: 25.25
+I1006 19:15:19.502803 139422372697792 logging_writer.py:48] [386100] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2496, v_loss=3131.82
+I1006 19:15:23.459816 139767564435584 logging_util.py:10] train epoch: 77, step: 386199, loss: 0.999997, steps/sec: 25.27
+I1006 19:15:23.460084 139422372697792 logging_writer.py:48] [386200] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2698, v_loss=3136.95
+I1006 19:15:27.414891 139767564435584 logging_util.py:10] train epoch: 77, step: 386299, loss: 0.999997, steps/sec: 25.28
+I1006 19:15:27.415143 139422372697792 logging_writer.py:48] [386300] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2839, v_loss=3131.91
+I1006 19:15:31.371953 139767564435584 logging_util.py:10] train epoch: 77, step: 386399, loss: 0.999997, steps/sec: 25.27
+I1006 19:15:31.372186 139422372697792 logging_writer.py:48] [386400] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2714, v_loss=3129.16
+I1006 19:15:35.318311 139767564435584 logging_util.py:10] train epoch: 77, step: 386499, loss: 0.999997, steps/sec: 25.34
+I1006 19:15:35.318441 139422372697792 logging_writer.py:48] [386500] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.3398, v_loss=3135.19
+I1006 19:15:39.274889 139767564435584 logging_util.py:10] train epoch: 77, step: 386599, loss: 0.999997, steps/sec: 25.27
+I1006 19:15:39.275087 139422372697792 logging_writer.py:48] [386600] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2744, v_loss=3134.85
+I1006 19:15:43.227133 139767564435584 logging_util.py:10] train epoch: 77, step: 386699, loss: 0.999997, steps/sec: 25.30
+I1006 19:15:43.227319 139422372697792 logging_writer.py:48] [386700] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.302, v_loss=3135.87
+I1006 19:15:47.339252 139767564435584 logging_util.py:10] train epoch: 77, step: 386799, loss: 0.999997, steps/sec: 24.32
+I1006 19:15:47.339473 139422372697792 logging_writer.py:48] [386800] ep=77, loss=0.999997, lr=0.0001, steps_per_second=24.3184, v_loss=3135.88
+I1006 19:15:51.293589 139767564435584 logging_util.py:10] train epoch: 77, step: 386899, loss: 0.999997, steps/sec: 25.29
+I1006 19:15:51.293776 139422372697792 logging_writer.py:48] [386900] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2887, v_loss=3128.04
+I1006 19:15:55.336134 139767564435584 logging_util.py:10] train epoch: 77, step: 386999, loss: 0.999997, steps/sec: 24.74
+I1006 19:15:55.336319 139422372697792 logging_writer.py:48] [387000] ep=77, loss=0.999997, lr=0.0001, steps_per_second=24.7369, v_loss=3136.74
+I1006 19:15:59.295698 139767564435584 logging_util.py:10] train epoch: 77, step: 387099, loss: 0.999997, steps/sec: 25.26
+I1006 19:15:59.295899 139422372697792 logging_writer.py:48] [387100] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2553, v_loss=3140.54
+I1006 19:16:03.253210 139767564435584 logging_util.py:10] train epoch: 77, step: 387199, loss: 0.999997, steps/sec: 25.27
+I1006 19:16:03.253402 139422372697792 logging_writer.py:48] [387200] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2684, v_loss=3139.82
+I1006 19:16:07.204097 139767564435584 logging_util.py:10] train epoch: 77, step: 387299, loss: 0.999997, steps/sec: 25.31
+I1006 19:16:07.204292 139422372697792 logging_writer.py:48] [387300] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.3108, v_loss=3134.15
+I1006 19:16:11.151796 139767564435584 logging_util.py:10] train epoch: 77, step: 387399, loss: 0.999997, steps/sec: 25.33
+I1006 19:16:11.152009 139422372697792 logging_writer.py:48] [387400] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.3312, v_loss=3133.82
+I1006 19:16:15.108350 139767564435584 logging_util.py:10] train epoch: 77, step: 387499, loss: 0.999997, steps/sec: 25.27
+I1006 19:16:15.108486 139422372697792 logging_writer.py:48] [387500] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2745, v_loss=3136.59
+I1006 19:16:19.212726 139767564435584 logging_util.py:10] train epoch: 77, step: 387599, loss: 0.999997, steps/sec: 24.36
+I1006 19:16:19.212868 139422372697792 logging_writer.py:48] [387600] ep=77, loss=0.999997, lr=0.0001, steps_per_second=24.3643, v_loss=3132.05
+I1006 19:16:23.168611 139767564435584 logging_util.py:10] train epoch: 77, step: 387699, loss: 0.999997, steps/sec: 25.28
+I1006 19:16:23.168825 139422372697792 logging_writer.py:48] [387700] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2788, v_loss=3138.6
+I1006 19:16:27.123202 139767564435584 logging_util.py:10] train epoch: 77, step: 387799, loss: 0.999997, steps/sec: 25.29
+I1006 19:16:27.123347 139422372697792 logging_writer.py:48] [387800] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2871, v_loss=3135.09
+I1006 19:16:31.080254 139767564435584 logging_util.py:10] train epoch: 77, step: 387899, loss: 0.999997, steps/sec: 25.27
+I1006 19:16:31.080473 139422372697792 logging_writer.py:48] [387900] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2714, v_loss=3128.37
+I1006 19:16:35.053551 139767564435584 logging_util.py:10] train epoch: 77, step: 387999, loss: 0.999997, steps/sec: 25.17
+I1006 19:16:35.053745 139422372697792 logging_writer.py:48] [388000] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.168, v_loss=3132.92
+I1006 19:16:39.000086 139767564435584 logging_util.py:10] train epoch: 77, step: 388099, loss: 0.999997, steps/sec: 25.34
+I1006 19:16:39.000277 139422372697792 logging_writer.py:48] [388100] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.3386, v_loss=3137.37
+I1006 19:16:42.951641 139767564435584 logging_util.py:10] train epoch: 77, step: 388199, loss: 0.999997, steps/sec: 25.31
+I1006 19:16:42.951848 139422372697792 logging_writer.py:48] [388200] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.3065, v_loss=3130.7
+I1006 19:16:46.917872 139767564435584 logging_util.py:10] train epoch: 77, step: 388299, loss: 0.999997, steps/sec: 25.21
+I1006 19:16:46.918091 139422372697792 logging_writer.py:48] [388300] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2129, v_loss=3136.09
+I1006 19:16:51.038141 139767564435584 logging_util.py:10] train epoch: 77, step: 388399, loss: 0.999997, steps/sec: 24.27
+I1006 19:16:51.038334 139422372697792 logging_writer.py:48] [388400] ep=77, loss=0.999997, lr=0.0001, steps_per_second=24.2702, v_loss=3135.01
+I1006 19:16:54.997506 139767564435584 logging_util.py:10] train epoch: 77, step: 388499, loss: 0.999997, steps/sec: 25.26
+I1006 19:16:54.997708 139422372697792 logging_writer.py:48] [388500] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2566, v_loss=3134.31
+I1006 19:16:58.960145 139767564435584 logging_util.py:10] train epoch: 77, step: 388599, loss: 0.999997, steps/sec: 25.24
+I1006 19:16:58.960376 139422372697792 logging_writer.py:48] [388600] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2358, v_loss=3127.36
+I1006 19:17:02.925000 139767564435584 logging_util.py:10] train epoch: 77, step: 388699, loss: 0.999997, steps/sec: 25.22
+I1006 19:17:02.925240 139422372697792 logging_writer.py:48] [388700] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2218, v_loss=3136.11
+I1006 19:17:06.881767 139767564435584 logging_util.py:10] train epoch: 77, step: 388799, loss: 0.999997, steps/sec: 25.27
+I1006 19:17:06.881978 139422372697792 logging_writer.py:48] [388800] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.273, v_loss=3133.71
+I1006 19:17:10.838355 139767564435584 logging_util.py:10] train epoch: 77, step: 388899, loss: 0.999997, steps/sec: 25.27
+I1006 19:17:10.838550 139422372697792 logging_writer.py:48] [388900] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2743, v_loss=3138.16
+I1006 19:17:14.791189 139767564435584 logging_util.py:10] train epoch: 77, step: 388999, loss: 0.999997, steps/sec: 25.30
+I1006 19:17:14.791371 139422372697792 logging_writer.py:48] [389000] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2982, v_loss=3128.38
+I1006 19:17:18.738624 139767564435584 logging_util.py:10] train epoch: 77, step: 389099, loss: 0.999997, steps/sec: 25.33
+I1006 19:17:18.738821 139422372697792 logging_writer.py:48] [389100] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.333, v_loss=3139.37
+I1006 19:17:22.906760 139767564435584 logging_util.py:10] train epoch: 77, step: 389199, loss: 0.999997, steps/sec: 23.99
+I1006 19:17:22.906972 139422372697792 logging_writer.py:48] [389200] ep=77, loss=0.999997, lr=0.0001, steps_per_second=23.9915, v_loss=3135.18
+I1006 19:17:26.859043 139767564435584 logging_util.py:10] train epoch: 77, step: 389299, loss: 0.999997, steps/sec: 25.30
+I1006 19:17:26.859259 139422372697792 logging_writer.py:48] [389300] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.3018, v_loss=3135.5
+I1006 19:17:30.812610 139767564435584 logging_util.py:10] train epoch: 77, step: 389399, loss: 0.999997, steps/sec: 25.29
+I1006 19:17:30.812816 139422372697792 logging_writer.py:48] [389400] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2936, v_loss=3133.66
+I1006 19:17:34.767839 139767564435584 logging_util.py:10] train epoch: 77, step: 389499, loss: 0.999997, steps/sec: 25.28
+I1006 19:17:34.768050 139422372697792 logging_writer.py:48] [389500] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.283, v_loss=3135.33
+I1006 19:17:38.722980 139767564435584 logging_util.py:10] train epoch: 77, step: 389599, loss: 0.999997, steps/sec: 25.28
+I1006 19:17:38.723184 139422372697792 logging_writer.py:48] [389600] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2836, v_loss=3134.12
+I1006 19:17:42.682800 139767564435584 logging_util.py:10] train epoch: 77, step: 389699, loss: 0.999997, steps/sec: 25.25
+I1006 19:17:42.683013 139422372697792 logging_writer.py:48] [389700] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2537, v_loss=3136.4
+I1006 19:17:46.641545 139767564435584 logging_util.py:10] train epoch: 77, step: 389799, loss: 0.999997, steps/sec: 25.26
+I1006 19:17:46.641751 139422372697792 logging_writer.py:48] [389800] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2605, v_loss=3136.79
+I1006 19:17:50.602031 139767564435584 logging_util.py:10] train epoch: 77, step: 389899, loss: 0.999997, steps/sec: 25.25
+I1006 19:17:50.602254 139422372697792 logging_writer.py:48] [389900] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2494, v_loss=3142.84
+I1006 19:17:54.745910 139767564435584 logging_util.py:10] train epoch: 77, step: 389999, loss: 0.999997, steps/sec: 24.13
+I1006 19:17:54.746148 139422372697792 logging_writer.py:48] [390000] ep=77, loss=0.999997, lr=0.0001, steps_per_second=24.1321, v_loss=3141.19
+I1006 19:17:58.692522 139767564435584 logging_util.py:10] train epoch: 77, step: 390099, loss: 0.999997, steps/sec: 25.34
+I1006 19:17:58.692716 139422372697792 logging_writer.py:48] [390100] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.3379, v_loss=3129.81
+I1006 19:18:02.641692 139767564435584 logging_util.py:10] train epoch: 77, step: 390199, loss: 0.999997, steps/sec: 25.32
+I1006 19:18:02.642343 139422372697792 logging_writer.py:48] [390200] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.322, v_loss=3136.93
+I1006 19:18:06.594445 139767564435584 logging_util.py:10] train epoch: 77, step: 390299, loss: 0.999997, steps/sec: 25.30
+I1006 19:18:06.594647 139422372697792 logging_writer.py:48] [390300] ep=77, loss=0.999997, lr=0.0001, steps_per_second=25.2986, v_loss=3130.89
+I1006 19:18:08.428215 139767564435584 logging_util.py:10] Saving checkpoint step 390312.
+I1006 19:18:08.428536 139767564435584 checkpoints.py:571] Saving checkpoint at step: 390312
+I1006 19:18:08.429078 139767564435584 checkpoints.py:814] Using Orbax as backend to save Flax checkpoints. For potential troubleshooting see: https://flax.readthedocs.io/en/latest/guides/training_techniques/use_checkpointing.html#orbax-as-backend-troubleshooting
+I1006 19:18:08.429144 139767564435584 pytree_checkpoint_handler.py:597] save_device_host_concurrent_bytes=None
+I1006 19:18:08.431597 139767564435584 event_tracking.py:70] [process=0] [sync] Started save checkpoint @ /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_390312.
+I1006 19:18:08.432631 139767564435584 atomicity.py:140] Creating tmp directory /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_390312.orbax-checkpoint-tmp
+I1006 19:18:09.569821 139767564435584 future.py:372] [process=0][thread=MainThread][operation_id=3] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+I1006 19:18:10.419480 139461522343616 array_metadata_store.py:248] [process=0][thread=write_metadata_after_commits] No metadata found for process_index=0, checkpoint_dir=/work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_390312.orbax-checkpoint-tmp. If the checkpoint does not contain jax.Array then it is expected. If checkpoint contains jax.Array then it should lead to an error eventually; if no error is raised then it is a bug.
+I1006 19:18:10.436107 139767564435584 event_tracking.py:125] [process=0] [sync] Finished blocking save in 2.00 seconds. Continuing save @ /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_390312.
+I1006 19:18:10.437509 139767564435584 array_metadata_store.py:284] [process=0][thread=MainThread] No metadata found for any process_index, checkpoint_dir=/work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_390312.orbax-checkpoint-tmp. Time taken: 0.000167s. If the checkpoint does not contain jax.Array then it is expected. If checkpoint contains jax.Array then it should lead to an error eventually; if no error is raised then it is a bug.
+I1006 19:18:10.445027 139767564435584 atomicity.py:535] Renaming /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_390312.orbax-checkpoint-tmp to /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_390312
+I1006 19:18:10.446716 139767564435584 atomicity.py:847] [process=0][thread=MainThread] Finished saving checkpoint (finalized tmp dir) to `/work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_390312`.
+I1006 19:18:10.447070 139767564435584 event_tracking.py:138] [process=0] [sync] Finished save in 2.02 seconds @ /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_390312
+I1006 19:18:10.447120 139767564435584 logging_util.py:10] Checkpoint step 390312 saved.
+I1006 19:18:10.474967 139767564435584 logging_util.py:10] epoch 78...
+I1006 19:18:10.475058 139767564435584 logging_util.py:10] epoch 78...
+I1006 19:18:14.011506 139767564435584 logging_util.py:10] train epoch: 78, step: 390399, loss: 0.999997, steps/sec: 28.28
+I1006 19:18:14.011793 139422372697792 logging_writer.py:48] [390400] ep=78, loss=0.999997, lr=0.0001, steps_per_second=28.2781, v_loss=3142.51
+I1006 19:18:17.956532 139767564435584 logging_util.py:10] train epoch: 78, step: 390499, loss: 0.999997, steps/sec: 25.35
+I1006 19:18:17.956795 139422372697792 logging_writer.py:48] [390500] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.3484, v_loss=3148.15
+I1006 19:18:21.997170 139767564435584 logging_util.py:10] train epoch: 78, step: 390599, loss: 0.999997, steps/sec: 24.75
+I1006 19:18:21.997410 139422372697792 logging_writer.py:48] [390600] ep=78, loss=0.999997, lr=0.0001, steps_per_second=24.7484, v_loss=3136.1
+I1006 19:18:25.948715 139767564435584 logging_util.py:10] train epoch: 78, step: 390699, loss: 0.999997, steps/sec: 25.31
+I1006 19:18:25.948952 139422372697792 logging_writer.py:48] [390700] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.3065, v_loss=3129.41
+I1006 19:18:29.897647 139767564435584 logging_util.py:10] train epoch: 78, step: 390799, loss: 0.999997, steps/sec: 25.32
+I1006 19:18:29.897889 139422372697792 logging_writer.py:48] [390800] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.3233, v_loss=3143.5
+I1006 19:18:33.852384 139767564435584 logging_util.py:10] train epoch: 78, step: 390899, loss: 0.999997, steps/sec: 25.29
+I1006 19:18:33.852622 139422372697792 logging_writer.py:48] [390900] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2861, v_loss=3136.16
+I1006 19:18:37.805978 139767564435584 logging_util.py:10] train epoch: 78, step: 390999, loss: 0.999997, steps/sec: 25.29
+I1006 19:18:37.806295 139422372697792 logging_writer.py:48] [391000] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2938, v_loss=3138.79
+I1006 19:18:41.766340 139767564435584 logging_util.py:10] train epoch: 78, step: 391099, loss: 0.999997, steps/sec: 25.25
+I1006 19:18:41.766606 139422372697792 logging_writer.py:48] [391100] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2501, v_loss=3135.48
+I1006 19:18:45.718791 139767564435584 logging_util.py:10] train epoch: 78, step: 391199, loss: 0.999997, steps/sec: 25.30
+I1006 19:18:45.719027 139422372697792 logging_writer.py:48] [391200] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.3006, v_loss=3138.98
+I1006 19:18:49.673885 139767564435584 logging_util.py:10] train epoch: 78, step: 391299, loss: 0.999997, steps/sec: 25.28
+I1006 19:18:49.674132 139422372697792 logging_writer.py:48] [391300] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2838, v_loss=3132.16
+I1006 19:18:53.730916 139767564435584 logging_util.py:10] train epoch: 78, step: 391399, loss: 0.999997, steps/sec: 24.65
+I1006 19:18:53.731154 139422372697792 logging_writer.py:48] [391400] ep=78, loss=0.999997, lr=0.0001, steps_per_second=24.6486, v_loss=3128.09
+I1006 19:18:57.679587 139767564435584 logging_util.py:10] train epoch: 78, step: 391499, loss: 0.999997, steps/sec: 25.32
+I1006 19:18:57.679825 139422372697792 logging_writer.py:48] [391500] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.325, v_loss=3140
+I1006 19:19:01.639182 139767564435584 logging_util.py:10] train epoch: 78, step: 391599, loss: 0.999997, steps/sec: 25.26
+I1006 19:19:01.639419 139422372697792 logging_writer.py:48] [391600] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2551, v_loss=3134.41
+I1006 19:19:05.595847 139767564435584 logging_util.py:10] train epoch: 78, step: 391699, loss: 0.999997, steps/sec: 25.27
+I1006 19:19:05.596143 139422372697792 logging_writer.py:48] [391700] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2741, v_loss=3135.92
+I1006 19:19:09.552745 139767564435584 logging_util.py:10] train epoch: 78, step: 391799, loss: 0.999997, steps/sec: 25.27
+I1006 19:19:09.552892 139422372697792 logging_writer.py:48] [391800] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2722, v_loss=3136.71
+I1006 19:19:13.503506 139767564435584 logging_util.py:10] train epoch: 78, step: 391899, loss: 0.999997, steps/sec: 25.31
+I1006 19:19:13.503812 139422372697792 logging_writer.py:48] [391900] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.312, v_loss=3124.82
+I1006 19:19:17.460940 139767564435584 logging_util.py:10] train epoch: 78, step: 391999, loss: 0.999997, steps/sec: 25.27
+I1006 19:19:17.461174 139422372697792 logging_writer.py:48] [392000] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2686, v_loss=3138.11
+I1006 19:19:21.419421 139767564435584 logging_util.py:10] train epoch: 78, step: 392099, loss: 0.999997, steps/sec: 25.26
+I1006 19:19:21.419651 139422372697792 logging_writer.py:48] [392100] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2621, v_loss=3137.16
+I1006 19:19:25.375503 139767564435584 logging_util.py:10] train epoch: 78, step: 392199, loss: 0.999997, steps/sec: 25.28
+I1006 19:19:25.375763 139422372697792 logging_writer.py:48] [392200] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2777, v_loss=3138.61
+I1006 19:19:29.582263 139767564435584 logging_util.py:10] train epoch: 78, step: 392299, loss: 0.999997, steps/sec: 23.77
+I1006 19:19:29.582514 139422372697792 logging_writer.py:48] [392300] ep=78, loss=0.999997, lr=0.0001, steps_per_second=23.7712, v_loss=3132.55
+I1006 19:19:33.534471 139767564435584 logging_util.py:10] train epoch: 78, step: 392399, loss: 0.999997, steps/sec: 25.30
+I1006 19:19:33.534707 139422372697792 logging_writer.py:48] [392400] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.3023, v_loss=3133.07
+I1006 19:19:37.493245 139767564435584 logging_util.py:10] train epoch: 78, step: 392499, loss: 0.999997, steps/sec: 25.26
+I1006 19:19:37.493532 139422372697792 logging_writer.py:48] [392500] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2606, v_loss=3130.85
+I1006 19:19:41.446717 139767564435584 logging_util.py:10] train epoch: 78, step: 392599, loss: 0.999997, steps/sec: 25.29
+I1006 19:19:41.446964 139422372697792 logging_writer.py:48] [392600] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.294, v_loss=3137.13
+I1006 19:19:45.395007 139767564435584 logging_util.py:10] train epoch: 78, step: 392699, loss: 0.999997, steps/sec: 25.33
+I1006 19:19:45.395282 139422372697792 logging_writer.py:48] [392700] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.3276, v_loss=3143.71
+I1006 19:19:49.351377 139767564435584 logging_util.py:10] train epoch: 78, step: 392799, loss: 0.999997, steps/sec: 25.28
+I1006 19:19:49.351516 139422372697792 logging_writer.py:48] [392800] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2756, v_loss=3136.3
+I1006 19:19:53.308236 139767564435584 logging_util.py:10] train epoch: 78, step: 392899, loss: 0.999997, steps/sec: 25.27
+I1006 19:19:53.308536 139422372697792 logging_writer.py:48] [392900] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2727, v_loss=3131.44
+I1006 19:19:57.266405 139767564435584 logging_util.py:10] train epoch: 78, step: 392999, loss: 0.999997, steps/sec: 25.26
+I1006 19:19:57.266761 139422372697792 logging_writer.py:48] [393000] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2644, v_loss=3134.15
+I1006 19:20:01.319817 139767564435584 logging_util.py:10] train epoch: 78, step: 393099, loss: 0.999997, steps/sec: 24.67
+I1006 19:20:01.320061 139422372697792 logging_writer.py:48] [393100] ep=78, loss=0.999997, lr=0.0001, steps_per_second=24.6703, v_loss=3137.37
+I1006 19:20:05.273672 139767564435584 logging_util.py:10] train epoch: 78, step: 393199, loss: 0.999997, steps/sec: 25.29
+I1006 19:20:05.273921 139422372697792 logging_writer.py:48] [393200] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2918, v_loss=3133.03
+I1006 19:20:09.224192 139767564435584 logging_util.py:10] train epoch: 78, step: 393299, loss: 0.999997, steps/sec: 25.31
+I1006 19:20:09.224440 139422372697792 logging_writer.py:48] [393300] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.3131, v_loss=3133.73
+I1006 19:20:13.185483 139767564435584 logging_util.py:10] train epoch: 78, step: 393399, loss: 0.999997, steps/sec: 25.24
+I1006 19:20:13.185795 139422372697792 logging_writer.py:48] [393400] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2444, v_loss=3137.45
+I1006 19:20:17.147098 139767564435584 logging_util.py:10] train epoch: 78, step: 393499, loss: 0.999997, steps/sec: 25.24
+I1006 19:20:17.147391 139422372697792 logging_writer.py:48] [393500] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2422, v_loss=3135.31
+I1006 19:20:21.094792 139767564435584 logging_util.py:10] train epoch: 78, step: 393599, loss: 0.999997, steps/sec: 25.33
+I1006 19:20:21.095060 139422372697792 logging_writer.py:48] [393600] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.3311, v_loss=3130.4
+I1006 19:20:25.049802 139767564435584 logging_util.py:10] train epoch: 78, step: 393699, loss: 0.999997, steps/sec: 25.28
+I1006 19:20:25.050045 139422372697792 logging_writer.py:48] [393700] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2844, v_loss=3139.61
+I1006 19:20:28.999232 139767564435584 logging_util.py:10] train epoch: 78, step: 393799, loss: 0.999997, steps/sec: 25.32
+I1006 19:20:28.999503 139422372697792 logging_writer.py:48] [393800] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.3203, v_loss=3131.25
+I1006 19:20:33.111173 139767564435584 logging_util.py:10] train epoch: 78, step: 393899, loss: 0.999997, steps/sec: 24.32
+I1006 19:20:33.111318 139422372697792 logging_writer.py:48] [393900] ep=78, loss=0.999997, lr=0.0001, steps_per_second=24.3192, v_loss=3140.98
+I1006 19:20:37.058579 139767564435584 logging_util.py:10] train epoch: 78, step: 393999, loss: 0.999997, steps/sec: 25.33
+I1006 19:20:37.058715 139422372697792 logging_writer.py:48] [394000] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.3331, v_loss=3131.91
+I1006 19:20:41.020107 139767564435584 logging_util.py:10] train epoch: 78, step: 394099, loss: 0.999997, steps/sec: 25.24
+I1006 19:20:41.020321 139422372697792 logging_writer.py:48] [394100] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2428, v_loss=3142.72
+I1006 19:20:44.984007 139767564435584 logging_util.py:10] train epoch: 78, step: 394199, loss: 0.999997, steps/sec: 25.23
+I1006 19:20:44.984227 139422372697792 logging_writer.py:48] [394200] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2278, v_loss=3132.77
+I1006 19:20:48.941338 139767564435584 logging_util.py:10] train epoch: 78, step: 394299, loss: 0.999997, steps/sec: 25.27
+I1006 19:20:48.941707 139422372697792 logging_writer.py:48] [394300] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2697, v_loss=3131.53
+I1006 19:20:52.897460 139767564435584 logging_util.py:10] train epoch: 78, step: 394399, loss: 0.999997, steps/sec: 25.28
+I1006 19:20:52.897778 139422372697792 logging_writer.py:48] [394400] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2772, v_loss=3131.62
+I1006 19:20:56.863335 139767564435584 logging_util.py:10] train epoch: 78, step: 394499, loss: 0.999997, steps/sec: 25.22
+I1006 19:20:56.863577 139422372697792 logging_writer.py:48] [394500] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.215, v_loss=3138.16
+I1006 19:21:00.829218 139767564435584 logging_util.py:10] train epoch: 78, step: 394599, loss: 0.999997, steps/sec: 25.22
+I1006 19:21:00.829453 139422372697792 logging_writer.py:48] [394600] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.215, v_loss=3138.94
+I1006 19:21:04.919181 139767564435584 logging_util.py:10] train epoch: 78, step: 394699, loss: 0.999997, steps/sec: 24.45
+I1006 19:21:04.919524 139422372697792 logging_writer.py:48] [394700] ep=78, loss=0.999997, lr=0.0001, steps_per_second=24.4502, v_loss=3138.49
+I1006 19:21:08.873436 139767564435584 logging_util.py:10] train epoch: 78, step: 394799, loss: 0.999997, steps/sec: 25.29
+I1006 19:21:08.873628 139422372697792 logging_writer.py:48] [394800] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2891, v_loss=3135.62
+I1006 19:21:12.833670 139767564435584 logging_util.py:10] train epoch: 78, step: 394899, loss: 0.999997, steps/sec: 25.25
+I1006 19:21:12.833909 139422372697792 logging_writer.py:48] [394900] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2512, v_loss=3136.2
+I1006 19:21:16.795058 139767564435584 logging_util.py:10] train epoch: 78, step: 394999, loss: 0.999997, steps/sec: 25.24
+I1006 19:21:16.795269 139422372697792 logging_writer.py:48] [395000] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2435, v_loss=3140.68
+I1006 19:21:20.758518 139767564435584 logging_util.py:10] train epoch: 78, step: 395099, loss: 0.999997, steps/sec: 25.23
+I1006 19:21:20.758857 139422372697792 logging_writer.py:48] [395100] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.2307, v_loss=3139.43
+I1006 19:21:24.710126 139767564435584 logging_util.py:10] train epoch: 78, step: 395199, loss: 0.999997, steps/sec: 25.31
+I1006 19:21:24.710269 139422372697792 logging_writer.py:48] [395200] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.306, v_loss=3140.78
+I1006 19:21:28.661105 139767564435584 logging_util.py:10] train epoch: 78, step: 395299, loss: 0.999997, steps/sec: 25.31
+I1006 19:21:28.661321 139422372697792 logging_writer.py:48] [395300] ep=78, loss=0.999997, lr=0.0001, steps_per_second=25.3103, v_loss=3124.26
+I1006 19:21:30.774821 139767564435584 logging_util.py:10] Saving checkpoint step 395316.
+I1006 19:21:30.775154 139767564435584 checkpoints.py:571] Saving checkpoint at step: 395316
+I1006 19:21:30.775716 139767564435584 checkpoints.py:814] Using Orbax as backend to save Flax checkpoints. For potential troubleshooting see: https://flax.readthedocs.io/en/latest/guides/training_techniques/use_checkpointing.html#orbax-as-backend-troubleshooting
+I1006 19:21:30.775824 139767564435584 pytree_checkpoint_handler.py:597] save_device_host_concurrent_bytes=None
+I1006 19:21:30.777643 139767564435584 event_tracking.py:70] [process=0] [sync] Started save checkpoint @ /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_395316.
+I1006 19:21:30.778927 139767564435584 atomicity.py:140] Creating tmp directory /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_395316.orbax-checkpoint-tmp
+I1006 19:21:32.483987 139767564435584 future.py:372] [process=0][thread=MainThread][operation_id=4] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+I1006 19:21:33.272706 139463023916736 array_metadata_store.py:248] [process=0][thread=write_metadata_after_commits] No metadata found for process_index=0, checkpoint_dir=/work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_395316.orbax-checkpoint-tmp. If the checkpoint does not contain jax.Array then it is expected. If checkpoint contains jax.Array then it should lead to an error eventually; if no error is raised then it is a bug.
+I1006 19:21:33.658641 139767564435584 event_tracking.py:125] [process=0] [sync] Finished blocking save in 2.88 seconds. Continuing save @ /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_395316.
+I1006 19:21:33.660154 139767564435584 array_metadata_store.py:284] [process=0][thread=MainThread] No metadata found for any process_index, checkpoint_dir=/work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_395316.orbax-checkpoint-tmp. Time taken: 0.000258s. If the checkpoint does not contain jax.Array then it is expected. If checkpoint contains jax.Array then it should lead to an error eventually; if no error is raised then it is a bug.
+I1006 19:21:33.667419 139767564435584 atomicity.py:535] Renaming /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_395316.orbax-checkpoint-tmp to /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_395316
+I1006 19:21:33.669198 139767564435584 atomicity.py:847] [process=0][thread=MainThread] Finished saving checkpoint (finalized tmp dir) to `/work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_395316`.
+I1006 19:21:33.669492 139767564435584 event_tracking.py:138] [process=0] [sync] Finished save in 2.89 seconds @ /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_395316
+I1006 19:21:33.669540 139767564435584 logging_util.py:10] Checkpoint step 395316 saved.
+I1006 19:21:33.695776 139767564435584 logging_util.py:10] epoch 79...
+I1006 19:21:33.695892 139767564435584 logging_util.py:10] epoch 79...
+I1006 19:21:37.083355 139767564435584 logging_util.py:10] train epoch: 79, step: 395399, loss: 0.999997, steps/sec: 29.52
+I1006 19:21:37.083689 139422372697792 logging_writer.py:48] [395400] ep=79, loss=0.999997, lr=0.0001, steps_per_second=29.5221, v_loss=3136.72
+I1006 19:21:41.034102 139767564435584 logging_util.py:10] train epoch: 79, step: 395499, loss: 0.999997, steps/sec: 25.31
+I1006 19:21:41.034363 139422372697792 logging_writer.py:48] [395500] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.3115, v_loss=3145.09
+I1006 19:21:44.978127 139767564435584 logging_util.py:10] train epoch: 79, step: 395599, loss: 0.999997, steps/sec: 25.35
+I1006 19:21:44.978387 139422372697792 logging_writer.py:48] [395600] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.3548, v_loss=3136.96
+I1006 19:21:48.933969 139767564435584 logging_util.py:10] train epoch: 79, step: 395699, loss: 0.999997, steps/sec: 25.28
+I1006 19:21:48.934261 139422372697792 logging_writer.py:48] [395700] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.2792, v_loss=3134.18
+I1006 19:21:52.879405 139767564435584 logging_util.py:10] train epoch: 79, step: 395799, loss: 0.999997, steps/sec: 25.35
+I1006 19:21:52.879643 139422372697792 logging_writer.py:48] [395800] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.3456, v_loss=3139.23
+I1006 19:21:56.835529 139767564435584 logging_util.py:10] train epoch: 79, step: 395899, loss: 0.999997, steps/sec: 25.28
+I1006 19:21:56.835847 139422372697792 logging_writer.py:48] [395900] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.2773, v_loss=3139.64
+I1006 19:22:00.782925 139767564435584 logging_util.py:10] train epoch: 79, step: 395999, loss: 0.999997, steps/sec: 25.33
+I1006 19:22:00.783158 139422372697792 logging_writer.py:48] [396000] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.3331, v_loss=3141.21
+I1006 19:22:04.737446 139767564435584 logging_util.py:10] train epoch: 79, step: 396099, loss: 0.999997, steps/sec: 25.29
+I1006 19:22:04.737686 139422372697792 logging_writer.py:48] [396100] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.2875, v_loss=3127.3
+I1006 19:22:08.789610 139767564435584 logging_util.py:10] train epoch: 79, step: 396199, loss: 0.999997, steps/sec: 24.68
+I1006 19:22:08.789839 139422372697792 logging_writer.py:48] [396200] ep=79, loss=0.999997, lr=0.0001, steps_per_second=24.6782, v_loss=3134.26
+I1006 19:22:12.738072 139767564435584 logging_util.py:10] train epoch: 79, step: 396299, loss: 0.999997, steps/sec: 25.33
+I1006 19:22:12.738368 139422372697792 logging_writer.py:48] [396300] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.3265, v_loss=3130.91
+I1006 19:22:16.693097 139767564435584 logging_util.py:10] train epoch: 79, step: 396399, loss: 0.999997, steps/sec: 25.28
+I1006 19:22:16.693371 139422372697792 logging_writer.py:48] [396400] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.2843, v_loss=3129.61
+I1006 19:22:20.639186 139767564435584 logging_util.py:10] train epoch: 79, step: 396499, loss: 0.999997, steps/sec: 25.34
+I1006 19:22:20.639419 139422372697792 logging_writer.py:48] [396500] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.3414, v_loss=3137.92
+I1006 19:22:24.591196 139767564435584 logging_util.py:10] train epoch: 79, step: 396599, loss: 0.999997, steps/sec: 25.30
+I1006 19:22:24.591444 139422372697792 logging_writer.py:48] [396600] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.3037, v_loss=3130.9
+I1006 19:22:28.539205 139767564435584 logging_util.py:10] train epoch: 79, step: 396699, loss: 0.999997, steps/sec: 25.33
+I1006 19:22:28.539436 139422372697792 logging_writer.py:48] [396700] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.3291, v_loss=3135.61
+I1006 19:22:32.489983 139767564435584 logging_util.py:10] train epoch: 79, step: 396799, loss: 0.999997, steps/sec: 25.31
+I1006 19:22:32.490234 139422372697792 logging_writer.py:48] [396800] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.3115, v_loss=3143
+I1006 19:22:36.434535 139767564435584 logging_util.py:10] train epoch: 79, step: 396899, loss: 0.999997, steps/sec: 25.35
+I1006 19:22:36.434785 139422372697792 logging_writer.py:48] [396900] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.3514, v_loss=3125.84
+I1006 19:22:40.541775 139767564435584 logging_util.py:10] train epoch: 79, step: 396999, loss: 0.999997, steps/sec: 24.35
+I1006 19:22:40.542012 139422372697792 logging_writer.py:48] [397000] ep=79, loss=0.999997, lr=0.0001, steps_per_second=24.3473, v_loss=3142.82
+I1006 19:22:44.491786 139767564435584 logging_util.py:10] train epoch: 79, step: 397099, loss: 0.999997, steps/sec: 25.32
+I1006 19:22:44.492036 139422372697792 logging_writer.py:48] [397100] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.3164, v_loss=3135.21
+I1006 19:22:48.436060 139767564435584 logging_util.py:10] train epoch: 79, step: 397199, loss: 0.999997, steps/sec: 25.35
+I1006 19:22:48.436315 139422372697792 logging_writer.py:48] [397200] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.3532, v_loss=3137.63
+I1006 19:22:52.386454 139767564435584 logging_util.py:10] train epoch: 79, step: 397299, loss: 0.999997, steps/sec: 25.31
+I1006 19:22:52.386697 139422372697792 logging_writer.py:48] [397300] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.3139, v_loss=3133.03
+I1006 19:22:56.336419 139767564435584 logging_util.py:10] train epoch: 79, step: 397399, loss: 0.999997, steps/sec: 25.32
+I1006 19:22:56.336687 139422372697792 logging_writer.py:48] [397400] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.3169, v_loss=3136.72
+I1006 19:23:00.291352 139767564435584 logging_util.py:10] train epoch: 79, step: 397499, loss: 0.999997, steps/sec: 25.28
+I1006 19:23:00.291604 139422372697792 logging_writer.py:48] [397500] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.2847, v_loss=3130.39
+I1006 19:23:04.244112 139767564435584 logging_util.py:10] train epoch: 79, step: 397599, loss: 0.999997, steps/sec: 25.30
+I1006 19:23:04.244394 139422372697792 logging_writer.py:48] [397600] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.2989, v_loss=3135.08
+I1006 19:23:08.199183 139767564435584 logging_util.py:10] train epoch: 79, step: 397699, loss: 0.999997, steps/sec: 25.28
+I1006 19:23:08.199424 139422372697792 logging_writer.py:48] [397700] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.2839, v_loss=3131.11
+I1006 19:23:12.335303 139767564435584 logging_util.py:10] train epoch: 79, step: 397799, loss: 0.999997, steps/sec: 24.18
+I1006 19:23:12.335437 139422372697792 logging_writer.py:48] [397800] ep=79, loss=0.999997, lr=0.0001, steps_per_second=24.1772, v_loss=3136.52
+I1006 19:23:16.283623 139767564435584 logging_util.py:10] train epoch: 79, step: 397899, loss: 0.999997, steps/sec: 25.33
+I1006 19:23:16.283763 139422372697792 logging_writer.py:48] [397900] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.3272, v_loss=3131.43
+I1006 19:23:20.236294 139767564435584 logging_util.py:10] train epoch: 79, step: 397999, loss: 0.999997, steps/sec: 25.30
+I1006 19:23:20.236493 139422372697792 logging_writer.py:48] [398000] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.2993, v_loss=3130.25
+I1006 19:23:24.177717 139767564435584 logging_util.py:10] train epoch: 79, step: 398099, loss: 0.999997, steps/sec: 25.37
+I1006 19:23:24.177933 139422372697792 logging_writer.py:48] [398100] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.3715, v_loss=3139.29
+I1006 19:23:28.127813 139767564435584 logging_util.py:10] train epoch: 79, step: 398199, loss: 0.999997, steps/sec: 25.32
+I1006 19:23:28.128030 139422372697792 logging_writer.py:48] [398200] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.3158, v_loss=3133.83
+I1006 19:23:32.084454 139767564435584 logging_util.py:10] train epoch: 79, step: 398299, loss: 0.999997, steps/sec: 25.27
+I1006 19:23:32.084671 139422372697792 logging_writer.py:48] [398300] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.274, v_loss=3127.62
+I1006 19:23:36.038615 139767564435584 logging_util.py:10] train epoch: 79, step: 398399, loss: 0.999997, steps/sec: 25.29
+I1006 19:23:36.038803 139422372697792 logging_writer.py:48] [398400] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.2898, v_loss=3142.65
+I1006 19:23:39.993982 139767564435584 logging_util.py:10] train epoch: 79, step: 398499, loss: 0.999997, steps/sec: 25.28
+I1006 19:23:39.994220 139422372697792 logging_writer.py:48] [398500] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.2822, v_loss=3137.45
+I1006 19:23:44.046146 139767564435584 logging_util.py:10] train epoch: 79, step: 398599, loss: 0.999997, steps/sec: 24.68
+I1006 19:23:44.046337 139422372697792 logging_writer.py:48] [398600] ep=79, loss=0.999997, lr=0.0001, steps_per_second=24.6781, v_loss=3127.99
+I1006 19:23:48.002159 139767564435584 logging_util.py:10] train epoch: 79, step: 398699, loss: 0.999997, steps/sec: 25.28
+I1006 19:23:48.002407 139422372697792 logging_writer.py:48] [398700] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.278, v_loss=3130.19
+I1006 19:23:51.951669 139767564435584 logging_util.py:10] train epoch: 79, step: 398799, loss: 0.999997, steps/sec: 25.32
+I1006 19:23:51.951873 139422372697792 logging_writer.py:48] [398800] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.3196, v_loss=3134.37
+I1006 19:23:55.900046 139767564435584 logging_util.py:10] train epoch: 79, step: 398899, loss: 0.999997, steps/sec: 25.33
+I1006 19:23:55.900233 139422372697792 logging_writer.py:48] [398900] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.3269, v_loss=3134.65
+I1006 19:23:59.854469 139767564435584 logging_util.py:10] train epoch: 79, step: 398999, loss: 0.999997, steps/sec: 25.29
+I1006 19:23:59.854707 139422372697792 logging_writer.py:48] [399000] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.2883, v_loss=3132.8
+I1006 19:24:03.810790 139767564435584 logging_util.py:10] train epoch: 79, step: 399099, loss: 0.999997, steps/sec: 25.28
+I1006 19:24:03.810985 139422372697792 logging_writer.py:48] [399100] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.2758, v_loss=3136.13
+I1006 19:24:07.764571 139767564435584 logging_util.py:10] train epoch: 79, step: 399199, loss: 0.999997, steps/sec: 25.29
+I1006 19:24:07.764766 139422372697792 logging_writer.py:48] [399200] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.2923, v_loss=3133.23
+I1006 19:24:11.719558 139767564435584 logging_util.py:10] train epoch: 79, step: 399299, loss: 0.999997, steps/sec: 25.28
+I1006 19:24:11.719789 139422372697792 logging_writer.py:48] [399300] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.2847, v_loss=3130.74
+I1006 19:24:15.836961 139767564435584 logging_util.py:10] train epoch: 79, step: 399399, loss: 0.999997, steps/sec: 24.29
+I1006 19:24:15.837168 139422372697792 logging_writer.py:48] [399400] ep=79, loss=0.999997, lr=0.0001, steps_per_second=24.2871, v_loss=3131.8
+I1006 19:24:19.789975 139767564435584 logging_util.py:10] train epoch: 79, step: 399499, loss: 0.999997, steps/sec: 25.30
+I1006 19:24:19.790185 139422372697792 logging_writer.py:48] [399500] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.2973, v_loss=3140.74
+I1006 19:24:23.745214 139767564435584 logging_util.py:10] train epoch: 79, step: 399599, loss: 0.999997, steps/sec: 25.28
+I1006 19:24:23.745430 139422372697792 logging_writer.py:48] [399600] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.2828, v_loss=3132.82
+I1006 19:24:27.698750 139767564435584 logging_util.py:10] train epoch: 79, step: 399699, loss: 0.999997, steps/sec: 25.29
+I1006 19:24:27.698963 139422372697792 logging_writer.py:48] [399700] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.2938, v_loss=3135.13
+I1006 19:24:31.654214 139767564435584 logging_util.py:10] train epoch: 79, step: 399799, loss: 0.999997, steps/sec: 25.28
+I1006 19:24:31.654416 139422372697792 logging_writer.py:48] [399800] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.2815, v_loss=3140.95
+I1006 19:24:35.621635 139767564435584 logging_util.py:10] train epoch: 79, step: 399899, loss: 0.999997, steps/sec: 25.21
+I1006 19:24:35.621907 139422372697792 logging_writer.py:48] [399900] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.2056, v_loss=3140.73
+I1006 19:24:39.576755 139767564435584 logging_util.py:10] train epoch: 79, step: 399999, loss: 0.999997, steps/sec: 25.28
+I1006 19:24:39.576979 139422372697792 logging_writer.py:48] [400000] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.2833, v_loss=3144.23
+I1006 19:24:43.537743 139767564435584 logging_util.py:10] train epoch: 79, step: 400099, loss: 0.999997, steps/sec: 25.25
+I1006 19:24:43.537949 139422372697792 logging_writer.py:48] [400100] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.2462, v_loss=3134.8
+I1006 19:24:47.636643 139767564435584 logging_util.py:10] train epoch: 79, step: 400199, loss: 0.999997, steps/sec: 24.40
+I1006 19:24:47.636787 139422372697792 logging_writer.py:48] [400200] ep=79, loss=0.999997, lr=0.0001, steps_per_second=24.3968, v_loss=3130.79
+I1006 19:24:51.597509 139767564435584 logging_util.py:10] train epoch: 79, step: 400299, loss: 0.999997, steps/sec: 25.25
+I1006 19:24:51.597708 139422372697792 logging_writer.py:48] [400300] ep=79, loss=0.999997, lr=0.0001, steps_per_second=25.247, v_loss=3132.61
+I1006 19:24:53.819521 139767564435584 logging_util.py:10] Saving checkpoint step 400320.
+I1006 19:24:53.819773 139767564435584 checkpoints.py:571] Saving checkpoint at step: 400320
+I1006 19:24:53.820063 139767564435584 checkpoints.py:814] Using Orbax as backend to save Flax checkpoints. For potential troubleshooting see: https://flax.readthedocs.io/en/latest/guides/training_techniques/use_checkpointing.html#orbax-as-backend-troubleshooting
+I1006 19:24:53.820101 139767564435584 pytree_checkpoint_handler.py:597] save_device_host_concurrent_bytes=None
+I1006 19:24:53.821371 139767564435584 checkpoints.py:436] Removing checkpoint at /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_380304
+I1006 19:24:53.843874 139767564435584 event_tracking.py:70] [process=0] [sync] Started save checkpoint @ /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_400320.
+I1006 19:24:53.844851 139767564435584 atomicity.py:140] Creating tmp directory /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_400320.orbax-checkpoint-tmp
+I1006 19:24:54.935063 139767564435584 future.py:372] [process=0][thread=MainThread][operation_id=5] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+I1006 19:24:55.762982 139463107790528 array_metadata_store.py:248] [process=0][thread=write_metadata_after_commits] No metadata found for process_index=0, checkpoint_dir=/work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_400320.orbax-checkpoint-tmp. If the checkpoint does not contain jax.Array then it is expected. If checkpoint contains jax.Array then it should lead to an error eventually; if no error is raised then it is a bug.
+I1006 19:24:55.777947 139767564435584 event_tracking.py:125] [process=0] [sync] Finished blocking save in 1.93 seconds. Continuing save @ /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_400320.
+I1006 19:24:55.779323 139767564435584 array_metadata_store.py:284] [process=0][thread=MainThread] No metadata found for any process_index, checkpoint_dir=/work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_400320.orbax-checkpoint-tmp. Time taken: 0.000165s. If the checkpoint does not contain jax.Array then it is expected. If checkpoint contains jax.Array then it should lead to an error eventually; if no error is raised then it is a bug.
+I1006 19:24:55.787134 139767564435584 atomicity.py:535] Renaming /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_400320.orbax-checkpoint-tmp to /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_400320
+I1006 19:24:55.788862 139767564435584 atomicity.py:847] [process=0][thread=MainThread] Finished saving checkpoint (finalized tmp dir) to `/work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_400320`.
+I1006 19:24:55.789150 139767564435584 event_tracking.py:138] [process=0] [sync] Finished save in 1.95 seconds @ /work/MeanFlow/runs/table1a_0_a100_b200/checkpoint_400320
+I1006 19:24:55.789196 139767564435584 logging_util.py:10] Checkpoint step 400320 saved.

@@ -1,0 +1,53 @@
+dataset:
+  cache: false
+  image_channels: 4
+  image_size: 32
+  name: imgnet_latent
+  num_classes: 1000
+  num_workers: 4
+  pin_memory: false
+  prefetch_factor: 2
+  root: /work/meanflow-table1e/data/imagenet256_latents
+  vae: mse
+eval_only: false
+fid:
+  cache_ref: /work/meanflow-table1e/data/fid/imagenet256_authors_ref.npz
+  device_batch_size: 20
+  num_samples: 50000
+  on_training: true
+load_from: null
+method:
+  P_mean: -0.4
+  P_std: 1.0
+  class_dropout_prob: 0.1
+  data_proportion: 0.75
+  guidance_eq: none
+  kappa: 0.5
+  noise_dist: logit_normal
+  norm_eps: 0.01
+  norm_p: 0.5
+  omega: 1.0
+  t_end: 1.0
+  t_start: 0.0
+model:
+  cls: DiT_B_4
+sampling:
+  num_classes: 1000
+  num_steps: 1
+  sampling_timesteps: null
+  schedule: default
+  seed: 0
+training:
+  adam_b2: 0.95
+  batch_size: 256
+  checkpoint_per_epoch: 10
+  ema_val: 0.9999
+  fid_per_epoch: 10
+  half_precision: false
+  learning_rate: 0.0001
+  log_per_step: 100
+  num_epochs: 80
+  sample_per_epoch: 10
+  seed: 42
+  ema_type: const
+  sample_on_training: true

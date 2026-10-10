@@ -1,0 +1,12 @@
+{
+  "source": "https://drive.google.com/file/d/1sESI-bE4SpB0noJ6VQ_OE6XAI_o4c-qK/view",
+  "path": "/work/meanflow-table1e/data/fid/imagenet256_authors_ref.npz",
+  "sha256": "a8e1d8cabbc2cd5137e009dc3c5ad8c410506e9dfcf5d1717a84967108e95d06",
+  "ref_mu_shape": [
+    2048
+  ],
+  "ref_sigma_shape": [
+    2048,
+    2048
+  ]
+}
