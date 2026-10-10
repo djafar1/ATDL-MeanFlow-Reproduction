@@ -1,0 +1,46 @@
+# Table 1(b), Mean Flows for One-step Generative Modeling (arXiv:2505.13447).
+# Override dataset.root with --dataset-root; training does not need FID assets.
+model:
+  cls: DiT_B_4
+dataset:
+  root: /REPLACE_WITH_CLUSTER_PATH/imagenet_latents
+  expected_examples: 1281167
+  num_workers: 4
+training:
+  batch_size: 256
+  num_epochs: 80
+  learning_rate: 0.0001
+  adam_b2: 0.95
+  ema_type: const
+  ema_val: 0.9999
+  seed: 42
+  log_per_step: 100
+  checkpoint_per_step: 1000
+  ema_snapshot_per_step: 25000
+  sample_on_training: false
+  sample_per_epoch: 10
+  checkpoint_per_epoch: 1
+  fid_per_epoch: 10
+method:
+  guidance_eq: none
+  omega: 1.0
+  kappa: 0.0
+  class_dropout_prob: 0.1
+  data_proportion: 0.75
+  noise_dist: logit_normal
+  P_mean: -0.4
+  P_std: 1.0
+  norm_p: 1.0
+  jvp_tangent_r: 1.0
+  jvp_tangent_t: 0.0
+  norm_eps: 0.01
+sampling:
+  seed: 0
+  num_steps: 1
+fid:
+  on_training: false
+  num_samples: 50000
+  device_batch_size: 20
+  cache_ref: /REPLACE_WITH_CLUSTER_PATH/imagenet_fid_reference.npz
+load_from: null
+eval_only: false

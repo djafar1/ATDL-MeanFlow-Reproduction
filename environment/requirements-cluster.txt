@@ -1,0 +1,24 @@
+# Python 3.11. JAX does the training; TensorFlow and Torch remain CPU-only.
+jax==0.4.27
+jaxlib==0.4.27
+flax==0.8.4
+optax==0.2.2
+chex==0.1.86
+orbax-checkpoint==0.4.4
+tensorstore==0.1.67
+numpy==1.26.4
+scipy==1.13.1
+ml-dtypes==0.3.2
+tensorflow-cpu==2.15.1
+keras==2.15.0
+clu==0.0.12
+diffusers==0.29.2
+huggingface-hub==0.25.2
+ml-collections==1.1.0
+matplotlib==3.9.2
+Pillow==10.4.0
+PyYAML==6.0.2
+absl-py==2.1.0
+dm-tree==0.1.8
+cached-property==1.5.2
+tqdm==4.66.5
